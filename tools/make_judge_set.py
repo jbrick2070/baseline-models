@@ -2,14 +2,23 @@
 
 Three seats per comparison, and none of them can see which arm is which:
 
-  seat1  full frames, labelled A/B, read A then B
-  seat2  the SAME frames, relabelled and permuted, read X then Y
+  seat1  full frames, labelled A/B
+  seat2  the SAME frames, relabelled X/Y
   seat3  native-pixel crops only, labelled P/Q
 
-Each seat gets its own independent label permutation, so a seat that leans on
-label position rather than on pixels disagrees with the others instead of
-quietly agreeing with them. The arm behind every label lives in KEY.json, which
-is the driver's file and is never handed to a seat.
+WITH TWO ARMS THERE ARE ONLY TWO READ ORDERS, so three seats can never each
+have their own. An earlier version of this file claimed they did and hard-coded
+a single map in which seat2 and seat3 both read official first -- two position
+conditions wearing three seats, with every fixture and seed sharing the same
+map. A refutation pass caught it. The honest design is stated here instead:
+the 2-1 split is unavoidable, so what varies is WHICH seat draws the minority
+order and WHICH arm reads first, derived per (fixture, seed) from a digest.
+That is deterministic and reproducible, but no longer aligned with seat
+identity across cells, so a position-leaning seat cannot agree with itself
+cell after cell and look like corroboration.
+
+The arm behind every label lives in KEY.json, which is the driver's file and is
+never handed to a seat.
 
 Crops are cut, never resampled: a judge asked "which eye-chart row still reads"
 must be looking at the model's own pixels, not at an interpolation of them.
@@ -19,6 +28,7 @@ usage: make_judge_set.py <lane_dir> <fixture> <seed> <judge_out_root>
 """
 from __future__ import annotations
 
+import hashlib
 import io
 import json
 import shutil
@@ -40,11 +50,31 @@ REGIONS = {
                  ("gratings_light", 8, 208, 400, 46),
                  ("gratings_dark", 424, 208, 400, 46)],
 }
-SEATS = {
-    "seat1_full_A_then_B": {"ours": "A", "official": "B", "order": ["A", "B"]},
-    "seat2_full_X_then_Y": {"ours": "Y", "official": "X", "order": ["X", "Y"]},
-    "seat3_crops_P_then_Q": {"ours": "Q", "official": "P", "order": ["P", "Q"]},
+SEAT_LABELS = {
+    "seat1_full": ("A", "B"),
+    "seat2_full": ("X", "Y"),
+    "seat3_crops": ("P", "Q"),
 }
+
+
+def seat_plan(fixture: str, seed: int) -> dict:
+    """Assign each seat a read order, varied per cell rather than fixed.
+
+    Two arms admit only two orders, so one order is always used twice. The
+    digest decides which seat is the odd one out and which arm leads, so the
+    repeat does not land on the same seats in every cell.
+    """
+    digest = hashlib.sha256(("%s|%d" % (fixture, seed)).encode("utf-8")).digest()
+    odd_seat = digest[0] % 3
+    ours_leads = bool(digest[1] & 1)
+    plan = {}
+    for index, (seat, (first, second)) in enumerate(sorted(SEAT_LABELS.items())):
+        leads = not ours_leads if index == odd_seat else ours_leads
+        ours_label, official_label = (first, second) if leads else (second, first)
+        plan[seat] = {"ours": ours_label, "official": official_label,
+                      "order": [first, second],
+                      "reads_first": "ours" if leads else "official"}
+    return plan
 
 
 def main(argv=None) -> int:
@@ -80,7 +110,7 @@ def main(argv=None) -> int:
     key = {"fixture": fixture, "seed": seed, "legs": legs, "seats": {}, "files": {}}
     manifest = {"fixture": fixture, "seed": seed, "seats": {}}
 
-    for seat, spec in SEATS.items():
+    for seat, spec in seat_plan(fixture, seed).items():
         seat_dir = out_dir / seat
         seat_dir.mkdir()
         shown = []
@@ -109,7 +139,8 @@ def main(argv=None) -> int:
                                     seat_dir / filename)
                     shown.append(filename)
                     key["files"][filename] = {"arm": arm, "leg": leg, "frame": index}
-        key["seats"][seat] = {"ours": spec["ours"], "official": spec["official"]}
+        key["seats"][seat] = {"ours": spec["ours"], "official": spec["official"],
+                              "reads_first": spec["reads_first"]}
         manifest["seats"][seat] = {
             "dir": str(seat_dir), "read_order": spec["order"],
             "files": sorted(shown),
