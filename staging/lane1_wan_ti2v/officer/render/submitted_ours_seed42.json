@@ -1,0 +1,128 @@
+{
+  "clip": {
+    "class_type": "CLIPLoaderGGUF",
+    "inputs": {
+      "clip_name": "umt5-xxl-encoder-Q5_K_M.gguf",
+      "type": "wan"
+    }
+  },
+  "ksampler": {
+    "class_type": "KSampler",
+    "inputs": {
+      "cfg": 5.0,
+      "denoise": 1.0,
+      "latent_image": [
+        "latent",
+        0
+      ],
+      "model": [
+        "modelsampling",
+        0
+      ],
+      "negative": [
+        "neg",
+        0
+      ],
+      "positive": [
+        "pos",
+        0
+      ],
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "seed": 42,
+      "steps": 30
+    }
+  },
+  "latent": {
+    "class_type": "Wan22ImageToVideoLatent",
+    "inputs": {
+      "batch_size": 1,
+      "height": 480,
+      "length": 97,
+      "start_image": [
+        "loadimage",
+        0
+      ],
+      "vae": [
+        "vae",
+        0
+      ],
+      "width": 832
+    }
+  },
+  "loadimage": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait_16_9.png"
+    }
+  },
+  "modelsampling": {
+    "class_type": "ModelSamplingSD3",
+    "inputs": {
+      "model": [
+        "unet",
+        0
+      ],
+      "shift": 5.0
+    }
+  },
+  "neg": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "clip",
+        0
+      ],
+      "text": "low quality, worst quality, blurry, distorted, watermark, text, static"
+    }
+  },
+  "pos": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "clip",
+        0
+      ],
+      "text": "1950s black and white cinematic close-up of a military officer's face, facing the camera, holding his gaze steady, only subtle breathing and a slight head movement, static locked-off camera, single continuous shot, no cut, no scene change, no camera move."
+    }
+  },
+  "save": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "baseline_output/lane1_wan_ti2v/ours_seed42/frame",
+      "images": [
+        "vaedecode",
+        0
+      ]
+    }
+  },
+  "unet": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "Wan2.2-TI2V-5B-Q5_K_M.gguf"
+    }
+  },
+  "vae": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "wan2.2_vae.safetensors"
+    }
+  },
+  "vaedecode": {
+    "class_type": "VAEDecodeTiled",
+    "inputs": {
+      "overlap": 64,
+      "samples": [
+        "ksampler",
+        0
+      ],
+      "temporal_overlap": 8,
+      "temporal_size": 16,
+      "tile_size": 256,
+      "vae": [
+        "vae",
+        0
+      ]
+    }
+  }
+}

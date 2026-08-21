@@ -1,0 +1,73 @@
+{
+  "arms": [
+    "official",
+    "ours"
+  ],
+  "fixture": "officer",
+  "fps": 25,
+  "legs": [
+    {
+      "arm": "ours",
+      "first_frame": "frame_00001_.png",
+      "fixture": "officer",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "officer/ours_seed42",
+      "prompt_id": "c022ad2d-7a08-4aad-8550-3baf39129246",
+      "receipt_origin": "rebuilt from server history",
+      "seed": 42,
+      "sha256": "4ad686371eaab89346b6771d3e40275accbd23f6cfe75424ce0956169b5e5da3",
+      "status": "success",
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\ours_seed42"
+    },
+    {
+      "arm": "official",
+      "first_frame": "frame_00001_.png",
+      "fixture": "officer",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "officer/official_seed42",
+      "prompt_id": "2d72b763-4a18-4792-987c-84643149c4c0",
+      "receipt_origin": "rebuilt from server history",
+      "seed": 42,
+      "sha256": "71000a2062c32c51cb1f8e0cb0896b76533297d19e6ce94632d5ce73b31529e1",
+      "status": "success",
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\official_seed42"
+    },
+    {
+      "arm": "ours",
+      "first_frame": "frame_00001_.png",
+      "fixture": "officer",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "officer/ours_seed20260821",
+      "prompt_id": "59765f82-3af5-4849-8f17-ef1d44a956c7",
+      "receipt_origin": "rebuilt from server history",
+      "seed": 20260821,
+      "sha256": "d50fbb6643bd8903b8b19250f468522634d76d45ec06a6bb73235c3c3353fa87",
+      "status": "success",
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\ours_seed20260821"
+    },
+    {
+      "arm": "official",
+      "first_frame": "frame_00001_.png",
+      "fixture": "officer",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "officer/official_seed20260821",
+      "prompt_id": "9701228c-db04-4829-89e1-97cb5ff51618",
+      "receipt_origin": "rebuilt from server history",
+      "seed": 20260821,
+      "sha256": "a6012080878649d72cda7faaeb5c5d03f013e8c71f4f7ebafc29f33d961afcb6",
+      "status": "success",
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\official_seed20260821"
+    }
+  ],
+  "note": "Receipts rebuilt from ComfyUI /history after the pass-1 files were lost in the per-fixture move. Each executed graph was compared against the re-derived submission.",
+  "output_prefix": "baseline_output/lane1_wan_ti2v",
+  "seeds": [
+    42,
+    20260821
+  ],
+  "server": "http://127.0.0.1:8000"
+}
