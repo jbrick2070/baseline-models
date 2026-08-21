@@ -1,0 +1,56 @@
+{
+  "fixture": "controlroom",
+  "seats": {
+    "seat1_full_A_then_B": {
+      "dir": "staging\\lane1_wan_ti2v\\judge\\controlroom\\seed42\\seat1_full_A_then_B",
+      "files": [
+        "A_f001.png",
+        "A_f049.png",
+        "A_f097.png",
+        "B_f001.png",
+        "B_f049.png",
+        "B_f097.png"
+      ],
+      "kind": "full matched frames",
+      "read_order": [
+        "A",
+        "B"
+      ]
+    },
+    "seat2_full_X_then_Y": {
+      "dir": "staging\\lane1_wan_ti2v\\judge\\controlroom\\seed42\\seat2_full_X_then_Y",
+      "files": [
+        "X_f001.png",
+        "X_f049.png",
+        "X_f097.png",
+        "Y_f001.png",
+        "Y_f049.png",
+        "Y_f097.png"
+      ],
+      "kind": "full matched frames",
+      "read_order": [
+        "X",
+        "Y"
+      ]
+    },
+    "seat3_crops_P_then_Q": {
+      "dir": "staging\\lane1_wan_ti2v\\judge\\controlroom\\seed42\\seat3_crops_P_then_Q",
+      "files": [
+        "P_f049_dials.png",
+        "P_f049_figure.png",
+        "P_f097_dials.png",
+        "P_f097_figure.png",
+        "Q_f049_dials.png",
+        "Q_f049_figure.png",
+        "Q_f097_dials.png",
+        "Q_f097_figure.png"
+      ],
+      "kind": "native-pixel crops",
+      "read_order": [
+        "P",
+        "Q"
+      ]
+    }
+  },
+  "seed": 42
+}

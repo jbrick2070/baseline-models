@@ -1,0 +1,197 @@
+{
+  "arms": [
+    "ours",
+    "official"
+  ],
+  "fixture": "controlroom",
+  "fps": 25,
+  "legs": [
+    {
+      "arm": "ours",
+      "elapsed_s": 205.6,
+      "first_frame": "frame_00001_.png",
+      "fixture": "controlroom",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "controlroom/ours_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "917a9b4e-fd69-4eb1-9f5b-48830f0b6ddd",
+            "timestamp": 1787327589273
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "clip",
+              "neg",
+              "unet",
+              "vae"
+            ],
+            "prompt_id": "917a9b4e-fd69-4eb1-9f5b-48830f0b6ddd",
+            "timestamp": 1787327589347
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "917a9b4e-fd69-4eb1-9f5b-48830f0b6ddd",
+            "timestamp": 1787327793070
+          }
+        ]
+      ],
+      "prompt_id": "917a9b4e-fd69-4eb1-9f5b-48830f0b6ddd",
+      "seed": 42,
+      "sha256": "2910aa98c564ead6f8b44adeccc329e13c6b9d2e7029e8bcb4185f4ffe046165",
+      "status": "success",
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\controlroom\\ours_seed42"
+    },
+    {
+      "arm": "official",
+      "elapsed_s": 150.7,
+      "first_frame": "frame_00001_.png",
+      "fixture": "controlroom",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "controlroom/official_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "5c776dfd-858b-4240-86a8-b9fec9da9914",
+            "timestamp": 1787327794905
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "clip",
+              "latent",
+              "loadimage",
+              "neg",
+              "pos",
+              "unet",
+              "vae"
+            ],
+            "prompt_id": "5c776dfd-858b-4240-86a8-b9fec9da9914",
+            "timestamp": 1787327794988
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "5c776dfd-858b-4240-86a8-b9fec9da9914",
+            "timestamp": 1787327942168
+          }
+        ]
+      ],
+      "prompt_id": "5c776dfd-858b-4240-86a8-b9fec9da9914",
+      "seed": 42,
+      "sha256": "869f98eb2647871435e95d1555c7aac2b20324e997ab41f594440593b24736ef",
+      "status": "success",
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\controlroom\\official_seed42"
+    },
+    {
+      "arm": "ours",
+      "elapsed_s": 200.7,
+      "first_frame": "frame_00001_.png",
+      "fixture": "controlroom",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "controlroom/ours_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "2347c4e4-a722-4756-85b4-b117e0ae59b1",
+            "timestamp": 1787327945681
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "clip",
+              "latent",
+              "loadimage",
+              "neg",
+              "pos",
+              "unet",
+              "vae"
+            ],
+            "prompt_id": "2347c4e4-a722-4756-85b4-b117e0ae59b1",
+            "timestamp": 1787327945819
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "2347c4e4-a722-4756-85b4-b117e0ae59b1",
+            "timestamp": 1787328145490
+          }
+        ]
+      ],
+      "prompt_id": "2347c4e4-a722-4756-85b4-b117e0ae59b1",
+      "seed": 20260821,
+      "sha256": "3ce2eee73568540a954a22db3daa171ccf1214c6eafd4b7f45dda97bcee54fd0",
+      "status": "success",
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\controlroom\\ours_seed20260821"
+    },
+    {
+      "arm": "official",
+      "elapsed_s": 150.4,
+      "first_frame": "frame_00001_.png",
+      "fixture": "controlroom",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "controlroom/official_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "2cb7ba01-6671-4c21-9b15-a499f5fb5ce2",
+            "timestamp": 1787328146213
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "clip",
+              "latent",
+              "loadimage",
+              "neg",
+              "pos",
+              "unet",
+              "vae"
+            ],
+            "prompt_id": "2cb7ba01-6671-4c21-9b15-a499f5fb5ce2",
+            "timestamp": 1787328146295
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "2cb7ba01-6671-4c21-9b15-a499f5fb5ce2",
+            "timestamp": 1787328294364
+          }
+        ]
+      ],
+      "prompt_id": "2cb7ba01-6671-4c21-9b15-a499f5fb5ce2",
+      "seed": 20260821,
+      "sha256": "365c74f47ca7cc0bcddc99fc084d85c3498daa216fb0d1bb6ee2d6245ae7aa53",
+      "status": "success",
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\controlroom\\official_seed20260821"
+    }
+  ],
+  "output_prefix": "baseline_output/lane1_wan_ti2v",
+  "seeds": [
+    42,
+    20260821
+  ],
+  "server": "http://127.0.0.1:8000"
+}

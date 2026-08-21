@@ -1,0 +1,107 @@
+{
+  "rows": [
+    {
+      "basis": "The only countable divergence is at frame 097: B still holds six coherent figures, including the far seated operator right of the standing man (pale shirt, distinct head above the chair back), while in A that same figure has dissolved into its chair, giving A 5 coherent figures and 1 fusion defect. Everything else ties - frames 001 and 049 are 6 figures / 0 defects on both, framing reads locked to the reference in all six frames, no hallucinated objects in either, and the right-hand dial bank could not be counted reliably at this resolution on either label, so Q2 is UNKNOWN throughout.",
+      "better_label": "B",
+      "fixture": "controlroom",
+      "maps_to": "official",
+      "margin": "marginal",
+      "seat": "seat1_full_A_then_B"
+    },
+    {
+      "basis": "Every countable question came out identical across the two labels at all three frames: 6 coherent figures each (two foreground operators, two mid-hall operators, two faint background figures, plus the standing man - I count the standing man among the six), 0 structural defects, 0 hallucinated objects, framing locked in both (corridor-light and ceiling-lamp landmark positions drift under ~5 px against the reference, far below a reframe), and the same near-run dial count in the right bank (9/9/8 for both). The only difference I could find is tonal - Y sits warmer and slightly more bloomed, so its far dial rims soften a touch sooner than X's - but that is visible only by flipping at 8x zoom and is excluded as taste-flipping, so it does not move a count.",
+      "better_label": "TIE",
+      "fixture": "controlroom",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat2_full_X_then_Y"
+    },
+    {
+      "basis": "Every countable answer came out identical: 4 coherent figures per frame for both labels at both frames, 0 structural defects, 0 hallucinated objects, and framing locked to the reference in all eight crops - including the same small forward drift from f049 to f097 in both labels, so it is a shared camera move rather than a difference between them. The dial-face count is UNKNOWN for both labels because the row recedes into haze and the far faces merge at this crop resolution; the differences I could see between P and Q are confined to warmth, contrast and micro-sharpness, which the brief excludes from the judgement.",
+      "better_label": "TIE",
+      "fixture": "controlroom",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat3_crops_P_then_Q"
+    },
+    {
+      "basis": "Every countable question came out identical: 6 intact separate glass tubes in all six frames, 0 structural defects and 0 hallucinated objects at legible scale in both labels, and the same ~11 clearly resolvable coherent faces per frame. Q2 is UNKNOWN for both because the meter band is bottom-cropped and its ticks smear at this resolution, so it discriminates nothing. The only differences I could see are warmth, brightness and saturation - B's f049/f097 render the background crowd band slightly darker and warmer, which reduces apparent detail there without any face or limb actually breaking - and that is exposure, which I was told not to judge.",
+      "better_label": "TIE",
+      "fixture": "crowd",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat1_full_A_then_B"
+    },
+    {
+      "basis": "Every count is identical at f001 and f049 (the two labels are visually indistinguishable at f001), and tube counts (6) and meter ticks are identical in all six frames; the entire difference sits in f097, where Y loses the red-haired boy's face in the left-mid crowd (eye, brow and mouth erased and replaced by vertical streaking, while X keeps a clear eye, nose and mouth at the same spot) and gains a bright red dot on the navy-suited man's lapel that is absent from the reference and from every other frame. That is one face and one hallucinated object, each a difference of one, on one of three sampled frames - X wins, but narrowly.",
+      "better_label": "X",
+      "fixture": "crowd",
+      "maps_to": "official",
+      "margin": "marginal",
+      "seat": "seat2_full_X_then_Y"
+    },
+    {
+      "basis": "Every countable quantity came out identical: 3 structurally coherent near-field faces in both labels at both frames, 0 structural defects and 0 hallucinated objects in all four face crops, and meter ticks that stay present and separate in all four meter crops without being exactly countable in either label. The only differences I could see between P and Q are tone and brightness, which the instructions exclude, so no count drives a winner.",
+      "better_label": "TIE",
+      "fixture": "crowd",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat3_crops_P_then_Q"
+    },
+    {
+      "basis": "Every countable question came out identical across the two labels and across all three frames each: identity YES 6/6, zero structural face defects 6/6, 3 resolvable shoulder studs 6/6, zero collar-and-tie edge breaks 6/6, zero hallucinated objects 6/6. The only differences I could see between A and B are global tone - B_f049 and B_f097 read slightly darker and higher-contrast - which is explicitly excluded from the judgment and moved none of the counts.",
+      "better_label": "TIE",
+      "fixture": "officer",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat1_full_A_then_B"
+    },
+    {
+      "basis": "Every countable question came out identical across all six frames: identity YES in all six, 0 structural face defects, 4 individually resolvable shoulder-board studs (2 on the viewer-left board, 2 on the viewer-right board), 0 collar/tie-edge breaks, and 0 hallucinated objects. The only thing separating the two is a slight softness difference at the shoulder-board edge and collar in Y at f097 versus X at f097, which is visible only under heavy zoom, does not change any count, and is therefore marginal at most.",
+      "better_label": "TIE",
+      "fixture": "officer",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat2_full_X_then_Y"
+    },
+    {
+      "basis": "Every countable question came out identical for both labels on both frames: identity YES 4/4, structural face defects 0 on all four face crops, 2 individually resolvable shoulder studs on all four uniform crops, and 0 hallucinated objects anywhere. The collar-and-tie question is UNKNOWN for both because that region is not inside the supplied crops, so it separates nothing; the only differences I can see are tonal (Q reads a little more contrasty at f097), which the rules exclude.",
+      "better_label": "TIE",
+      "fixture": "officer",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat3_crops_P_then_Q"
+    },
+    {
+      "basis": "Every one of the eight counted questions returned the identical value for A and B at all three frames: both start pristine at f001 (eye row 5 legible on both panels, shape row 4, 3px gratings separated, zero hallucinations, 8 colour bars), and both degrade the same way and by the same amount by f049 and hold there at f097 - eye row 5 collapses to an unreadable smear on both panels in both labels while row 4 (VZCDH) stays readable, shape rows survive to 4, the 3px grating block picks up colour contamination in both so 4px is the finest I can call reliably separated, and each degraded frame carries exactly one hallucinated blob in the same place (a rounded-rectangle artifact on the dark eye-chart panel, right of the letters, obscuring no instrument). The only difference I can see is severity rather than count: A's f049 blob is a bright saturated cyan-blue glow while B's is a dim dark one, and B's light panels carry one or two very faint pale smudges that A's do not - both are offsetting and neither moves a number, so the honest answer on the questions asked is a tie.",
+      "better_label": "TIE",
+      "fixture": "testcard",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat1_full_A_then_B"
+    },
+    {
+      "basis": "All 24 counted values match between X and Y on every frame: both hold eye-chart row 5 and shape row 4 at f001, both drop to eye-chart row 4 on BOTH panels at f049 and f097 (row 5 KNORSV loses at least one letter, usually the O, in all four degraded frames), both keep shape row 4 identifiable throughout, both keep 3px gratings visibly separated on light and dark, both keep all 8 colour bars distinct, and both produce exactly one hallucinated object per degraded frame — the same rounded pill in the same spot on the dark eye-chart panel. Nothing separates them on any question. The single non-count difference, which does not change any answer: at f049 that hallucinated pill is a bright filled cyan slab in Y and only a dim dark-interior outline in X (X's is fainter again by f097); if blob severity rather than blob presence were being scored, that one observation would favor X, and it is the only asymmetry I found.",
+      "better_label": "TIE",
+      "fixture": "testcard",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat2_full_X_then_Y"
+    },
+    {
+      "basis": "Every legibility and separation count came out identical: eye-chart row 4 is the last fully legible row on both panels in all four frames for both labels (row 5 is a smear everywhere), and the 4px grating is the finest reliably separated pitch on both panels in all four frames, with 3px not countable in either render. The only differences are in the hallucination column and they cancel: P carries one extra faint pale smudge on the f097 light panel (3 blobs total vs Q's 2), while Q's single f049 dark-panel object is a bright cyan glowing rectangle rather than P's low-contrast dark one - a severity difference, not a count difference, and neither costs a row or a grating pitch.",
+      "better_label": "TIE",
+      "fixture": "testcard",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat3_crops_P_then_Q"
+    }
+  ],
+  "run": "wf_0292e174-1bd",
+  "seats": 12,
+  "seed": 42,
+  "tally": {
+    "TIE": 10,
+    "official": 2
+  }
+}

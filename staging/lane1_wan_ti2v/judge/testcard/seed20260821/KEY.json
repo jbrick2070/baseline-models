@@ -1,0 +1,276 @@
+{
+  "files": {
+    "A_f001.png": {
+      "arm": "ours",
+      "frame": 1,
+      "leg": "ours_seed20260821"
+    },
+    "A_f049.png": {
+      "arm": "ours",
+      "frame": 49,
+      "leg": "ours_seed20260821"
+    },
+    "A_f097.png": {
+      "arm": "ours",
+      "frame": 97,
+      "leg": "ours_seed20260821"
+    },
+    "B_f001.png": {
+      "arm": "official",
+      "frame": 1,
+      "leg": "official_seed20260821"
+    },
+    "B_f049.png": {
+      "arm": "official",
+      "frame": 49,
+      "leg": "official_seed20260821"
+    },
+    "B_f097.png": {
+      "arm": "official",
+      "frame": 97,
+      "leg": "official_seed20260821"
+    },
+    "P_f049_eye_dark.png": {
+      "arm": "official",
+      "box": [
+        424,
+        258,
+        824,
+        418
+      ],
+      "frame": 49,
+      "leg": "official_seed20260821",
+      "region": "eye_dark"
+    },
+    "P_f049_eye_light.png": {
+      "arm": "official",
+      "box": [
+        8,
+        258,
+        408,
+        418
+      ],
+      "frame": 49,
+      "leg": "official_seed20260821",
+      "region": "eye_light"
+    },
+    "P_f049_gratings_dark.png": {
+      "arm": "official",
+      "box": [
+        424,
+        208,
+        824,
+        254
+      ],
+      "frame": 49,
+      "leg": "official_seed20260821",
+      "region": "gratings_dark"
+    },
+    "P_f049_gratings_light.png": {
+      "arm": "official",
+      "box": [
+        8,
+        208,
+        408,
+        254
+      ],
+      "frame": 49,
+      "leg": "official_seed20260821",
+      "region": "gratings_light"
+    },
+    "P_f097_eye_dark.png": {
+      "arm": "official",
+      "box": [
+        424,
+        258,
+        824,
+        418
+      ],
+      "frame": 97,
+      "leg": "official_seed20260821",
+      "region": "eye_dark"
+    },
+    "P_f097_eye_light.png": {
+      "arm": "official",
+      "box": [
+        8,
+        258,
+        408,
+        418
+      ],
+      "frame": 97,
+      "leg": "official_seed20260821",
+      "region": "eye_light"
+    },
+    "P_f097_gratings_dark.png": {
+      "arm": "official",
+      "box": [
+        424,
+        208,
+        824,
+        254
+      ],
+      "frame": 97,
+      "leg": "official_seed20260821",
+      "region": "gratings_dark"
+    },
+    "P_f097_gratings_light.png": {
+      "arm": "official",
+      "box": [
+        8,
+        208,
+        408,
+        254
+      ],
+      "frame": 97,
+      "leg": "official_seed20260821",
+      "region": "gratings_light"
+    },
+    "Q_f049_eye_dark.png": {
+      "arm": "ours",
+      "box": [
+        424,
+        258,
+        824,
+        418
+      ],
+      "frame": 49,
+      "leg": "ours_seed20260821",
+      "region": "eye_dark"
+    },
+    "Q_f049_eye_light.png": {
+      "arm": "ours",
+      "box": [
+        8,
+        258,
+        408,
+        418
+      ],
+      "frame": 49,
+      "leg": "ours_seed20260821",
+      "region": "eye_light"
+    },
+    "Q_f049_gratings_dark.png": {
+      "arm": "ours",
+      "box": [
+        424,
+        208,
+        824,
+        254
+      ],
+      "frame": 49,
+      "leg": "ours_seed20260821",
+      "region": "gratings_dark"
+    },
+    "Q_f049_gratings_light.png": {
+      "arm": "ours",
+      "box": [
+        8,
+        208,
+        408,
+        254
+      ],
+      "frame": 49,
+      "leg": "ours_seed20260821",
+      "region": "gratings_light"
+    },
+    "Q_f097_eye_dark.png": {
+      "arm": "ours",
+      "box": [
+        424,
+        258,
+        824,
+        418
+      ],
+      "frame": 97,
+      "leg": "ours_seed20260821",
+      "region": "eye_dark"
+    },
+    "Q_f097_eye_light.png": {
+      "arm": "ours",
+      "box": [
+        8,
+        258,
+        408,
+        418
+      ],
+      "frame": 97,
+      "leg": "ours_seed20260821",
+      "region": "eye_light"
+    },
+    "Q_f097_gratings_dark.png": {
+      "arm": "ours",
+      "box": [
+        424,
+        208,
+        824,
+        254
+      ],
+      "frame": 97,
+      "leg": "ours_seed20260821",
+      "region": "gratings_dark"
+    },
+    "Q_f097_gratings_light.png": {
+      "arm": "ours",
+      "box": [
+        8,
+        208,
+        408,
+        254
+      ],
+      "frame": 97,
+      "leg": "ours_seed20260821",
+      "region": "gratings_light"
+    },
+    "X_f001.png": {
+      "arm": "official",
+      "frame": 1,
+      "leg": "official_seed20260821"
+    },
+    "X_f049.png": {
+      "arm": "official",
+      "frame": 49,
+      "leg": "official_seed20260821"
+    },
+    "X_f097.png": {
+      "arm": "official",
+      "frame": 97,
+      "leg": "official_seed20260821"
+    },
+    "Y_f001.png": {
+      "arm": "ours",
+      "frame": 1,
+      "leg": "ours_seed20260821"
+    },
+    "Y_f049.png": {
+      "arm": "ours",
+      "frame": 49,
+      "leg": "ours_seed20260821"
+    },
+    "Y_f097.png": {
+      "arm": "ours",
+      "frame": 97,
+      "leg": "ours_seed20260821"
+    }
+  },
+  "fixture": "testcard",
+  "legs": {
+    "official": "official_seed20260821",
+    "ours": "ours_seed20260821"
+  },
+  "seats": {
+    "seat1_full_A_then_B": {
+      "official": "B",
+      "ours": "A"
+    },
+    "seat2_full_X_then_Y": {
+      "official": "X",
+      "ours": "Y"
+    },
+    "seat3_crops_P_then_Q": {
+      "official": "P",
+      "ours": "Q"
+    }
+  },
+  "seed": 20260821
+}

@@ -1,2 +1,6 @@
 __pycache__/
 *.pyc
+
+# Judge sets are regenerable from the rendered frames by tools/make_judge_set.py.
+# The receipts (KEY/MANIFEST/PANEL json) are kept; the image copies are not.
+staging/**/judge/**/*.png
