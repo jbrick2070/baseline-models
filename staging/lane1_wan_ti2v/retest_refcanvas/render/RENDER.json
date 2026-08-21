@@ -1,0 +1,98 @@
+{
+  "cell": "retest_refcanvas",
+  "fps": 24,
+  "legs": [
+    {
+      "arm": "ours",
+      "elapsed_s": 741.0,
+      "frame_count": 121,
+      "leg": "retest/ours_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "27bece3b-d56d-4310-8065-c963aa2769a0",
+            "timestamp": 1787335900879
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "27bece3b-d56d-4310-8065-c963aa2769a0",
+            "timestamp": 1787335901027
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "27bece3b-d56d-4310-8065-c963aa2769a0",
+            "timestamp": 1787336635850
+          }
+        ]
+      ],
+      "prompt_id": "27bece3b-d56d-4310-8065-c963aa2769a0",
+      "seed": 20260821,
+      "sha256": "17e4fc1b62c2ddd369138b4c730b42f12a19eba01e2cc128b76b2362ee384c6a",
+      "status": "success",
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\retest_refcanvas\\ours_seed20260821",
+      "temporal": {
+        "argmax_pair": 8,
+        "frame_pairs": 120,
+        "max_abs_delta": 2.7139,
+        "mean_abs_delta": 1.3216
+      }
+    },
+    {
+      "arm": "official",
+      "elapsed_s": 530.7,
+      "frame_count": 121,
+      "leg": "retest/official_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "cf6a5d3c-42e2-4c54-8066-cbeebb45039c",
+            "timestamp": 1787336644186
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "clip",
+              "latent",
+              "loadimage",
+              "neg",
+              "pos",
+              "unet",
+              "vae"
+            ],
+            "prompt_id": "cf6a5d3c-42e2-4c54-8066-cbeebb45039c",
+            "timestamp": 1787336644262
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "cf6a5d3c-42e2-4c54-8066-cbeebb45039c",
+            "timestamp": 1787337167168
+          }
+        ]
+      ],
+      "prompt_id": "cf6a5d3c-42e2-4c54-8066-cbeebb45039c",
+      "seed": 20260821,
+      "sha256": "5e8f0ef44346948872a47c9062ba0ae51cdc5b587815428e933bea42c9d0c64c",
+      "status": "success",
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\retest_refcanvas\\official_seed20260821",
+      "temporal": {
+        "argmax_pair": 8,
+        "frame_pairs": 120,
+        "max_abs_delta": 2.8841,
+        "mean_abs_delta": 1.4268
+      }
+    }
+  ],
+  "seed": 20260821,
+  "server": "http://127.0.0.1:8000"
+}

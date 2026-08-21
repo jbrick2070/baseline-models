@@ -193,8 +193,23 @@ shift 8 here is not a null for shift 8 everywhere.
    judged in this lane.
 6. Write mean and max frame-to-frame delta into `RENDER.json` per leg. One numpy
    pass, no re-render, and every future lane gets a temporal baseline.
-7. Re-test one cell at the reference canvas (1280x704 x 121) to close the shift
-   transplant objection for good.
+7. ~~Re-test one cell at the reference canvas~~ **CLOSED (2026-08-21 afternoon,
+   `retest_refcanvas/`).** Crowd, seed 20260821, both arms at 1280x704 x 121 --
+   the operating point shift 8 was authored for. Best effort, no OOM (12.6 GB
+   peak). Result, all three axes:
+   * **The scene divergence disappears.** Arm-to-arm NCC at the final frame is
+     0.9698 against 0.6269 at our canvas -- so the trajectory walk-off in the
+     main lane really was the transplanted shift, and at its authored canvas
+     the two recipes render the same scene.
+   * **Detail still ties exactly.** Edge energy in the scaled face box at f121:
+     ratio 0.995 raw AND 0.995 contrast-normalized.
+   * **Official is still the less stable arm** (+8% mean frame-to-frame delta,
+     1.427 vs 1.322) and the driver's eye found faint hallucinated light-streaks
+     over the right-side figure in official's final frame, absent in ours.
+   So the transplant objection is dead: even where shift 8 belongs, it buys no
+   quality and remains marginally behind on stability. NO WIN holds at both
+   operating points. (Render cost at reference canvas: ours 741s, official
+   531s per leg.)
 8. Hands are the one anatomy gap across the fixture set.
 
 ## Provenance
