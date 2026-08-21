@@ -18,7 +18,13 @@
       "seed": 42,
       "sha256": "4ad686371eaab89346b6771d3e40275accbd23f6cfe75424ce0956169b5e5da3",
       "status": "success",
-      "subfolder": "baseline_output\\lane1_wan_ti2v\\ours_seed42"
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\ours_seed42",
+      "temporal": {
+        "argmax_pair": 93,
+        "frame_pairs": 96,
+        "max_abs_delta": 5.6874,
+        "mean_abs_delta": 2.1407
+      }
     },
     {
       "arm": "official",
@@ -32,7 +38,13 @@
       "seed": 42,
       "sha256": "71000a2062c32c51cb1f8e0cb0896b76533297d19e6ce94632d5ce73b31529e1",
       "status": "success",
-      "subfolder": "baseline_output\\lane1_wan_ti2v\\official_seed42"
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\official_seed42",
+      "temporal": {
+        "argmax_pair": 73,
+        "frame_pairs": 96,
+        "max_abs_delta": 7.2058,
+        "mean_abs_delta": 2.7984
+      }
     },
     {
       "arm": "ours",
@@ -46,7 +58,13 @@
       "seed": 20260821,
       "sha256": "d50fbb6643bd8903b8b19250f468522634d76d45ec06a6bb73235c3c3353fa87",
       "status": "success",
-      "subfolder": "baseline_output\\lane1_wan_ti2v\\ours_seed20260821"
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\ours_seed20260821",
+      "temporal": {
+        "argmax_pair": 81,
+        "frame_pairs": 96,
+        "max_abs_delta": 4.8865,
+        "mean_abs_delta": 2.171
+      }
     },
     {
       "arm": "official",
@@ -60,7 +78,13 @@
       "seed": 20260821,
       "sha256": "a6012080878649d72cda7faaeb5c5d03f013e8c71f4f7ebafc29f33d961afcb6",
       "status": "success",
-      "subfolder": "baseline_output\\lane1_wan_ti2v\\official_seed20260821"
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\official_seed20260821",
+      "temporal": {
+        "argmax_pair": 81,
+        "frame_pairs": 96,
+        "max_abs_delta": 7.4624,
+        "mean_abs_delta": 3.4671
+      }
     }
   ],
   "note": "Receipts rebuilt from ComfyUI /history after the pass-1 files were lost in the per-fixture move. Each executed graph was compared against the re-derived submission.",

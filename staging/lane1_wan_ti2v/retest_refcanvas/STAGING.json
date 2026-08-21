@@ -1,0 +1,22 @@
+{
+  "arm_sha256": {
+    "official": "86cbbf178007154e849bc19851a7f25058a7021c600756ff8803acf9a1cbf273",
+    "ours": "98c0256df4ae1a8cd6e4964eee5260b1ea9a2bbba93d88eefdd8e2179d798eac"
+  },
+  "canvas": {
+    "height": 704,
+    "length": 121,
+    "width": 1280
+  },
+  "cell": "retest_refcanvas",
+  "declared_contrast": {
+    "ksampler.sampler_name": "uni_pc",
+    "ksampler.steps": 20,
+    "modelsampling.shift": 8.0
+  },
+  "derived_from": "crowd arms, canvas override applied to BOTH arms",
+  "fixture": "crowd",
+  "lane": "lane1_wan_ti2v",
+  "seed": 20260821,
+  "why": "shift is resolution/length-dependent; this cell closes the transplant objection recorded in the lane 1 verdict"
+}

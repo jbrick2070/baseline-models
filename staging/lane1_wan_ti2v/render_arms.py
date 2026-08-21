@@ -32,6 +32,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[1] / "tools"))
 import purity_gate  # noqa: E402
+import temporal_stats  # noqa: E402
 
 SERVER = "http://127.0.0.1:8000"
 SEEDS = [42, 20260821]
@@ -246,7 +247,7 @@ def main():
                 if result["status"] != "success":
                     print("[FAULT] %s: %s"
                           % (label, json.dumps(result.get("messages"))[:1500]))
-                fixture_legs.append({
+                leg_record = {
                     "leg": label, "fixture": fixture, "arm": arm, "seed": seed,
                     "sha256": digest, "prompt_id": prompt_id,
                     "status": result["status"], "elapsed_s": elapsed,
@@ -255,7 +256,16 @@ def main():
                     "first_frame": images[0]["filename"] if images else None,
                     "last_frame": images[-1]["filename"] if images else None,
                     "messages": result.get("messages", []),
-                })
+                }
+                # Temporal stability is a standard receipt field (lane 1
+                # closed without it and the critic had to reconstruct it).
+                if result["status"] == "success" and leg_record["subfolder"]:
+                    leg_record["temporal"] = temporal_stats.leg_stats(
+                        temporal_stats.COMFY_OUTPUT / leg_record["subfolder"])
+                    print("[TEMPORAL] %s mean=%.3f max=%.3f"
+                          % (label, leg_record["temporal"]["mean_abs_delta"],
+                             leg_record["temporal"]["max_abs_delta"]))
+                fixture_legs.append(leg_record)
                 legs.append(fixture_legs[-1])
                 io.open(receipts / "RENDER.json", "w", encoding="utf-8",
                         newline="\n").write(

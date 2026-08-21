@@ -1,0 +1,118 @@
+{
+  "clip": {
+    "class_type": "CLIPLoaderGGUF",
+    "inputs": {
+      "clip_name": "umt5-xxl-encoder-Q5_K_M.gguf",
+      "type": "wan"
+    }
+  },
+  "ksampler": {
+    "class_type": "KSampler",
+    "inputs": {
+      "cfg": 5.0,
+      "denoise": 1.0,
+      "latent_image": [
+        "latent",
+        0
+      ],
+      "model": [
+        "modelsampling",
+        0
+      ],
+      "negative": [
+        "neg",
+        0
+      ],
+      "positive": [
+        "pos",
+        0
+      ],
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "seed": 42,
+      "steps": 30
+    }
+  },
+  "latent": {
+    "class_type": "Wan22ImageToVideoLatent",
+    "inputs": {
+      "batch_size": 1,
+      "height": 704,
+      "length": 121,
+      "start_image": [
+        "loadimage",
+        0
+      ],
+      "vae": [
+        "vae",
+        0
+      ],
+      "width": 1280
+    }
+  },
+  "loadimage": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "lane1_crowd.png"
+    }
+  },
+  "modelsampling": {
+    "class_type": "ModelSamplingSD3",
+    "inputs": {
+      "model": [
+        "unet",
+        0
+      ],
+      "shift": 5.0
+    }
+  },
+  "neg": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "clip",
+        0
+      ],
+      "text": "low quality, worst quality, blurry, distorted, watermark, text, static"
+    }
+  },
+  "pos": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "clip",
+        0
+      ],
+      "text": "A crowded 1950s tent hall at night, dozens of people shoulder to shoulder watching a large wooden valve radio with a chrome antenna and glowing vacuum tubes on a table in the foreground, warm lantern light overhead, a lit doorway beyond the crowd, only subtle breathing, small head turns in the crowd and a faint flicker in the tube filaments, static locked-off camera, single continuous shot, no cut, no scene change, no camera move."
+    }
+  },
+  "unet": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "Wan2.2-TI2V-5B-Q5_K_M.gguf"
+    }
+  },
+  "vae": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "wan2.2_vae.safetensors"
+    }
+  },
+  "vaedecode": {
+    "class_type": "VAEDecodeTiled",
+    "inputs": {
+      "overlap": 64,
+      "samples": [
+        "ksampler",
+        0
+      ],
+      "temporal_overlap": 8,
+      "temporal_size": 16,
+      "tile_size": 256,
+      "vae": [
+        "vae",
+        0
+      ]
+    }
+  }
+}

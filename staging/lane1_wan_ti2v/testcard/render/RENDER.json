@@ -47,7 +47,13 @@
       "seed": 42,
       "sha256": "a150c1b48cc164c9b0222d37df177a085fffccc25e5e3f19b2a8979392215014",
       "status": "success",
-      "subfolder": "baseline_output\\lane1_wan_ti2v\\testcard\\ours_seed42"
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\testcard\\ours_seed42",
+      "temporal": {
+        "argmax_pair": 50,
+        "frame_pairs": 96,
+        "max_abs_delta": 6.4032,
+        "mean_abs_delta": 3.1212
+      }
     },
     {
       "arm": "official",
@@ -93,7 +99,13 @@
       "seed": 42,
       "sha256": "f69fa95064c5aeb005cdcc129202be36fd8c8a982a78ea04100a6dc7c5707e40",
       "status": "success",
-      "subfolder": "baseline_output\\lane1_wan_ti2v\\testcard\\official_seed42"
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\testcard\\official_seed42",
+      "temporal": {
+        "argmax_pair": 47,
+        "frame_pairs": 96,
+        "max_abs_delta": 8.8779,
+        "mean_abs_delta": 3.4503
+      }
     },
     {
       "arm": "ours",
@@ -139,7 +151,13 @@
       "seed": 20260821,
       "sha256": "276f6bcbabdbd250efc40ea8b2c7a0cb2fc55f2e624a260f75c6b20b427a34cc",
       "status": "success",
-      "subfolder": "baseline_output\\lane1_wan_ti2v\\testcard\\ours_seed20260821"
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\testcard\\ours_seed20260821",
+      "temporal": {
+        "argmax_pair": 89,
+        "frame_pairs": 96,
+        "max_abs_delta": 4.9194,
+        "mean_abs_delta": 2.9534
+      }
     },
     {
       "arm": "official",
@@ -185,7 +203,13 @@
       "seed": 20260821,
       "sha256": "31eddccf1709cca68752b27dfb5c0132d36dd67f357d4654e271277f84bcb33f",
       "status": "success",
-      "subfolder": "baseline_output\\lane1_wan_ti2v\\testcard\\official_seed20260821"
+      "subfolder": "baseline_output\\lane1_wan_ti2v\\testcard\\official_seed20260821",
+      "temporal": {
+        "argmax_pair": 65,
+        "frame_pairs": 96,
+        "max_abs_delta": 7.407,
+        "mean_abs_delta": 3.5569
+      }
     }
   ],
   "output_prefix": "baseline_output/lane1_wan_ti2v",
