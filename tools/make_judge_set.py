@@ -60,6 +60,28 @@ REGIONS = {
         "march": [("players", 30, 170, 700, 360), ("street_right", 700, 160, 320, 380)],
         "radio": [("tubes", 280, 80, 480, 260), ("dial_grille", 210, 320, 640, 220)],
     },
+    # lane 4 renders at 832x480 -- the SAME canvas lane 1 authored against -- so
+    # the lane 1 boxes transfer unscaled.
+    #
+    # testcard_motion was designed as an acuity-UNDER-MOTION fixture, and fixed
+    # crops would have been wrong for a drifting card. Measured before declaring
+    # these regions (phase correlation, f001 vs f097, all four legs): global
+    # translation is 0.0 px in BOTH arms at BOTH seeds. The model ignores the
+    # prompted camera drift on a flat graphic still, so the card is STATIC and
+    # fixed crops are correct after all. That also means the motion axis is
+    # FLOORED: this fixture is lane 1's static card, and a null on it is a
+    # fixture failure on motion, never an encoder null.
+    "lane4_wan_text_encoder": {
+        # crowd is a PRESERVATION fixture on an i2v lane -- everything the prompt
+        # names is already in the conditioning still, so these questions ask what
+        # survived, not what the encoder invented. The meter is scored for
+        # preservation only; the prompt never demands it.
+        "crowd": [("faces", 500, 60, 224, 168), ("meter", 330, 404, 260, 76)],
+        "testcard_motion": [("eye_light", 8, 258, 400, 160),
+                            ("eye_dark", 424, 258, 400, 160),
+                            ("gratings_light", 8, 208, 400, 46),
+                            ("gratings_dark", 424, 208, 400, 46)],
+    },
     "lane2_ltx25": {
         "officer": [("face", 432, 32, 640, 640), ("uniform", 120, 680, 512, 256)],
         "crowd": [("faces", 1000, 120, 448, 336), ("meter", 660, 808, 520, 152)],

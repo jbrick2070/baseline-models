@@ -1,0 +1,73 @@
+{
+  "device": "cpu (both arms)",
+  "measurement": "conditioning-tensor delta between the two lane 4 encoders",
+  "official": {
+    "class": "CLIPLoader",
+    "file": "umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+  },
+  "ours": {
+    "class": "CLIPLoaderGGUFCPU",
+    "file": "umt5-xxl-encoder-Q5_K_M.gguf"
+  },
+  "prompts": {
+    "crowd/negative": "low quality, worst quality, blurry, distorted, watermark, text, static",
+    "crowd/positive": "A crowded 1950s tent hall at night, dozens of people shoulder to shoulder watching a large wooden valve radio with a chrome antenna and glowing vacuum tubes on a table in the foreground, warm lantern light overhead, a lit doorway beyond the crowd, only subtle breathing, small head turns in the crowd and a faint flicker in the tube filaments, static locked-off camera, single continuous shot, no cut, no scene change, no camera move.",
+    "testcard_motion/negative": "low quality, worst quality, blurry, distorted, static",
+    "testcard_motion/positive": "A 1950s broadcast test card filling the frame: colour bars across the top, a grey step wedge, panels of geometric shapes and rows of block letters in decreasing sizes, fine line gratings, and a smooth grey gradient. The camera drifts slowly and steadily to the left across the card at a constant rate, the card itself stays flat, square and rigid, every printed element holding its shape and sharpness as it moves, single continuous shot, no cut, no scene change, nothing warping or rippling."
+  },
+  "results": {
+    "crowd/negative": {
+      "comparable": true,
+      "cosine_similarity": 0.990366,
+      "max_abs_diff": 0.277119,
+      "mean_abs_ours": 0.001809,
+      "relative_rms": 1.041291,
+      "rms_diff": 0.001883,
+      "shape": [
+        1,
+        512,
+        4096
+      ]
+    },
+    "crowd/positive": {
+      "comparable": true,
+      "cosine_similarity": 0.991601,
+      "max_abs_diff": 0.75368,
+      "mean_abs_ours": 0.012167,
+      "relative_rms": 0.396262,
+      "rms_diff": 0.004821,
+      "shape": [
+        1,
+        512,
+        4096
+      ]
+    },
+    "testcard_motion/negative": {
+      "comparable": true,
+      "cosine_similarity": 0.995912,
+      "max_abs_diff": 0.050795,
+      "mean_abs_ours": 0.001335,
+      "relative_rms": 0.791253,
+      "rms_diff": 0.001057,
+      "shape": [
+        1,
+        512,
+        4096
+      ]
+    },
+    "testcard_motion/positive": {
+      "comparable": true,
+      "cosine_similarity": 0.99267,
+      "max_abs_diff": 0.91902,
+      "mean_abs_ours": 0.013406,
+      "relative_rms": 0.355068,
+      "rms_diff": 0.00476,
+      "shape": [
+        1,
+        512,
+        4096
+      ]
+    }
+  },
+  "why": "the video panel observes renders; this observes the thing the knob actually varies. A near-identical result makes a video null meaningful rather than ambiguous."
+}
