@@ -1,0 +1,232 @@
+{
+  "arms": [
+    "ours",
+    "half"
+  ],
+  "fixture": "portrait",
+  "fps": 25,
+  "legs": [
+    {
+      "arm": "ours",
+      "elapsed_s": 100.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "portrait",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "portrait/ours_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "1e1b7e15-7219-4405-a067-023b61c0a53e",
+            "timestamp": 1787344510500
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "latent",
+              "neg",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "1e1b7e15-7219-4405-a067-023b61c0a53e",
+            "timestamp": 1787344510500
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "1e1b7e15-7219-4405-a067-023b61c0a53e",
+            "timestamp": 1787344607635
+          }
+        ]
+      ],
+      "prompt_id": "1e1b7e15-7219-4405-a067-023b61c0a53e",
+      "seed": 42,
+      "sha256": "6fc89812a104a685f8d096fb0743f03b3642ab8603ed452545828bd7046a88e6",
+      "status": "success",
+      "subfolder": "baseline_output\\lane3_ltx_video\\portrait\\ours_seed42",
+      "temporal": {
+        "argmax_pair": 12,
+        "frame_pairs": 96,
+        "max_abs_delta": 11.6898,
+        "mean_abs_delta": 7.9757
+      }
+    },
+    {
+      "arm": "half",
+      "elapsed_s": 110.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "portrait",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "portrait/half_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "c540a774-7aea-4f60-afa1-d199a05f8b62",
+            "timestamp": 1787344612028
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "cond",
+              "latent",
+              "neg",
+              "noise",
+              "pos",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "c540a774-7aea-4f60-afa1-d199a05f8b62",
+            "timestamp": 1787344612030
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "c540a774-7aea-4f60-afa1-d199a05f8b62",
+            "timestamp": 1787344712921
+          }
+        ]
+      ],
+      "prompt_id": "c540a774-7aea-4f60-afa1-d199a05f8b62",
+      "seed": 42,
+      "sha256": "fc8d4aa3a412fa68f62e885fdb226431d7efacc1181de61f652023a6e39e0ddb",
+      "status": "success",
+      "subfolder": "baseline_output\\lane3_ltx_video\\portrait\\half_seed42",
+      "temporal": {
+        "argmax_pair": 26,
+        "frame_pairs": 96,
+        "max_abs_delta": 10.2302,
+        "mean_abs_delta": 5.6758
+      }
+    },
+    {
+      "arm": "ours",
+      "elapsed_s": 100.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "portrait",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "portrait/ours_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "bb0442db-9814-41c5-be0f-13c4d74afe88",
+            "timestamp": 1787344723562
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "cond",
+              "latent",
+              "neg",
+              "pos",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "bb0442db-9814-41c5-be0f-13c4d74afe88",
+            "timestamp": 1787344723563
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "bb0442db-9814-41c5-be0f-13c4d74afe88",
+            "timestamp": 1787344817725
+          }
+        ]
+      ],
+      "prompt_id": "bb0442db-9814-41c5-be0f-13c4d74afe88",
+      "seed": 20260821,
+      "sha256": "dfa4840dd5885a03e4a89119124666478bbde2ec2346e9de89cc7e27346be84e",
+      "status": "success",
+      "subfolder": "baseline_output\\lane3_ltx_video\\portrait\\ours_seed20260821",
+      "temporal": {
+        "argmax_pair": 53,
+        "frame_pairs": 96,
+        "max_abs_delta": 7.6944,
+        "mean_abs_delta": 4.2823
+      }
+    },
+    {
+      "arm": "half",
+      "elapsed_s": 100.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "portrait",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "portrait/half_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "5dc89214-50be-4970-ab24-68772fe50883",
+            "timestamp": 1787344825053
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "cond",
+              "latent",
+              "neg",
+              "noise",
+              "pos",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "5dc89214-50be-4970-ab24-68772fe50883",
+            "timestamp": 1787344825055
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "5dc89214-50be-4970-ab24-68772fe50883",
+            "timestamp": 1787344918562
+          }
+        ]
+      ],
+      "prompt_id": "5dc89214-50be-4970-ab24-68772fe50883",
+      "seed": 20260821,
+      "sha256": "a997ea100e8597d608a4cf1e1638f3529694bfbd9f69351261804cdac721440c",
+      "status": "success",
+      "subfolder": "baseline_output\\lane3_ltx_video\\portrait\\half_seed20260821",
+      "temporal": {
+        "argmax_pair": 51,
+        "frame_pairs": 96,
+        "max_abs_delta": 6.0799,
+        "mean_abs_delta": 3.0802
+      }
+    }
+  ],
+  "output_prefix": "baseline_output/lane3_ltx_video",
+  "seeds": [
+    42,
+    20260821
+  ],
+  "server": "http://127.0.0.1:8000"
+}

@@ -53,6 +53,13 @@ REGIONS = {
                      ("gratings_light", 8, 208, 400, 46),
                      ("gratings_dark", 424, 208, 400, 46)],
     },
+    "lane3_ltx_video": {
+        # 1024x576 t2v. march is a MOVING subject: fixed boxes are judged with
+        # per-frame count questions only, never cross-frame tracking.
+        "portrait": [("face", 300, 20, 420, 380), ("mic", 380, 330, 320, 240)],
+        "march": [("players", 30, 170, 700, 360), ("street_right", 700, 160, 320, 380)],
+        "radio": [("tubes", 280, 80, 480, 260), ("dial_grille", 210, 320, 640, 220)],
+    },
     "lane2_ltx25": {
         "officer": [("face", 432, 32, 640, 640), ("uniform", 120, 680, 512, 256)],
         "crowd": [("faces", 1000, 120, 448, 336), ("meter", 660, 808, 520, 152)],

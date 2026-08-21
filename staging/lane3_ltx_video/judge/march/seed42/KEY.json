@@ -1,0 +1,183 @@
+{
+  "files": {
+    "A_f001.png": {
+      "arm": "half",
+      "frame": 1,
+      "leg": "half_seed42"
+    },
+    "A_f049.png": {
+      "arm": "half",
+      "frame": 49,
+      "leg": "half_seed42"
+    },
+    "A_f097.png": {
+      "arm": "half",
+      "frame": 97,
+      "leg": "half_seed42"
+    },
+    "B_f001.png": {
+      "arm": "ours",
+      "frame": 1,
+      "leg": "ours_seed42"
+    },
+    "B_f049.png": {
+      "arm": "ours",
+      "frame": 49,
+      "leg": "ours_seed42"
+    },
+    "B_f097.png": {
+      "arm": "ours",
+      "frame": 97,
+      "leg": "ours_seed42"
+    },
+    "P_f049_players.png": {
+      "arm": "half",
+      "box": [
+        30,
+        170,
+        730,
+        530
+      ],
+      "frame": 49,
+      "leg": "half_seed42",
+      "region": "players"
+    },
+    "P_f049_street_right.png": {
+      "arm": "half",
+      "box": [
+        700,
+        160,
+        1020,
+        540
+      ],
+      "frame": 49,
+      "leg": "half_seed42",
+      "region": "street_right"
+    },
+    "P_f097_players.png": {
+      "arm": "half",
+      "box": [
+        30,
+        170,
+        730,
+        530
+      ],
+      "frame": 97,
+      "leg": "half_seed42",
+      "region": "players"
+    },
+    "P_f097_street_right.png": {
+      "arm": "half",
+      "box": [
+        700,
+        160,
+        1020,
+        540
+      ],
+      "frame": 97,
+      "leg": "half_seed42",
+      "region": "street_right"
+    },
+    "Q_f049_players.png": {
+      "arm": "ours",
+      "box": [
+        30,
+        170,
+        730,
+        530
+      ],
+      "frame": 49,
+      "leg": "ours_seed42",
+      "region": "players"
+    },
+    "Q_f049_street_right.png": {
+      "arm": "ours",
+      "box": [
+        700,
+        160,
+        1020,
+        540
+      ],
+      "frame": 49,
+      "leg": "ours_seed42",
+      "region": "street_right"
+    },
+    "Q_f097_players.png": {
+      "arm": "ours",
+      "box": [
+        30,
+        170,
+        730,
+        530
+      ],
+      "frame": 97,
+      "leg": "ours_seed42",
+      "region": "players"
+    },
+    "Q_f097_street_right.png": {
+      "arm": "ours",
+      "box": [
+        700,
+        160,
+        1020,
+        540
+      ],
+      "frame": 97,
+      "leg": "ours_seed42",
+      "region": "street_right"
+    },
+    "X_f001.png": {
+      "arm": "half",
+      "frame": 1,
+      "leg": "half_seed42"
+    },
+    "X_f049.png": {
+      "arm": "half",
+      "frame": 49,
+      "leg": "half_seed42"
+    },
+    "X_f097.png": {
+      "arm": "half",
+      "frame": 97,
+      "leg": "half_seed42"
+    },
+    "Y_f001.png": {
+      "arm": "ours",
+      "frame": 1,
+      "leg": "ours_seed42"
+    },
+    "Y_f049.png": {
+      "arm": "ours",
+      "frame": 49,
+      "leg": "ours_seed42"
+    },
+    "Y_f097.png": {
+      "arm": "ours",
+      "frame": 97,
+      "leg": "ours_seed42"
+    }
+  },
+  "fixture": "march",
+  "legs": {
+    "half": "half_seed42",
+    "ours": "ours_seed42"
+  },
+  "seats": {
+    "seat1_full": {
+      "half": "A",
+      "ours": "B",
+      "reads_first": "candidate"
+    },
+    "seat2_full": {
+      "half": "X",
+      "ours": "Y",
+      "reads_first": "candidate"
+    },
+    "seat3_crops": {
+      "half": "P",
+      "ours": "Q",
+      "reads_first": "candidate"
+    }
+  },
+  "seed": 42
+}

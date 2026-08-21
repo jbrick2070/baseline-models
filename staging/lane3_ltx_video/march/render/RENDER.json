@@ -1,0 +1,224 @@
+{
+  "arms": [
+    "ours",
+    "half"
+  ],
+  "fixture": "march",
+  "fps": 25,
+  "legs": [
+    {
+      "arm": "ours",
+      "elapsed_s": 120.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "march",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "march/ours_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "0e13e367-bfd9-4822-b1ed-953ba85671ca",
+            "timestamp": 1787344054577
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "0e13e367-bfd9-4822-b1ed-953ba85671ca",
+            "timestamp": 1787344054583
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "0e13e367-bfd9-4822-b1ed-953ba85671ca",
+            "timestamp": 1787344170117
+          }
+        ]
+      ],
+      "prompt_id": "0e13e367-bfd9-4822-b1ed-953ba85671ca",
+      "seed": 42,
+      "sha256": "61cb391171fb06e89eac861bcc8bbc07bba2ceb0870a7ad3eea7ed8580982988",
+      "status": "success",
+      "subfolder": "baseline_output\\lane3_ltx_video\\march\\ours_seed42",
+      "temporal": {
+        "argmax_pair": 19,
+        "frame_pairs": 96,
+        "max_abs_delta": 25.0346,
+        "mean_abs_delta": 21.6033
+      }
+    },
+    {
+      "arm": "half",
+      "elapsed_s": 110.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "march",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "march/half_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "c29f3f42-0548-4b34-b129-70328bd4e8b9",
+            "timestamp": 1787344176068
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "cond",
+              "latent",
+              "neg",
+              "noise",
+              "pos",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "c29f3f42-0548-4b34-b129-70328bd4e8b9",
+            "timestamp": 1787344176070
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "c29f3f42-0548-4b34-b129-70328bd4e8b9",
+            "timestamp": 1787344276410
+          }
+        ]
+      ],
+      "prompt_id": "c29f3f42-0548-4b34-b129-70328bd4e8b9",
+      "seed": 42,
+      "sha256": "952e1e14b90e49c54a65123e7ddddf2932faeb5067f24d76600188c719d44587",
+      "status": "success",
+      "subfolder": "baseline_output\\lane3_ltx_video\\march\\half_seed42",
+      "temporal": {
+        "argmax_pair": 12,
+        "frame_pairs": 96,
+        "max_abs_delta": 23.3029,
+        "mean_abs_delta": 13.4246
+      }
+    },
+    {
+      "arm": "ours",
+      "elapsed_s": 110.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "march",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "march/ours_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "3f80ce50-dfc3-44ac-9e8c-94a7c0cdaede",
+            "timestamp": 1787344287518
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "cond",
+              "latent",
+              "neg",
+              "pos",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "3f80ce50-dfc3-44ac-9e8c-94a7c0cdaede",
+            "timestamp": 1787344287518
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "3f80ce50-dfc3-44ac-9e8c-94a7c0cdaede",
+            "timestamp": 1787344396161
+          }
+        ]
+      ],
+      "prompt_id": "3f80ce50-dfc3-44ac-9e8c-94a7c0cdaede",
+      "seed": 20260821,
+      "sha256": "17e1845cdb0e2fdf846460fc3eef9a2f89f09223c317684a3db29a438ded4b49",
+      "status": "success",
+      "subfolder": "baseline_output\\lane3_ltx_video\\march\\ours_seed20260821",
+      "temporal": {
+        "argmax_pair": 42,
+        "frame_pairs": 96,
+        "max_abs_delta": 30.0154,
+        "mean_abs_delta": 23.9904
+      }
+    },
+    {
+      "arm": "half",
+      "elapsed_s": 110.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "march",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "march/half_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "8ef7952c-5586-4461-8d5f-a73408a85590",
+            "timestamp": 1787344399013
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "cond",
+              "latent",
+              "neg",
+              "noise",
+              "pos",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "8ef7952c-5586-4461-8d5f-a73408a85590",
+            "timestamp": 1787344399014
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "8ef7952c-5586-4461-8d5f-a73408a85590",
+            "timestamp": 1787344508284
+          }
+        ]
+      ],
+      "prompt_id": "8ef7952c-5586-4461-8d5f-a73408a85590",
+      "seed": 20260821,
+      "sha256": "63c7d08e0379bdd80289f3f4997e35ade3205eebad11c96a7093e13ef94e56b7",
+      "status": "success",
+      "subfolder": "baseline_output\\lane3_ltx_video\\march\\half_seed20260821",
+      "temporal": {
+        "argmax_pair": 48,
+        "frame_pairs": 96,
+        "max_abs_delta": 26.9535,
+        "mean_abs_delta": 22.4527
+      }
+    }
+  ],
+  "output_prefix": "baseline_output/lane3_ltx_video",
+  "seeds": [
+    42,
+    20260821
+  ],
+  "server": "http://127.0.0.1:8000"
+}

@@ -1,0 +1,183 @@
+{
+  "files": {
+    "A_f001.png": {
+      "arm": "ours",
+      "frame": 1,
+      "leg": "ours_seed42"
+    },
+    "A_f049.png": {
+      "arm": "ours",
+      "frame": 49,
+      "leg": "ours_seed42"
+    },
+    "A_f097.png": {
+      "arm": "ours",
+      "frame": 97,
+      "leg": "ours_seed42"
+    },
+    "B_f001.png": {
+      "arm": "half",
+      "frame": 1,
+      "leg": "half_seed42"
+    },
+    "B_f049.png": {
+      "arm": "half",
+      "frame": 49,
+      "leg": "half_seed42"
+    },
+    "B_f097.png": {
+      "arm": "half",
+      "frame": 97,
+      "leg": "half_seed42"
+    },
+    "P_f049_dial_grille.png": {
+      "arm": "half",
+      "box": [
+        210,
+        320,
+        850,
+        540
+      ],
+      "frame": 49,
+      "leg": "half_seed42",
+      "region": "dial_grille"
+    },
+    "P_f049_tubes.png": {
+      "arm": "half",
+      "box": [
+        280,
+        80,
+        760,
+        340
+      ],
+      "frame": 49,
+      "leg": "half_seed42",
+      "region": "tubes"
+    },
+    "P_f097_dial_grille.png": {
+      "arm": "half",
+      "box": [
+        210,
+        320,
+        850,
+        540
+      ],
+      "frame": 97,
+      "leg": "half_seed42",
+      "region": "dial_grille"
+    },
+    "P_f097_tubes.png": {
+      "arm": "half",
+      "box": [
+        280,
+        80,
+        760,
+        340
+      ],
+      "frame": 97,
+      "leg": "half_seed42",
+      "region": "tubes"
+    },
+    "Q_f049_dial_grille.png": {
+      "arm": "ours",
+      "box": [
+        210,
+        320,
+        850,
+        540
+      ],
+      "frame": 49,
+      "leg": "ours_seed42",
+      "region": "dial_grille"
+    },
+    "Q_f049_tubes.png": {
+      "arm": "ours",
+      "box": [
+        280,
+        80,
+        760,
+        340
+      ],
+      "frame": 49,
+      "leg": "ours_seed42",
+      "region": "tubes"
+    },
+    "Q_f097_dial_grille.png": {
+      "arm": "ours",
+      "box": [
+        210,
+        320,
+        850,
+        540
+      ],
+      "frame": 97,
+      "leg": "ours_seed42",
+      "region": "dial_grille"
+    },
+    "Q_f097_tubes.png": {
+      "arm": "ours",
+      "box": [
+        280,
+        80,
+        760,
+        340
+      ],
+      "frame": 97,
+      "leg": "ours_seed42",
+      "region": "tubes"
+    },
+    "X_f001.png": {
+      "arm": "half",
+      "frame": 1,
+      "leg": "half_seed42"
+    },
+    "X_f049.png": {
+      "arm": "half",
+      "frame": 49,
+      "leg": "half_seed42"
+    },
+    "X_f097.png": {
+      "arm": "half",
+      "frame": 97,
+      "leg": "half_seed42"
+    },
+    "Y_f001.png": {
+      "arm": "ours",
+      "frame": 1,
+      "leg": "ours_seed42"
+    },
+    "Y_f049.png": {
+      "arm": "ours",
+      "frame": 49,
+      "leg": "ours_seed42"
+    },
+    "Y_f097.png": {
+      "arm": "ours",
+      "frame": 97,
+      "leg": "ours_seed42"
+    }
+  },
+  "fixture": "radio",
+  "legs": {
+    "half": "half_seed42",
+    "ours": "ours_seed42"
+  },
+  "seats": {
+    "seat1_full": {
+      "half": "B",
+      "ours": "A",
+      "reads_first": "ours"
+    },
+    "seat2_full": {
+      "half": "X",
+      "ours": "Y",
+      "reads_first": "candidate"
+    },
+    "seat3_crops": {
+      "half": "P",
+      "ours": "Q",
+      "reads_first": "candidate"
+    }
+  },
+  "seed": 42
+}

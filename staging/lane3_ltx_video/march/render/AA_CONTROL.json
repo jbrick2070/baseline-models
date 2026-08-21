@@ -1,0 +1,20 @@
+{
+  "control": "A/A null",
+  "elapsed_s": 105.4,
+  "frame_compare": {
+    "dirs": [
+      "march/ours_seed42",
+      "march/ours_seed42_RUN2"
+    ],
+    "identical": 97,
+    "method": "sha256 per frame, run1 vs run2",
+    "total": 97
+  },
+  "frame_count": 97,
+  "note": "Same recipe, same seed, same graph -- only the destination differs. A panel that does not return TIE here is reading noise.",
+  "output_prefix": "baseline_output/lane3_ltx_video/march/ours_seed42_RUN2",
+  "prompt_id": "3605b327-770a-4aed-a33d-8d0ec587b471",
+  "source_graph": "C:\\Users\\jeffr\\Documents\\ComfyUI\\custom_nodes\\basline-models\\staging\\lane3_ltx_video\\march\\render\\submitted_ours_seed42.json",
+  "source_sha256": "61cb391171fb06e89eac861bcc8bbc07bba2ceb0870a7ad3eea7ed8580982988",
+  "status": "success"
+}

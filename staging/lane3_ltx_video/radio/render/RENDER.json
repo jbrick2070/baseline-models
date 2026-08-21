@@ -1,0 +1,232 @@
+{
+  "arms": [
+    "ours",
+    "half"
+  ],
+  "fixture": "radio",
+  "fps": 25,
+  "legs": [
+    {
+      "arm": "ours",
+      "elapsed_s": 110.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "radio",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "radio/ours_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "638e64c9-de62-478a-9f6c-b961ce914f23",
+            "timestamp": 1787344926582
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "latent",
+              "neg",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "638e64c9-de62-478a-9f6c-b961ce914f23",
+            "timestamp": 1787344926583
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "638e64c9-de62-478a-9f6c-b961ce914f23",
+            "timestamp": 1787345029137
+          }
+        ]
+      ],
+      "prompt_id": "638e64c9-de62-478a-9f6c-b961ce914f23",
+      "seed": 42,
+      "sha256": "dc1b035c87c994c8ea3186b0fb39275eed73e595c3353a76e93eb8775f86970f",
+      "status": "success",
+      "subfolder": "baseline_output\\lane3_ltx_video\\radio\\ours_seed42",
+      "temporal": {
+        "argmax_pair": 2,
+        "frame_pairs": 96,
+        "max_abs_delta": 7.6111,
+        "mean_abs_delta": 4.1386
+      }
+    },
+    {
+      "arm": "half",
+      "elapsed_s": 100.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "radio",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "radio/half_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "3fc291e0-d544-45c9-ac5b-29f76f3b39dd",
+            "timestamp": 1787345038153
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "cond",
+              "latent",
+              "neg",
+              "noise",
+              "pos",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "3fc291e0-d544-45c9-ac5b-29f76f3b39dd",
+            "timestamp": 1787345038154
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "3fc291e0-d544-45c9-ac5b-29f76f3b39dd",
+            "timestamp": 1787345133732
+          }
+        ]
+      ],
+      "prompt_id": "3fc291e0-d544-45c9-ac5b-29f76f3b39dd",
+      "seed": 42,
+      "sha256": "4692df950adc604bfb810387cb543c6efd1bf54cd53f427bab8f6dc4f6c2ac3e",
+      "status": "success",
+      "subfolder": "baseline_output\\lane3_ltx_video\\radio\\half_seed42",
+      "temporal": {
+        "argmax_pair": 5,
+        "frame_pairs": 96,
+        "max_abs_delta": 4.9004,
+        "mean_abs_delta": 3.0753
+      }
+    },
+    {
+      "arm": "ours",
+      "elapsed_s": 100.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "radio",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "radio/ours_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "aa60039c-ef4c-422e-8cf9-ff06f6beff99",
+            "timestamp": 1787345139684
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "cond",
+              "latent",
+              "neg",
+              "pos",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "aa60039c-ef4c-422e-8cf9-ff06f6beff99",
+            "timestamp": 1787345139685
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "aa60039c-ef4c-422e-8cf9-ff06f6beff99",
+            "timestamp": 1787345237507
+          }
+        ]
+      ],
+      "prompt_id": "aa60039c-ef4c-422e-8cf9-ff06f6beff99",
+      "seed": 20260821,
+      "sha256": "b529963fd2bd8ea42c4d6142f24a918a59c27dfe0771ebef4ae17ae139ecb67a",
+      "status": "success",
+      "subfolder": "baseline_output\\lane3_ltx_video\\radio\\ours_seed20260821",
+      "temporal": {
+        "argmax_pair": 4,
+        "frame_pairs": 96,
+        "max_abs_delta": 6.4248,
+        "mean_abs_delta": 3.2092
+      }
+    },
+    {
+      "arm": "half",
+      "elapsed_s": 100.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "radio",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "radio/half_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "fdf05f33-0888-401e-b39b-a80624cc6da5",
+            "timestamp": 1787345241279
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "cond",
+              "latent",
+              "neg",
+              "noise",
+              "pos",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "fdf05f33-0888-401e-b39b-a80624cc6da5",
+            "timestamp": 1787345241281
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "fdf05f33-0888-401e-b39b-a80624cc6da5",
+            "timestamp": 1787345336405
+          }
+        ]
+      ],
+      "prompt_id": "fdf05f33-0888-401e-b39b-a80624cc6da5",
+      "seed": 20260821,
+      "sha256": "d8628941d32fb51653b95372e6e420d89e250639099baf131e3c47e0d53df2aa",
+      "status": "success",
+      "subfolder": "baseline_output\\lane3_ltx_video\\radio\\half_seed20260821",
+      "temporal": {
+        "argmax_pair": 5,
+        "frame_pairs": 96,
+        "max_abs_delta": 4.6116,
+        "mean_abs_delta": 2.3655
+      }
+    }
+  ],
+  "output_prefix": "baseline_output/lane3_ltx_video",
+  "seeds": [
+    42,
+    20260821
+  ],
+  "server": "http://127.0.0.1:8000"
+}
