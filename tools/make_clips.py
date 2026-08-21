@@ -16,12 +16,35 @@ import sys
 from pathlib import Path
 
 COMFY_OUTPUT = Path(r"C:\Users\jeffr\Documents\ComfyUI\output")
-BASE = COMFY_OUTPUT / "baseline_output" / "lane1_wan_ti2v"
 FPS = 25
-# LEFT/RIGHT is fixed per fixture but alternates across fixtures, so a viewer
-# cannot settle into "the left one is always ours".
-LEFT_ARM = {"officer": "ours", "controlroom": "official",
-            "crowd": "ours", "testcard": "official"}
+
+
+def lane_base(lane) -> Path:
+    """Output root for THIS lane, not lane 1's.
+
+    The old module-level BASE pinned every lane's clips at lane1_wan_ti2v, and
+    the LEFT_ARM table only named lane 1's fixtures -- so any other lane either
+    wrote to the wrong tree or died on KeyError.
+    """
+    return COMFY_OUTPUT / "baseline_output" / lane["lane"]
+
+
+def arms_for(lane, fixture):
+    """(ours, candidate) -- the candidate is whatever the lane called its arm."""
+    arms = sorted(lane["arm_sha256"][fixture])
+    if "ours" not in arms or len(arms) != 2:
+        raise SystemExit("[FAIL] %s: expected 'ours' plus one candidate, got %s"
+                         % (fixture, arms))
+    return "ours", next(a for a in arms if a != "ours")
+
+
+def left_arm_for(lane, fixture) -> str:
+    """Alternate LEFT/RIGHT across fixtures so a viewer cannot settle into
+    'the left one is always ours'. Deterministic from the sorted fixture order,
+    so the mapping is reproducible and is written into CLIPS.json as the key."""
+    ours, candidate = arms_for(lane, fixture)
+    index = sorted(lane["fixtures"]).index(fixture)
+    return ours if index % 2 == 0 else candidate
 
 
 def run(args):
@@ -55,18 +78,22 @@ def main(argv) -> int:
     lane_dir = Path(argv[0]) if argv else None
     lane = json.loads(io.open(lane_dir / "LANE.json", encoding="utf-8").read())
     seeds = [42, 20260821]
-    clips_dir = BASE / "_clips"
+    base_root = lane_base(lane)
+    clips_dir = base_root / "_clips"
     clips_dir.mkdir(parents=True, exist_ok=True)
 
-    record = {"fps": FPS, "left_right_mapping": {}, "singles": [], "pairs": []}
+    record = {"fps": FPS, "lane": lane["lane"],
+              "left_right_mapping": {}, "singles": [], "pairs": []}
     for fixture in sorted(lane["fixtures"]):
         subdir = lane["fixtures"][fixture]["output_subdir"]
-        base = BASE / subdir if subdir else BASE
-        left_arm = LEFT_ARM[fixture]
-        right_arm = "official" if left_arm == "ours" else "ours"
+        base = base_root / subdir if subdir else base_root
+        ours, candidate = arms_for(lane, fixture)
+        left_arm = left_arm_for(lane, fixture)
+        right_arm = candidate if left_arm == ours else ours
         record["left_right_mapping"][fixture] = {"LEFT": left_arm, "RIGHT": right_arm}
         for seed in seeds:
-            dirs = {arm: base / ("%s_seed%d" % (arm, seed)) for arm in ("ours", "official")}
+            dirs = {arm: base / ("%s_seed%d" % (arm, seed))
+                    for arm in (ours, candidate)}
             if not all(d.exists() for d in dirs.values()):
                 print("[SKIP] %s seed%d: frames missing" % (fixture, seed))
                 continue

@@ -8,7 +8,7 @@
   "legs": [
     {
       "arm": "ours",
-      "elapsed_s": 220.4,
+      "elapsed_s": 230.5,
       "first_frame": "frame_00001_.png",
       "fixture": "testcard_motion",
       "frame_count": 97,
@@ -18,45 +18,47 @@
         [
           "execution_start",
           {
-            "prompt_id": "c0afc53c-6b05-471c-9392-b0607af1e3f9",
-            "timestamp": 1787350327175
+            "prompt_id": "dc18d0c7-85a0-487f-9a22-226e388a6f72",
+            "timestamp": 1787352042773
           }
         ],
         [
           "execution_cached",
           {
             "nodes": [
+              "latent",
+              "loadimage",
               "modelsampling",
               "unet",
               "vae"
             ],
-            "prompt_id": "c0afc53c-6b05-471c-9392-b0607af1e3f9",
-            "timestamp": 1787350327253
+            "prompt_id": "dc18d0c7-85a0-487f-9a22-226e388a6f72",
+            "timestamp": 1787352042840
           }
         ],
         [
           "execution_success",
           {
-            "prompt_id": "c0afc53c-6b05-471c-9392-b0607af1e3f9",
-            "timestamp": 1787350543380
+            "prompt_id": "dc18d0c7-85a0-487f-9a22-226e388a6f72",
+            "timestamp": 1787352268837
           }
         ]
       ],
-      "prompt_id": "c0afc53c-6b05-471c-9392-b0607af1e3f9",
+      "prompt_id": "dc18d0c7-85a0-487f-9a22-226e388a6f72",
       "seed": 42,
-      "sha256": "2931407467f8e2c8601ba20417a7cc9929e8bcdd4c31767ebef91a8491806a45",
+      "sha256": "a8f51b6e1cb4d2f4777f3fd3058b239f7fdd00325e08c6df0d03b4c663f2260a",
       "status": "success",
       "subfolder": "baseline_output\\lane4_wan_text_encoder\\testcard_motion\\ours_seed42",
       "temporal": {
         "argmax_pair": 50,
         "frame_pairs": 96,
-        "max_abs_delta": 6.6361,
-        "mean_abs_delta": 3.2114
+        "max_abs_delta": 5.7732,
+        "mean_abs_delta": 3.2492
       }
     },
     {
       "arm": "official",
-      "elapsed_s": 220.5,
+      "elapsed_s": 210.5,
       "first_frame": "frame_00001_.png",
       "fixture": "testcard_motion",
       "frame_count": 97,
@@ -66,8 +68,8 @@
         [
           "execution_start",
           {
-            "prompt_id": "66eccdbc-e084-4e44-ab41-c4e0642fbab1",
-            "timestamp": 1787350548216
+            "prompt_id": "287feab5-9386-41ee-920f-ea3cac043ccc",
+            "timestamp": 1787352273996
           }
         ],
         [
@@ -80,33 +82,33 @@
               "unet",
               "vae"
             ],
-            "prompt_id": "66eccdbc-e084-4e44-ab41-c4e0642fbab1",
-            "timestamp": 1787350548292
+            "prompt_id": "287feab5-9386-41ee-920f-ea3cac043ccc",
+            "timestamp": 1787352274108
           }
         ],
         [
           "execution_success",
           {
-            "prompt_id": "66eccdbc-e084-4e44-ab41-c4e0642fbab1",
-            "timestamp": 1787350760623
+            "prompt_id": "287feab5-9386-41ee-920f-ea3cac043ccc",
+            "timestamp": 1787352480677
           }
         ]
       ],
-      "prompt_id": "66eccdbc-e084-4e44-ab41-c4e0642fbab1",
+      "prompt_id": "287feab5-9386-41ee-920f-ea3cac043ccc",
       "seed": 42,
-      "sha256": "42f36615d55123e0845dd92e70739b4837a034b7a285cc3baf02735e0950f271",
+      "sha256": "fcf1f226166ca014b1095b78d3363f85bd28c1e1188dc13547729af7399abe09",
       "status": "success",
       "subfolder": "baseline_output\\lane4_wan_text_encoder\\testcard_motion\\official_seed42",
       "temporal": {
         "argmax_pair": 50,
         "frame_pairs": 96,
-        "max_abs_delta": 6.4095,
-        "mean_abs_delta": 3.1937
+        "max_abs_delta": 6.0486,
+        "mean_abs_delta": 3.2116
       }
     },
     {
       "arm": "ours",
-      "elapsed_s": 230.4,
+      "elapsed_s": 230.7,
       "first_frame": "frame_00001_.png",
       "fixture": "testcard_motion",
       "frame_count": 97,
@@ -116,8 +118,8 @@
         [
           "execution_start",
           {
-            "prompt_id": "1c925c0e-2acc-4fbd-9cde-0724c4ba563a",
-            "timestamp": 1787350769280
+            "prompt_id": "6b545aee-b48f-4837-9ed1-d2a914ebbeb8",
+            "timestamp": 1787352485032
           }
         ],
         [
@@ -130,28 +132,28 @@
               "unet",
               "vae"
             ],
-            "prompt_id": "1c925c0e-2acc-4fbd-9cde-0724c4ba563a",
-            "timestamp": 1787350769375
+            "prompt_id": "6b545aee-b48f-4837-9ed1-d2a914ebbeb8",
+            "timestamp": 1787352485100
           }
         ],
         [
           "execution_success",
           {
-            "prompt_id": "1c925c0e-2acc-4fbd-9cde-0724c4ba563a",
-            "timestamp": 1787350996296
+            "prompt_id": "6b545aee-b48f-4837-9ed1-d2a914ebbeb8",
+            "timestamp": 1787352707495
           }
         ]
       ],
-      "prompt_id": "1c925c0e-2acc-4fbd-9cde-0724c4ba563a",
+      "prompt_id": "6b545aee-b48f-4837-9ed1-d2a914ebbeb8",
       "seed": 20260821,
-      "sha256": "e2a8cc03b8537e9fcde6ad0fdf284c4f02f3001d247a24ce1dde1f315db3d19b",
+      "sha256": "1861ea2d2b27d80dcad5464031c8e1fa2a498eca542c133da998a295bd2bd9f1",
       "status": "success",
       "subfolder": "baseline_output\\lane4_wan_text_encoder\\testcard_motion\\ours_seed20260821",
       "temporal": {
-        "argmax_pair": 50,
+        "argmax_pair": 65,
         "frame_pairs": 96,
-        "max_abs_delta": 6.8314,
-        "mean_abs_delta": 3.5641
+        "max_abs_delta": 6.8773,
+        "mean_abs_delta": 3.5841
       }
     },
     {
@@ -166,8 +168,8 @@
         [
           "execution_start",
           {
-            "prompt_id": "2f2bae5c-3e2b-4890-9484-b203f4dd196c",
-            "timestamp": 1787351000293
+            "prompt_id": "271d1c72-8bb9-4831-956d-8378291f2692",
+            "timestamp": 1787352716415
           }
         ],
         [
@@ -180,28 +182,28 @@
               "unet",
               "vae"
             ],
-            "prompt_id": "2f2bae5c-3e2b-4890-9484-b203f4dd196c",
-            "timestamp": 1787351000382
+            "prompt_id": "271d1c72-8bb9-4831-956d-8378291f2692",
+            "timestamp": 1787352716485
           }
         ],
         [
           "execution_success",
           {
-            "prompt_id": "2f2bae5c-3e2b-4890-9484-b203f4dd196c",
-            "timestamp": 1787351205042
+            "prompt_id": "271d1c72-8bb9-4831-956d-8378291f2692",
+            "timestamp": 1787352923980
           }
         ]
       ],
-      "prompt_id": "2f2bae5c-3e2b-4890-9484-b203f4dd196c",
+      "prompt_id": "271d1c72-8bb9-4831-956d-8378291f2692",
       "seed": 20260821,
-      "sha256": "686445c42992b012896923e564bd339d36638319599f47737886de8a803c606a",
+      "sha256": "0fbf5fbeb4627836e480c2729ca982175905c4d41382c2a8bd66eedd63db7dcb",
       "status": "success",
       "subfolder": "baseline_output\\lane4_wan_text_encoder\\testcard_motion\\official_seed20260821",
       "temporal": {
-        "argmax_pair": 65,
+        "argmax_pair": 50,
         "frame_pairs": 96,
-        "max_abs_delta": 6.8791,
-        "mean_abs_delta": 3.5453
+        "max_abs_delta": 6.0104,
+        "mean_abs_delta": 3.3889
       }
     }
   ],
