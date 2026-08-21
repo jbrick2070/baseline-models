@@ -52,6 +52,10 @@ WHAT_TO_COUNT = {
 }
 LANE_ORDER = ["lane1_wan_ti2v", "lane2_ltx25", "lane3_ltx_video",
               "lane4_wan_text_encoder"]
+# Every lane renders 97 frames and every pair clip is cut at 25 fps, so each
+# segment is exactly this long. The viewer seeks by index * SEG_SECONDS, so if a
+# lane ever ships a different frame count this constant has to become per-clip.
+SEG_SECONDS = 97 / 25.0
 
 
 def run(args) -> bool:
@@ -84,12 +88,24 @@ def normalize(source: Path, destination: Path, top: str, bottom: str) -> bool:
                 "-preset", "medium", "-pix_fmt", "yuv420p", str(destination)])
 
 
+def write_watch_page(out_dir: Path, captions: list, seg_seconds: float) -> None:
+    """Emit the click-to-seek viewer, generated from the SAME caption list the
+    reel was cut from. Stays blind: no arm name reaches the page."""
+    template = Path(__file__).resolve().parent / "operator_reel_template.html"
+    html = io.open(template, encoding="utf-8").read()
+    html = (html.replace("__SEGMENTS_JSON__", json.dumps(captions, ensure_ascii=False))
+                .replace("__SEG_SECONDS__", repr(round(seg_seconds, 6)))
+                .replace("__TOTAL__", str(len(captions))))
+    io.open(out_dir / "watch.html", "w", encoding="utf-8", newline="\n").write(html)
+    print("[PAGE] %s" % (out_dir / "watch.html"))
+
+
 def main(argv) -> int:
     out_dir = Path(argv[0]) if argv else DEFAULT_OUT
     parts_dir = out_dir / "_parts"
     parts_dir.mkdir(parents=True, exist_ok=True)
 
-    segments, missing = [], []
+    segments, captions, missing = [], [], []
     for lane in LANE_ORDER:
         clips_json = BASE / lane / "_clips" / "CLIPS.json"
         if not clips_json.is_file():
@@ -107,6 +123,9 @@ def main(argv) -> int:
             part = parts_dir / ("%02d_%s_%s.mp4" % (len(segments) + 1, lane, stem))
             if normalize(source, part, top, hint):
                 segments.append(part)
+                captions.append({"lane": lane.split("_", 1)[0].replace("lane", "lane "),
+                                 "fixture": fixture.replace("_", " "),
+                                 "seed": "seed " + seed, "count": hint})
                 print("[SEGMENT] %2d  %-24s %s" % (len(segments), lane, stem))
 
     if not segments:
@@ -120,6 +139,13 @@ def main(argv) -> int:
     if not run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0",
                 "-i", str(listing), "-c", "copy", str(reel)]):
         return 1
+
+    # The viewer page is GENERATED from the same segment list the reel was cut
+    # from. A hand-maintained page desyncs the moment a lane is added or
+    # dropped, and would then caption segments that are not on screen -- which
+    # is worse than no page, because the operator would be judging one clip
+    # against another clip's question.
+    write_watch_page(out_dir, captions, SEG_SECONDS)
 
     io.open(out_dir / "HOW_TO_WATCH.md", "w", encoding="utf-8", newline="\n").write(
         "# The reel -- about 90 seconds, watch it once\n\n"

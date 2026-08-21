@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Operator Eye</title>
+<style>
+  :root{
+    --bg:#f6f5f2; --panel:#fffdfa; --ink:#1c1a17; --muted:#6b6560;
+    --line:#e0dbd3; --accent:#8a6a2f; --count:#7a5a12; --countbg:#fdf6e3;
+    --left:#2d6a8f; --right:#8f4a2d; --same:#5a6b52;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#16151a; --panel:#1e1d23; --ink:#ece9e4; --muted:#a09a92;
+      --line:#33313a; --accent:#d7b168; --count:#e2c37c; --countbg:#2a2620;
+      --left:#7fb8d8; --right:#dd9a78; --same:#a3bd97;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#16151a; --panel:#1e1d23; --ink:#ece9e4; --muted:#a09a92;
+    --line:#33313a; --accent:#d7b168; --count:#e2c37c; --countbg:#2a2620;
+    --left:#7fb8d8; --right:#dd9a78; --same:#a3bd97;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.55 ui-serif,Georgia,'Iowan Old Style',serif;}
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 20px 80px}
+  h1{font-size:1.6rem;margin:0 0 4px;letter-spacing:-.01em}
+  .sub{color:var(--muted);font-size:.95rem;margin:0 0 22px}
+  video{width:100%;background:#000;border-radius:8px;display:block}
+  .stickyvid{position:sticky;top:0;z-index:5;background:var(--bg);padding-bottom:10px}
+  .blind{background:var(--countbg);border:1px solid var(--line);border-left:3px solid var(--accent);
+    padding:12px 14px;border-radius:6px;margin:16px 0 22px;font-size:.93rem}
+  .blind b{color:var(--accent)}
+  .tablewrap{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;font-size:.92rem;min-width:640px}
+  th{text-align:left;font-weight:600;color:var(--muted);font-size:.78rem;
+    text-transform:uppercase;letter-spacing:.06em;padding:0 8px 8px;border-bottom:1px solid var(--line)}
+  td{padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:middle}
+  tr.active td{background:var(--countbg)}
+  .seg{font-variant-numeric:tabular-nums;color:var(--muted);width:34px}
+  .play{cursor:pointer;background:none;border:none;color:var(--ink);font:inherit;
+    text-align:left;padding:0;text-decoration:underline;text-decoration-color:var(--line);
+    text-underline-offset:3px}
+  .play:hover{color:var(--accent)}
+  .lane{color:var(--muted);font-size:.8rem;display:block}
+  .count{color:var(--count);font-size:.86rem}
+  .calls{white-space:nowrap;width:210px}
+  .calls button{font:inherit;font-size:.82rem;padding:4px 9px;margin-right:4px;cursor:pointer;
+    border:1px solid var(--line);background:var(--panel);color:var(--muted);border-radius:5px}
+  .calls button:hover{border-color:var(--accent)}
+  .calls button.on[data-v="LEFT"]{background:var(--left);border-color:var(--left);color:#fff}
+  .calls button.on[data-v="RIGHT"]{background:var(--right);border-color:var(--right);color:#fff}
+  .calls button.on[data-v="SAME"]{background:var(--same);border-color:var(--same);color:#fff}
+  .foot{margin-top:26px;padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:8px}
+  #out{width:100%;min-height:120px;margin-top:10px;font:13px/1.5 ui-monospace,Consolas,monospace;
+    background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:10px}
+  .big{font-size:.95rem;padding:8px 16px;background:var(--accent);color:var(--bg);
+    border:none;border-radius:6px;cursor:pointer;font-family:inherit}
+  .tally{color:var(--muted);font-size:.88rem;margin-left:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Operator Eye</h1>
+  <p class="sub">__TOTAL__ A/B pairs &middot; the final judge seat in the voted method</p>
+
+  <div class="stickyvid">
+    <video id="v" controls preload="metadata" src="OPERATOR_EYE_REEL.mp4"></video>
+  </div>
+
+  <div class="blind">
+    <b>This is blind on purpose.</b> LEFT and RIGHT swap between fixtures, and nothing here or on
+    screen tells you which side is the shipped recipe. Judge what you can <b>count</b> &mdash; not
+    which you prefer. The arms can differ in content and wardrobe, so &ldquo;prettier&rdquo; would not
+    survive as evidence. <b>If a pair looks the same, that is the answer</b> &mdash; three lanes have
+    closed on exactly that, and a SAME is worth as much as a call.
+  </div>
+
+  <div class="tablewrap">
+  <table>
+    <thead><tr><th>#</th><th>Fixture</th><th>What to count</th><th>Your call</th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table>
+  </div>
+
+  <div class="foot">
+    <button class="big" onclick="dump()">Copy my calls</button>
+    <span class="tally" id="tally"></span>
+    <textarea id="out" placeholder="Your calls appear here - paste them back into the chat."></textarea>
+  </div>
+</div>
+
+<script>
+const SEG = __SEG_SECONDS__;
+const S = __SEGMENTS_JSON__;
+const calls = {};
+const v = document.getElementById('v');
+const rows = document.getElementById('rows');
+
+S.forEach(function(s,i){
+  const tr = document.createElement('tr');
+  tr.id = 'r'+i;
+  tr.innerHTML =
+    '<td class="seg">'+(i+1)+'</td>'+
+    '<td><button class="play" onclick="go('+i+')">'+s.fixture+'</button>'+
+      '<span class="lane">'+s.lane+' &middot; '+s.seed+'</span></td>'+
+    '<td class="count">'+s.count+'</td>'+
+    '<td class="calls">'+
+      ['LEFT','RIGHT','SAME'].map(function(x){
+        return '<button data-i="'+i+'" data-v="'+x+'" onclick="pick(this)">'+x+'</button>';
+      }).join('')+
+    '</td>';
+  rows.appendChild(tr);
+});
+
+function go(i){ v.currentTime = i*SEG + 0.05; v.play(); }
+
+function pick(b){
+  const i = b.dataset.i, val = b.dataset.v;
+  if (calls[i] === val) { delete calls[i]; } else { calls[i] = val; }
+  document.querySelectorAll('button[data-i="'+i+'"]').forEach(function(x){x.classList.remove('on');});
+  if (calls[i]) b.classList.add('on');
+  tally();
+}
+
+function tally(){
+  const n = Object.keys(calls).length;
+  const c = {LEFT:0,RIGHT:0,SAME:0};
+  Object.values(calls).forEach(function(x){c[x]++;});
+  document.getElementById('tally').textContent =
+    n ? n+' of '+S.length+' called - '+c.LEFT+' left, '+c.RIGHT+' right, '+c.SAME+' same' : '';
+}
+
+v.addEventListener('timeupdate', function(){
+  const i = Math.min(S.length-1, Math.floor(v.currentTime / SEG));
+  document.querySelectorAll('tr').forEach(function(r){r.classList.remove('active');});
+  const r = document.getElementById('r'+i);
+  if (r) r.classList.add('active');
+});
+
+function dump(){
+  const lines = S.map(function(s,i){
+    return (i+1)+'. '+s.lane+' '+s.fixture+' '+s.seed+' -> '+(calls[i] || 'skip');
+  });
+  const out = document.getElementById('out');
+  out.value = 'OPERATOR EYE CALLS\n' + lines.join('\n');
+  out.select();
+  try { document.execCommand('copy'); } catch(e){}
+}
+</script>
+</body>
+</html>
