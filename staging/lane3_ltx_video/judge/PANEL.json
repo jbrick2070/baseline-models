@@ -1,0 +1,155 @@
+{
+  "rows": [
+    {
+      "basis": "Neither render delivers the demanded five brass players, a baton-twirling drum major, or waving onlookers, and both are tracking shots (PARTIAL traversal), so the call rests on member counts and defect counts. B keeps four red bandsmen in all three frames (A has only three in f001) and, critically, its snare drum is carried and played by a visible drummer in every frame, while A's drum floats with no carrier in two of three frames — an at-a-glance orphan object. B totals fewer hallucinated objects (2 vs 4) and one more recognisable instrument. Against that, A's visible figures are individually cleaner: B's drummer has a smeared face in f001 and B's left pair entangle in later frames, roughly offsetting A's doubled bell and hybrid horn. The net count advantage to B is real but small, so the margin is marginal.",
+      "better_label": "B",
+      "cell": "march/seed20260821",
+      "maps_to": "half",
+      "margin": "marginal",
+      "seat": "seat1_full"
+    },
+    {
+      "basis": "Both labels miss the prompt's five brass players, show no drum major with baton, no waving onlookers, and both are tracking shots (PARTIAL traversal), so prompt satisfaction is near-equal. X edges the raw counts (4/4/4 members and 4/5/6 instruments vs Y's 3/4/4 and 4/5/4) but accumulates three visible defects across its frames: a metallic disc replacing the drummer's face in f001, a streaked seated onlooker in f049, and a disembodied playerless trumpet at the right edge in f097, plus ambiguous drum attachment to a civilian. Y's frames carry zero melted onlookers and zero hallucinated objects; its faults are milder (occluded drum carrier, rod-like horn extensions, one occluded fourth member). Y's clean defect ledger outweighs X's one-frame +1 member count, but X being closer to the demanded brass count keeps the margin marginal rather than clear.",
+      "better_label": "Y",
+      "cell": "march/seed20260821",
+      "maps_to": "ours",
+      "margin": "marginal",
+      "seat": "seat2_full"
+    },
+    {
+      "basis": "Both labels compose a plausible 1950s red-uniform brass band with drummer, both count ~4-5 red members per frame, both show similar instrument counts, and both achieve only PARTIAL left-to-right traversal (a consistent ~80-110 px rightward shift between f049 and f097, visible in the players crop offsets and the street_right crop where the trailing trumpeter enters more fully). The separators are defect counts: P has 3 melted/streaked onlookers total (the smeary seated figure in f049 players, plus two blur-faced spectators in the f097 street_right crowd) versus 0 for Q, whose onlookers (white-tee men at f049, gray-polo man at f097) have clearly formed faces at native pixels. Q also edges coherent bodies 6 vs 5 total, with crisply articulated gloved hands and valved trumpets, while P's leftmost player pair at f097 overlaps with mushy hand/face detail. P's only count advantage is one extra red member at f097, which is marginal. The onlooker-melt gap is visible at normal viewing, not only by high-zoom flipping, so the margin is clear rather than marginal, but not large since scene composition, traversal, and band counts are otherwise comparable.",
+      "better_label": "Q",
+      "cell": "march/seed20260821",
+      "maps_to": "ours",
+      "margin": "clear",
+      "seat": "seat3_crops"
+    },
+    {
+      "basis": "The prompt demands five brass players in red. A delivers exactly 5 red brass players with well-formed horns, coherent in all three frames (15/15 coherent red bodies, 16 clean instruments); B delivers only 4 red players of whom just 3 are brass, decaying to 3-plus-a-partial by f097 with trombone-length trumpet deformations, a warped drum, a fused stick-hand, and 5 hallucinated objects vs A's 3. A's defects are an extra melted non-uniform drummer in one frame and 3 soft-melted background onlookers. B wins only Q4 (PARTIAL frame traversal vs A's NO - both violate the hold-position demand, A by full camera tracking) and Q5 (0 melted onlookers vs 3). On the prompt-central counts - band size, brass instruments, body coherence - A wins Q1, Q2, Q3 and Q6, so A is better by a clear (not large) margin. Neither render produced the demanded drum major with baton.",
+      "better_label": "A",
+      "cell": "march/seed42",
+      "maps_to": "half",
+      "margin": "clear",
+      "seat": "seat1_full"
+    },
+    {
+      "basis": "The prompt's headline countable is five brass players in red uniforms. X shows exactly 5 red-uniformed brass players with 5 recognisable instruments in all three frames, all bodies coherent. Y shows only 4 red members (one of them a snare drummer, not brass), decaying to 3 visible bodies by f097, plus one hallucinated road object and an oddly placed suited man; its instrument count never reaches 5. Both labels equally miss the drum major with twirling baton, both have waving onlookers, both have comparably low onlooker-melt counts (0-2 per frame), and both score PARTIAL on traversal because the camera tracks the band instead of holding while the column advances through the scene. With defect counts roughly tied, X wins on the member and instrument counts in every single frame - a difference visible at a glance, not only under zoom - hence a clear (not large) margin.",
+      "better_label": "X",
+      "cell": "march/seed42",
+      "maps_to": "half",
+      "margin": "clear",
+      "seat": "seat2_full"
+    },
+    {
+      "basis": "Both labels traverse left to right, so the decision rests on defect counts within identical crop regions, where Q wins consistently: melted/streaked onlookers ~1 (Q) vs ~5 (P); hallucinated/anachronistic objects 1 ambiguous duplicated bell (Q) vs a modern white car plus a rope-like crowd artifact (P); and P has a uniform-integrity failure at f097 - a shirtless, non-red band drummer - while every Q band member stays in uniform. Q's instruments are unmistakable (trumpets with valves, snare drums with lugs) versus P's blobby horn masses. P's only countable win is raw red-uniform count (about 6 visible at f049 vs Q's 4, closer to the prompt's five brass players), but the crops do not cover the whole frame, so member totals are weak evidence, whereas the defect comparisons are direct. Margin is clear, not large: P is a competent render with more visible members; Q is simply cleaner on nearly every defect count.",
+      "better_label": "Q",
+      "cell": "march/seed42",
+      "maps_to": "ours",
+      "margin": "clear",
+      "seat": "seat3_crops"
+    },
+    {
+      "basis": "Both labels tie on every face count: structurally coherent faces with 0 defects in all six frames, the same person persists across each label's frames, 0 hallucinated objects each, and both MOVE with small natural expression/head changes as the prompt demands. The differences are on the objects: A resolves 9 crisp straight microphone grille slats versus B's roughly 8 wavy slats that bend and fuse near the center rib (a zoom-level difference, so marginal by rule 5), and A's jacket is an unambiguous herringbone tweed weave while B's jacket, though resolved as texture, is a paisley/scroll print rather than the tweed the prompt names - the one difference visible at native resolution. Offsetting slightly, A's grille carries a dark smudge artifact on its right side that B's mic does not. Net: A satisfies the countable prompt items a bit better with no dimension favoring B, but the gap is small - marginal, not clear.",
+      "better_label": "A",
+      "cell": "portrait/seed20260821",
+      "maps_to": "half",
+      "margin": "marginal",
+      "seat": "seat1_full"
+    },
+    {
+      "basis": "Every structural count ties: 0 face defects per frame on both labels, same person persists in both, both grilles are cleanly resolvable (7 vs 9 slat shadows by identical scan - no target count in the prompt, so a tie), 0 hallucinated objects each, and both announcers MOVE naturally with no warping. Both also miss 'chrome' identically, rendering a brass-toned mic under the tungsten grade, which cancels out. The single countable separation is Q4: X resolves a true herringbone tweed weave as the prompt names, while Y substitutes a brocade/paisley swirl print that is not tweed - visible at normal zoom, not just flip-zoom. Minor offsetting mic flaws (X's smeared grille blotch vs Y's wavier merged slats) roughly cancel. A one-axis win with five ties is X by a marginal margin.",
+      "better_label": "X",
+      "cell": "portrait/seed20260821",
+      "maps_to": "half",
+      "margin": "marginal",
+      "seat": "seat2_full"
+    },
+    {
+      "basis": "Most counts tie: both labels score 0 facial structural defects in both frames, both persist the same person (Q's persistent skin specks actually confirm it), both resolve 5 grille slats, and both hallucinate the identical unattached ball-tipped wire spike (1 each). Q wins one axis marginally: its tweed is a crisper woven texture than P's soft mottle. P wins two axes: its microphone is structurally cleaner (crisp countable slats plus ~9 resolved side grille holes, versus Q's grille interrupted by an irregular dark blob in both frames and a collapsed dark mass in the side view), and, decisively, movement -- the prompt explicitly demands small natural head movements, and P delivers a visible, coherent head rotation between f049 and f097 (raw mean|diff| 29.5 with global brightness equal, whole-silhouette displacement, no warping), while Q is near-static (mean|diff| 10.0, thin edge rim only). Because the movement gap is roughly 3x, measurable in raw pixels, and visible at normal zoom rather than only by high-zoom flipping, it is a clear rather than marginal difference; combined with the mic-structure edge it outweighs Q's marginal tweed-crispness win.",
+      "better_label": "P",
+      "cell": "portrait/seed20260821",
+      "maps_to": "ours",
+      "margin": "clear",
+      "seat": "seat3_crops"
+    },
+    {
+      "basis": "Q1-Q4 are effectively tied: both labels show 0 structural face defects across all three frames, both persist the same person, both resolve mic grille slats at similar counts (~9-10 vs ~8-9), and both jackets read as woven (B slightly crisper). The split is Q5 vs Q6. B wins Q5 (0 hallucinated objects vs A's unrequested background fairy-light strings). A wins Q6, and Q6 is a direct prompt demand: the prompt requires \"he speaks calmly into the microphone with small natural head movements\" - A shows open eyes, a mouth opening in f049/f097 consistent with speech, and clear small head-angle changes, while B holds a closed-eyes, closed-mouth bowed pose in all three sampled frames with change that mostly reads as camera drift. A prompt-demanded behavior missing from B outweighs one class of benign background set dressing in A, but since both renders are structurally clean and B is otherwise slightly tidier, the margin is marginal, not clear.",
+      "better_label": "A",
+      "cell": "portrait/seed42",
+      "maps_to": "half",
+      "margin": "marginal",
+      "seat": "seat1_full"
+    },
+    {
+      "basis": "Q1, Q2, and Q6 tie exactly (0 defects each, same man persists, both MOVE). Q3: both fully resolve the grille (X 7-8 slats, Y 9-10); no target count exists, so neither side takes a defect. The two category differences both favor X: Q4 - X's jacket is a genuinely woven pinstripe-herringbone in all frames while Y's resolves as noisy fur-like boucle with an artificial radial crease pattern; Q5 - X has zero hallucinated objects while Y adds an unrequested string of bare-bulb lights (~10 bulbs) in all three frames, visible at a glance. X therefore wins two countable categories and loses none. Margin stays marginal rather than clear because Y counters inside the tied categories with crisper mic resolution and actual visible speech articulation at f049 (X's mouth is closed in all three samples), and Y's hallucination is background set dressing that leaves the prompted subject intact.",
+      "better_label": "X",
+      "cell": "portrait/seed42",
+      "maps_to": "ours",
+      "margin": "marginal",
+      "seat": "seat2_full"
+    },
+    {
+      "basis": "Both labels render structurally coherent, persistent announcers with woven tweed, resolvable chrome-mic slats (P ~10 vs Q ~9), zero facial defects, and visible inter-frame movement, so the core counts are near parity. P wins on two countables: zero hallucinated objects versus Q's one (an unexplained straw/wicker mass in the f097 background), and P's movement better matches the prompted behavior (head lifts, eyes open, announcer addressing the mic) while Q's announcer keeps eyes closed with his face pressed onto the grille in both sampled frames. The tie-at-f049 ambiguity affects both labels equally. The differences are real but small, so the margin is marginal, not clear.",
+      "better_label": "P",
+      "cell": "portrait/seed42",
+      "maps_to": "half",
+      "margin": "marginal",
+      "seat": "seat3_crops"
+    },
+    {
+      "basis": "Q1/Q2/Q6 are identical (both render 7 intact tubes against the requested six, both hold one stable scene), and both grilles answer WOVEN, so the decision rests on the two questions where the labels actually differ. Q5: A has 0 hallucinated objects in every frame while B carries 2 chrome barrel fixtures in every frame, visible at normal zoom. Q3: neither resolves fine ticks, but A's dial shows 6-8 coarse markings versus B's nearly blank face. Additionally, A shows the prompt's lit pilot lamp in all frames while B has none - an entire prompt element missing from B at normal zoom. Offsetting credits to B: its tubes show real glass stems where A's read as opaque cylinders, and its weave is cleaner - but these do not change any counted answer, while B's deficits do. A wins both differing counts plus the pilot-lamp element; margin is clear, not large, because B genuinely renders the glassier tubes and the cleaner weave.",
+      "better_label": "A",
+      "cell": "radio/seed20260821",
+      "maps_to": "half",
+      "margin": "clear",
+      "seat": "seat1_full"
+    },
+    {
+      "basis": "Every countable question lands identically: both labels show 7 tubes against the prompted six (+1 error each), all 7 intact and separate in every frame, neither dial resolves fine tick marks (X shows garbled glyphs, Y faint smudges - both fail), both grilles resolve as woven, zero hallucinated objects, and both hold a single stable radio across their three frames with no re-composition. The only real differences offset each other: Y's tubes are genuinely glass (transparent lower halves) where X's read as opaque candle-like cylinders with no glass character, but X delivers the prompted glowing pilot lamp in all three frames while Y omits it entirely, and Y's f001 grille carries chroma speckle noise. One prompted-element defect on each side, equal counts everywhere else - a tie on the counts, not a preference call.",
+      "better_label": "TIE",
+      "cell": "radio/seed20260821",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat2_full"
+    },
+    {
+      "basis": "Tube count (7), tube integrity, woven grille, and temporal stability tie across labels. P satisfies two countable prompt elements Q misses: a lit pilot lamp is present in both P frames while Q shows an unlit keyhole knob in its place, and P resolves ~10 dial tick/numeral marks vs ~4 sparse marks on Q's clock-like face. Q also carries 2 hallucinated elements per frame (a row of dark oval holes in the floor plus the keyhole knob) vs 0 for P. These differences are visible at normal viewing, so the margin is clear rather than marginal; neither label achieves the requested six tubes (both show 7).",
+      "better_label": "P",
+      "cell": "radio/seed20260821",
+      "maps_to": "half",
+      "margin": "clear",
+      "seat": "seat3_crops"
+    },
+    {
+      "basis": "The one countable difference that separates the labels is the tube count: A shows exactly 6 distinct, separate, intact cylinders in all three frames, matching the prompt's \"six glass vacuum tubes\"; B shows 7 in all three frames, a stable over-count of one. Every other countable is effectively tied: both render the grille as a genuinely woven basket pattern in every frame; both render the brass dial as a clock face with coarse resolvable marks (A ~14-16 bar marks, B ~12-13 Roman-numeral clusters) rather than fine tick marks; both carry the same class of hallucination (clock hands on the dial, pseudo-text labels wrapped around opaque canister-like tubes instead of transparent glass); neither shows a distinct small pilot lamp on the radio (B has a large external glowing lamp at right, which reads as legitimate warm lamplight, not counted as a hallucination); and both hold the same radio composition across their three frames with only slow camera drift (Q6 YES for both). The 7-vs-6 difference is visible at native resolution without flipping or zoom, so it is more than marginal, but it is a single defect against an otherwise tied scorecard, so the margin is clear rather than large.",
+      "better_label": "A",
+      "cell": "radio/seed42",
+      "maps_to": "ours",
+      "margin": "clear",
+      "seat": "seat1_full"
+    },
+    {
+      "basis": "Both labels tie on every countable except the headline one. Q2: all tubes intact and separate in both. Q3: both show a resolvable ringed dial (both substitute a clock-like face for a radio dial; fine ticks not reliably countable in either). Q4: both grilles resolve as genuinely woven patterns. Q5: one substituted element each (dial-as-clock), plus the identical shared defect of tubes rendered as opaque gibberish-labeled canisters instead of clear glass. Q6: both are temporally stable single continuous shots with no re-composition. The deciding count is Q1: the prompt asks for SIX tubes; Y shows exactly 6 in all three frames while X shows 7 in all three frames. That is a stable, glance-visible count difference on the prompt's primary countable, not a high-zoom flip difference, so Y wins on counts - but by one question only, hence clear rather than large.",
+      "better_label": "Y",
+      "cell": "radio/seed42",
+      "maps_to": "ours",
+      "margin": "clear",
+      "seat": "seat2_full"
+    },
+    {
+      "basis": "Both labels share identical defect classes: the brass dial is rendered as a clock face with hands, the tubes are opaque pseudo-text-labeled canisters rather than glass, and both grilles resolve as genuine woven patterns; both stay on the same radio across frames. The single decisive countable difference is tube count: the prompt asks for six, Q shows exactly 6 intact tubes in both frames while P shows 8 (7 full + 1 crop-edge partial) in both frames. This is a plain count visible without zoom, so Q wins on the counts with a clear (not large) margin - every other countable question is a tie, and Q's hallucinated text is denser though numerically fewer instances.",
+      "better_label": "Q",
+      "cell": "radio/seed42",
+      "maps_to": "ours",
+      "margin": "clear",
+      "seat": "seat3_crops"
+    }
+  ],
+  "run": "wf_cc532009-7af",
+  "seats": 18,
+  "tally": {
+    "TIE": 1,
+    "half": 9,
+    "ours": 8
+  }
+}
