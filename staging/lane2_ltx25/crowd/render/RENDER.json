@@ -55,6 +55,194 @@
         "max_abs_delta": 3.8122,
         "mean_abs_delta": 2.1632
       }
+    },
+    {
+      "arm": "soft",
+      "elapsed_s": 220.7,
+      "first_frame": "frame_00001_.png",
+      "fixture": "crowd",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "crowd/soft_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "96d97384-daee-4594-b637-90d8096f13ab",
+            "timestamp": 1787339293023
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "audiovae",
+              "cond",
+              "emptyaudio",
+              "emptylatent",
+              "guider",
+              "ksel",
+              "loadimage",
+              "modality",
+              "neg",
+              "noise",
+              "pos",
+              "preprocess",
+              "refine_sigmas",
+              "resize",
+              "te",
+              "unet",
+              "upscale_loader",
+              "videovae"
+            ],
+            "prompt_id": "96d97384-daee-4594-b637-90d8096f13ab",
+            "timestamp": 1787339293162
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "96d97384-daee-4594-b637-90d8096f13ab",
+            "timestamp": 1787339505290
+          }
+        ]
+      ],
+      "prompt_id": "96d97384-daee-4594-b637-90d8096f13ab",
+      "seed": 42,
+      "sha256": "bf160a4c600535e61e916ec01d440f999d53876ce6186428c7a75e836274044d",
+      "status": "success",
+      "subfolder": "baseline_output\\lane2_ltx25\\crowd\\soft_seed42",
+      "temporal": {
+        "argmax_pair": 87,
+        "frame_pairs": 96,
+        "max_abs_delta": 3.9142,
+        "mean_abs_delta": 2.2053
+      }
+    },
+    {
+      "arm": "ours",
+      "elapsed_s": 230.6,
+      "first_frame": "frame_00001_.png",
+      "fixture": "crowd",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "crowd/ours_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "bf0fde5e-da59-4bfc-9aed-2fadcaf374fa",
+            "timestamp": 1787339516440
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "audiovae",
+              "cond",
+              "emptyaudio",
+              "emptylatent",
+              "guider",
+              "ksel",
+              "loadimage",
+              "modality",
+              "neg",
+              "pos",
+              "preprocess",
+              "refine_sigmas",
+              "resize",
+              "te",
+              "unet",
+              "upscale_loader",
+              "videovae"
+            ],
+            "prompt_id": "bf0fde5e-da59-4bfc-9aed-2fadcaf374fa",
+            "timestamp": 1787339516578
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "bf0fde5e-da59-4bfc-9aed-2fadcaf374fa",
+            "timestamp": 1787339743258
+          }
+        ]
+      ],
+      "prompt_id": "bf0fde5e-da59-4bfc-9aed-2fadcaf374fa",
+      "seed": 20260821,
+      "sha256": "1d0f35716d9e56cae88135d056e52021784a0f5850a382a02944e7345bdd4a65",
+      "status": "success",
+      "subfolder": "baseline_output\\lane2_ltx25\\crowd\\ours_seed20260821",
+      "temporal": {
+        "argmax_pair": 25,
+        "frame_pairs": 96,
+        "max_abs_delta": 2.5485,
+        "mean_abs_delta": 1.3914
+      }
+    },
+    {
+      "arm": "soft",
+      "elapsed_s": 230.7,
+      "first_frame": "frame_00001_.png",
+      "fixture": "crowd",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "crowd/soft_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "70d0944a-1f8f-4271-96a5-9edbe4122ef7",
+            "timestamp": 1787339749861
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "audiovae",
+              "cond",
+              "emptyaudio",
+              "emptylatent",
+              "guider",
+              "ksel",
+              "loadimage",
+              "modality",
+              "neg",
+              "noise",
+              "pos",
+              "preprocess",
+              "refine_sigmas",
+              "resize",
+              "te",
+              "unet",
+              "upscale_loader",
+              "videovae"
+            ],
+            "prompt_id": "70d0944a-1f8f-4271-96a5-9edbe4122ef7",
+            "timestamp": 1787339750000
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "70d0944a-1f8f-4271-96a5-9edbe4122ef7",
+            "timestamp": 1787339974753
+          }
+        ]
+      ],
+      "prompt_id": "70d0944a-1f8f-4271-96a5-9edbe4122ef7",
+      "seed": 20260821,
+      "sha256": "d10a9c5b08759171177f89ee8e1a6baca4b5721246a509734acfc119f3b8e324",
+      "status": "success",
+      "subfolder": "baseline_output\\lane2_ltx25\\crowd\\soft_seed20260821",
+      "temporal": {
+        "argmax_pair": 24,
+        "frame_pairs": 96,
+        "max_abs_delta": 2.9981,
+        "mean_abs_delta": 1.2588
+      }
     }
   ],
   "output_prefix": "baseline_output/lane2_ltx25",

@@ -41,14 +41,25 @@ COMFY_OUTPUT = Path(r"C:\Users\jeffr\Documents\ComfyUI\output")
 FRAMES = [1, 49, 97]
 CROP_FRAMES = [49, 97]
 
-# Per fixture, the regions that carry this fixture's countable evidence.
+# Per lane and fixture, the regions that carry the countable evidence.
+# lane2_ltx25 renders at 1664x960 -- exactly double the 832x480 authoring
+# canvas -- so its boxes are the lane 1 coordinates x2, identity regions first.
 REGIONS = {
-    "officer": [("face", 216, 16, 320, 320), ("uniform", 60, 340, 256, 128)],
-    "controlroom": [("dials", 512, 176, 320, 160), ("figure", 320, 140, 208, 232)],
-    "crowd": [("meter", 330, 404, 260, 76), ("faces", 500, 60, 224, 168)],
-    "testcard": [("eye_light", 8, 258, 400, 160), ("eye_dark", 424, 258, 400, 160),
-                 ("gratings_light", 8, 208, 400, 46),
-                 ("gratings_dark", 424, 208, 400, 46)],
+    "lane1_wan_ti2v": {
+        "officer": [("face", 216, 16, 320, 320), ("uniform", 60, 340, 256, 128)],
+        "controlroom": [("dials", 512, 176, 320, 160), ("figure", 320, 140, 208, 232)],
+        "crowd": [("meter", 330, 404, 260, 76), ("faces", 500, 60, 224, 168)],
+        "testcard": [("eye_light", 8, 258, 400, 160), ("eye_dark", 424, 258, 400, 160),
+                     ("gratings_light", 8, 208, 400, 46),
+                     ("gratings_dark", 424, 208, 400, 46)],
+    },
+    "lane2_ltx25": {
+        "officer": [("face", 432, 32, 640, 640), ("uniform", 120, 680, 512, 256)],
+        "crowd": [("faces", 1000, 120, 448, 336), ("meter", 660, 808, 520, 152)],
+        "testcard": [("eye_light", 16, 516, 800, 320), ("eye_dark", 848, 516, 800, 320),
+                     ("gratings_light", 16, 416, 800, 92),
+                     ("gratings_dark", 848, 416, 800, 92)],
+    },
 }
 SEAT_LABELS = {
     "seat1_full": ("A", "B"),
@@ -70,10 +81,10 @@ def seat_plan(fixture: str, seed: int) -> dict:
     plan = {}
     for index, (seat, (first, second)) in enumerate(sorted(SEAT_LABELS.items())):
         leads = not ours_leads if index == odd_seat else ours_leads
-        ours_label, official_label = (first, second) if leads else (second, first)
-        plan[seat] = {"ours": ours_label, "official": official_label,
+        ours_label, candidate_label = (first, second) if leads else (second, first)
+        plan[seat] = {"ours": ours_label, "candidate": candidate_label,
                       "order": [first, second],
-                      "reads_first": "ours" if leads else "official"}
+                      "reads_first": "ours" if leads else "candidate"}
     return plan
 
 
@@ -88,8 +99,17 @@ def main(argv=None) -> int:
     if fixture not in lane["fixtures"]:
         print("[FAIL] unknown fixture %r" % fixture)
         return 1
+    lane_name = lane["lane"]
+    if lane_name not in REGIONS or fixture not in REGIONS[lane_name]:
+        print("[FAIL] no crop regions declared for %s/%s" % (lane_name, fixture))
+        return 1
+    arms = sorted(lane["arm_sha256"][fixture])
+    if len(arms) != 2 or "ours" not in arms:
+        print("[FAIL] expected exactly two arms including 'ours', got %s" % arms)
+        return 1
+    candidate = next(a for a in arms if a != "ours")
     subdir = lane["fixtures"][fixture]["output_subdir"]
-    base = COMFY_OUTPUT / "baseline_output" / "lane1_wan_ti2v"
+    base = COMFY_OUTPUT / "baseline_output" / lane_name
     if subdir:
         base = base / subdir
 
@@ -98,7 +118,7 @@ def main(argv=None) -> int:
         shutil.rmtree(out_dir)
     out_dir.mkdir(parents=True)
 
-    legs = {"ours": "ours_seed%d" % seed, "official": "official_seed%d" % seed}
+    legs = {arm: "%s_seed%d" % (arm, seed) for arm in ("ours", candidate)}
     for arm, leg in legs.items():
         for index in sorted(set(FRAMES + CROP_FRAMES)):
             path = base / leg / ("frame_%05d_.png" % index)
@@ -106,7 +126,7 @@ def main(argv=None) -> int:
                 print("[FAIL] missing %s" % path)
                 return 1
 
-    regions = REGIONS[fixture]
+    regions = REGIONS[lane_name][fixture]
     key = {"fixture": fixture, "seed": seed, "legs": legs, "seats": {}, "files": {}}
     manifest = {"fixture": fixture, "seed": seed, "seats": {}}
 
@@ -116,7 +136,7 @@ def main(argv=None) -> int:
         shown = []
         crops_only = seat.startswith("seat3")
         for arm, leg in legs.items():
-            label = spec[arm]
+            label = spec["ours"] if arm == "ours" else spec["candidate"]
             if crops_only:
                 for index in CROP_FRAMES:
                     with Image.open(base / leg / ("frame_%05d_.png" % index)) as image:
@@ -139,7 +159,7 @@ def main(argv=None) -> int:
                                     seat_dir / filename)
                     shown.append(filename)
                     key["files"][filename] = {"arm": arm, "leg": leg, "frame": index}
-        key["seats"][seat] = {"ours": spec["ours"], "official": spec["official"],
+        key["seats"][seat] = {"ours": spec["ours"], candidate: spec["candidate"],
                               "reads_first": spec["reads_first"]}
         manifest["seats"][seat] = {
             "dir": str(seat_dir), "read_order": spec["order"],

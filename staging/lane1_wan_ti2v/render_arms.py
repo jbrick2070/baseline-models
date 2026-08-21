@@ -162,6 +162,11 @@ def wait_for_leg(prompt_id, started):
             history = get_json("%s/history/%s" % (SERVER, prompt_id))
         except (urllib.error.URLError, TimeoutError) as exc:
             return {"status": "SERVER GONE: %s" % exc, "outputs": {}, "messages": []}
+        except json.JSONDecodeError:
+            # A restarting server can answer with an HTML error page; that is
+            # a hiccup to ride out, not a reason to abandon the queued legs.
+            time.sleep(10)
+            continue
         entry = history.get(prompt_id)
         if entry:
             status = entry.get("status") or {}

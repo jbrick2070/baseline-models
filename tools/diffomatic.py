@@ -865,6 +865,11 @@ def _api_inputs(inputs: dict) -> dict:
 
     def emit(key, value):
         if isinstance(value, dict) and not _is_wire(value):
+            if not value:
+                raise UnsupportedGraphError(
+                    "input %r is an empty dict; flattening would drop the "
+                    "argument entirely and reproduce the unmapped-argument "
+                    "failure the flattener exists to prevent" % key)
             leaf = key.rsplit(".", 1)[-1]
             for inner_key, inner_value in value.items():
                 child = key if str(inner_key) == leaf else "%s.%s" % (key, inner_key)

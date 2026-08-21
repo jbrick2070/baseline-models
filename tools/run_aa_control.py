@@ -67,11 +67,15 @@ def main(argv):
         assert graph[node] == original[node]
     print("[A/A] re-submitting %s" % source.name)
     print("[A/A] identical in every node except save.filename_prefix")
-    print("[A/A] seed=%s sampler=%s steps=%s shift=%s"
-          % (graph["ksampler"]["inputs"]["seed"],
-             graph["ksampler"]["inputs"]["sampler_name"],
-             graph["ksampler"]["inputs"]["steps"],
-             graph["modelsampling"]["inputs"]["shift"]))
+    # Lane-agnostic knob echo: name whichever seed/strength literals exist.
+    for node_id, input_name in (("ksampler", "seed"), ("ksampler", "sampler_name"),
+                                ("ksampler", "steps"), ("modelsampling", "shift"),
+                                ("noise", "noise_seed"), ("i2v", "strength"),
+                                ("refine_i2v", "strength")):
+        node = graph.get(node_id)
+        if node and input_name in node.get("inputs", {}):
+            print("[A/A] %s.%s = %s" % (node_id, input_name,
+                                        node["inputs"][input_name]))
 
     started = time.time()
     try:

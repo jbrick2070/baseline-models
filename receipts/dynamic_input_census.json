@@ -1,0 +1,1212 @@
+{
+  "engine_dict_inputs": {
+    "video:ltx25_video": [
+      {
+        "class": "ResizeImageMaskNode",
+        "input": "resize_type",
+        "node": "resize",
+        "value": {
+          "crop": "center",
+          "height": 480,
+          "resize_type": "scale dimensions",
+          "width": 832
+        }
+      }
+    ],
+    "video:minimax_h3_audio_in": [
+      {
+        "class": "MiniMaxH3ReferenceToVideo",
+        "input": "ref_images",
+        "node": "h3",
+        "value": {
+          "ref_image_0": [
+            "loadimage",
+            0
+          ]
+        }
+      },
+      {
+        "class": "MiniMaxH3ReferenceToVideo",
+        "input": "ref_audios",
+        "node": "h3",
+        "value": {
+          "ref_audio_0": [
+            "loadaudio",
+            0
+          ]
+        }
+      }
+    ],
+    "video:minimax_h3_video": [
+      {
+        "class": "LoadImage",
+        "input": "image",
+        "node": "loadimage",
+        "value": {
+          "audio": "diffomatic.wav",
+          "image": "diffomatic.png"
+        }
+      }
+    ]
+  },
+  "server_dynamic_classes": {
+    "BatchImagesNode": [
+      {
+        "input": "images",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "BatchLatentsNode": [
+      {
+        "input": "latents",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "BatchMasksNode": [
+      {
+        "input": "masks",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "BeebleSwitchXImageEdit": [
+      {
+        "input": "alpha_mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "BeebleSwitchXVideoEdit": [
+      {
+        "input": "alpha_mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "BerniniConditioning": [
+      {
+        "input": "reference_images",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "optional"
+      }
+    ],
+    "BriaEraser": [
+      {
+        "input": "moderation",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "BriaExpandImage": [
+      {
+        "input": "expand_mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "moderation",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "BriaGenFill": [
+      {
+        "input": "moderation",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "BriaImageEditNode": [
+      {
+        "input": "moderation",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "BriaIncreaseResolution": [
+      {
+        "input": "moderation",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "BriaRemoveImageBackground": [
+      {
+        "input": "moderation",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "BuildJsonPromptIdeogram": [
+      {
+        "input": "style",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ByteDance2FirstLastFrameNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ByteDance2ReferenceNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ByteDance2ReferenceNodeV2": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ByteDance2TextToVideoNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ByteDanceSeedAudio": [
+      {
+        "input": "reference_mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ByteDanceSeedNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ByteDanceSeedreamNodeV2": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ByteDanceSeedreamNodeV3": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ClaudeNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "images",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "ColorTransfer": [
+      {
+        "input": "source_stats",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ComfyAndNode": [
+      {
+        "input": "values",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "ComfyMathExpression": [
+      {
+        "input": "values",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "ComfyOrNode": [
+      {
+        "input": "values",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "ComfySwitchNode": [
+      {
+        "input": "on_false",
+        "io_type": "COMFY_MATCHTYPE_V3",
+        "section": "required"
+      },
+      {
+        "input": "on_true",
+        "io_type": "COMFY_MATCHTYPE_V3",
+        "section": "required"
+      }
+    ],
+    "CreateCameraInfo": [
+      {
+        "input": "mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "CreateList": [
+      {
+        "input": "inputs",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "DA3Inference": [
+      {
+        "input": "mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "DA3Render": [
+      {
+        "input": "output",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "DecodeAndSaveVideo": [
+      {
+        "input": "tiling",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ElevenLabsInstantVoiceClone": [
+      {
+        "input": "files",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "ElevenLabsSpeechToSpeech": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ElevenLabsSpeechToText": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ElevenLabsTextToDialogue": [
+      {
+        "input": "inputs",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ElevenLabsTextToSoundEffects": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ElevenLabsTextToSpeech": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "EncodeVideoComponents": [
+      {
+        "input": "keep_proportion",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "FishAudioInstantVoiceClone": [
+      {
+        "input": "files",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "FishAudioTextToSpeech": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "FishAudioVoiceSelector": [
+      {
+        "input": "voice",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "Flux2ImageNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "Flux3ImageToVideoNode": [
+      {
+        "input": "keyframes",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      },
+      {
+        "input": "placement",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "GLSLShader": [
+      {
+        "input": "size_mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "images",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      },
+      {
+        "input": "floats",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      },
+      {
+        "input": "ints",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      },
+      {
+        "input": "bools",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      },
+      {
+        "input": "curves",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "GeminiNanoBanana2V2": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "GeminiNodeV2": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "GeminiVideoOmni": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "GrokImageEditNodeV2": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "GrokVideoExtendNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "GrokVideoReferenceNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "HappyHorseImageToVideoApi": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "HappyHorseReferenceVideoApi": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "HappyHorseTextToVideoApi": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "HappyHorseVideoEditApi": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "HeyGenAvatarVideoNode": [
+      {
+        "input": "engine",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "speech",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "HeyGenCreateAvatarNode": [
+      {
+        "input": "source",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "HeyGenTalkingPhotoNode": [
+      {
+        "input": "speech",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "HiDreamO1ReferenceImages": [
+      {
+        "input": "images",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "HitPawVideoEnhance": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ImageSharpenKJ": [
+      {
+        "input": "image",
+        "io_type": "COMFY_MATCHTYPE_V3",
+        "section": "required"
+      },
+      {
+        "input": "method",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ImageTransformKJ": [
+      {
+        "input": "image",
+        "io_type": "COMFY_MATCHTYPE_V3",
+        "section": "required"
+      },
+      {
+        "input": "keep_proportion",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "extra_padding",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "invert_crop",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "KlingFirstLastFrameNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "KlingOmniProFirstLastFrameNode": [
+      {
+        "input": "storyboards",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "optional"
+      }
+    ],
+    "KlingOmniProImageToVideoNode": [
+      {
+        "input": "storyboards",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "optional"
+      }
+    ],
+    "KlingOmniProTextToVideoNode": [
+      {
+        "input": "storyboards",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "optional"
+      }
+    ],
+    "KlingVideoNode": [
+      {
+        "input": "multi_shot",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "Krea2ImageNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "LTXVAddGuideMulti": [
+      {
+        "input": "num_guides",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "LTXVImgToVideoInplaceKJ": [
+      {
+        "input": "num_images",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "LtxApi25AudioToVideo": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "LtxApi25ImageToVideo": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "LtxApi25TextToVideo": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "LumaImageEditNode2": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "LumaImageNode2": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "LumaRay32ExtendVideoNode": [
+      {
+        "input": "direction",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "LumaRay32KeyframeNode": [
+      {
+        "input": "position",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "MagnificImageRelightNode": [
+      {
+        "input": "advanced_settings",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "MagnificImageSkinEnhancerNode": [
+      {
+        "input": "mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "MagnificImageStyleTransferNode": [
+      {
+        "input": "portrait_mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "MediaPipeFaceMask": [
+      {
+        "input": "regions",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "MediaPipeFaceMeshVisualize": [
+      {
+        "input": "connections",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "MergeSplat": [
+      {
+        "input": "splats",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "MeshyImageToModelNode": [
+      {
+        "input": "should_remesh",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "should_texture",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "MeshyMultiImageToModelNode": [
+      {
+        "input": "images",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      },
+      {
+        "input": "should_remesh",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "should_texture",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "MeshyTextToModelNode": [
+      {
+        "input": "should_remesh",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "MiniMaxH3ReferenceToVideo": [
+      {
+        "input": "ref_images",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "optional"
+      },
+      {
+        "input": "ref_videos",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "optional"
+      },
+      {
+        "input": "ref_video_audios",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "optional"
+      },
+      {
+        "input": "ref_audios",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "optional"
+      }
+    ],
+    "MinimaxHailuo03ContextIRNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "MinimaxHailuo03FirstLastFrameNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "MinimaxHailuo03ReferenceNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "MinimaxHailuo03RegenerateNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "MinimaxHailuo03TextToVideoNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "OpenAIGPTImageNodeV2": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "OpenRouterLLMNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "QuiverImageToSVGNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "QuiverTextToSVGNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "reference_images",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "optional"
+      }
+    ],
+    "QwenImageEditApi": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "size",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "QwenImageTextToImageApi": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "RTXVideoSuperResolution": [
+      {
+        "input": "resize_type",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "RecraftCreateStyleNode": [
+      {
+        "input": "images",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "RecraftV4TextToImageNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "RecraftV4TextToVectorNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ResizeImageMaskNode": [
+      {
+        "input": "input",
+        "io_type": "COMFY_MATCHTYPE_V3",
+        "section": "required"
+      },
+      {
+        "input": "resize_type",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ReveImageCreateNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "upscale",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ReveImageEditNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "upscale",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ReveImageRemixNode": [
+      {
+        "input": "reference_images",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      },
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "upscale",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "Rodin3D_Gen25_Image": [
+      {
+        "input": "images",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      },
+      {
+        "input": "mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "Rodin3D_Gen25_Text": [
+      {
+        "input": "mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "RunwayAleph2KeyframeNode": [
+      {
+        "input": "timing",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "RunwayAleph2PromptImageNode": [
+      {
+        "input": "position",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "SamplerSelfRefineVideo": [
+      {
+        "input": "input_mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "SaveAudioAdvanced": [
+      {
+        "input": "format",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "SaveImageAdvanced": [
+      {
+        "input": "format",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "SaveVideo": [
+      {
+        "input": "codec",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "SeedVR2TemporalChunk": [
+      {
+        "input": "chunking_mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "SimpleCalculatorKJ": [
+      {
+        "input": "variables",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "StringFormat": [
+      {
+        "input": "values",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "SyncLipSyncNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "SyncTalkingImageNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "TencentImageToModelNode": [
+      {
+        "input": "generate_type",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "TencentTextToModelNode": [
+      {
+        "input": "generate_type",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "TextEncodeBooguEdit": [
+      {
+        "input": "images",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "TextEncodeJoyImageEdit": [
+      {
+        "input": "images",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "optional"
+      }
+    ],
+    "TextEncodeMageFlowEdit": [
+      {
+        "input": "images",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "TextGenerate": [
+      {
+        "input": "sampling_mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "TextGenerateLTX2Prompt": [
+      {
+        "input": "sampling_mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "TopazImageEnhanceV2": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "TopazVideoEnhanceV2": [
+      {
+        "input": "upscaler_model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      },
+      {
+        "input": "interpolation_model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "TripoP1ImageToModelNode": [
+      {
+        "input": "output_mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "TripoP1MultiviewToModelNode": [
+      {
+        "input": "output_mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "TripoP1TextToModelNode": [
+      {
+        "input": "output_mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "Vidu2ReferenceVideoNode": [
+      {
+        "input": "subjects",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ],
+    "Vidu3ImageToVideoNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "Vidu3StartEndToVideoNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "Vidu3TextToVideoNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ViduExtendVideoNode": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "ViduMultiFrameVideoNode": [
+      {
+        "input": "frames",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "Wan2ImageToVideoApi": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "Wan2ReferenceVideoApi": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "Wan2TextToVideoApi": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "Wan2VideoContinuationApi": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "Wan2VideoEditApi": [
+      {
+        "input": "model",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "WanInfiniteTalkToVideo": [
+      {
+        "input": "mode",
+        "io_type": "COMFY_DYNAMICCOMBO_V3",
+        "section": "required"
+      }
+    ],
+    "WanReferenceVideoApi": [
+      {
+        "input": "reference_videos",
+        "io_type": "COMFY_AUTOGROW_V3",
+        "section": "required"
+      }
+    ]
+  }
+}
