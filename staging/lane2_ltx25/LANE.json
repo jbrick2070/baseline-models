@@ -1,16 +1,16 @@
 {
   "arm_sha256": {
     "crowd": {
-      "ours": "7a52ed5e30a9442b02e68ac7ac4ec7056ae4d4437495a7f08a91b9525d7424eb",
-      "soft": "4e9f82cbfb8574eb1a5a1bb1f06b028811d95c6741e146bb4a61ed3d90ab1aef"
+      "ours": "ad8e6b16b405336e7f15e4be079762adb831c499a0f8fea6dff829d28af17c06",
+      "soft": "3d702a579c76003f25725f7552278b2fd66bf8c92c31b003e0b2afbf804c70f5"
     },
     "officer": {
-      "ours": "a5bb658b8a7886d2ccc0e55562ef89c9b507e28fec3c782866e4a8462306cf6f",
-      "soft": "c24e0038faaae4b1d1f8a67f25a2ca97d683eeaaf3157471ff1eb006a58f09a5"
+      "ours": "04dc0ddcd575bd852ca059acff66ac96ae1db30b8cc8a1ed141c4c2daa238dca",
+      "soft": "6ecf088673ea1f90753e7c9974a112e5aa47135bb9b35c6e3885b1d267c8482f"
     },
     "testcard": {
-      "ours": "82e406ccc53131ec7ee4fc4c2a81689cc878ff452a649c0f38d79f3d0d85b083",
-      "soft": "13150daff3f0778ad77fcd1da16a0ad6998c7f42214947b3014a8eb3b14b0ec7"
+      "ours": "16dba718eaf7e836437000832abb2666c71d95b4de8efe6f813c68dff4973971",
+      "soft": "c5d87ef1751d850c402ab0911205dfb613444b32a0390402485730f172aca286"
     }
   },
   "declared_contrast": {

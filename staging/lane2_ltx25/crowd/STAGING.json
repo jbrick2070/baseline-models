@@ -1,7 +1,7 @@
 {
   "arm_sha256": {
-    "ours": "7a52ed5e30a9442b02e68ac7ac4ec7056ae4d4437495a7f08a91b9525d7424eb",
-    "soft": "4e9f82cbfb8574eb1a5a1bb1f06b028811d95c6741e146bb4a61ed3d90ab1aef"
+    "ours": "ad8e6b16b405336e7f15e4be079762adb831c499a0f8fea6dff829d28af17c06",
+    "soft": "3d702a579c76003f25725f7552278b2fd66bf8c92c31b003e0b2afbf804c70f5"
   },
   "contrast_note": "two graph leaves, ONE shipping knob: both read LTX25_I2V_ANCHOR_STRENGTH (ltx25_recipe.py:223)",
   "declared_contrast": {

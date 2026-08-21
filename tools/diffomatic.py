@@ -847,6 +847,36 @@ def _api_value(value: Any):
     return value
 
 
+def _api_inputs(inputs: dict) -> dict:
+    """Builder inputs in HTTP-prompt form, dynamic dicts flattened to dot keys.
+
+    V3 dynamic inputs (``COMFY_DYNAMICCOMBO_V3``, autogrow) are addressed in
+    the API prompt by dot-joined prefixes -- ``finalize_prefix`` in ComfyUI's
+    ``comfy_api/latest/_io.py`` joins with ``"."`` and the executor resolves
+    sub-inputs via those paths. The in-process bridge accepts the nested-dict
+    authoring form instead, which is what engine builders emit -- submitting
+    that dict verbatim leaves the argument unmapped and the node raises
+    ``execute() missing 1 required positional argument`` (every lane 2 leg,
+    first attempt, 2026-08-21). The flattening rule mirrors
+    ``_flatten_params``: an inner key equal to the input's own name is the
+    selector and keeps the bare name; every other key gains the dot prefix.
+    """
+    out = {}
+
+    def emit(key, value):
+        if isinstance(value, dict) and not _is_wire(value):
+            leaf = key.rsplit(".", 1)[-1]
+            for inner_key, inner_value in value.items():
+                child = key if str(inner_key) == leaf else "%s.%s" % (key, inner_key)
+                emit(child, inner_value)
+            return
+        out[key] = _api_value(value)
+
+    for key, value in inputs.items():
+        emit(str(key), value)
+    return out
+
+
 def build_api_graph(identifier: str, otr_root: str = OTR_ROOT) -> tuple[dict, dict]:
     """The engine's OWN graph in ComfyUI API form, literals and wires intact.
 
@@ -893,7 +923,7 @@ def build_api_graph(identifier: str, otr_root: str = OTR_ROOT) -> tuple[dict, di
                 )
             api[str(node_id)] = {
                 "class_type": class_type,
-                "inputs": {k: _api_value(v) for k, v in inputs.items()},
+                "inputs": _api_inputs(inputs),
             }
         width, height = _declared_canvas(engine)
         provenance = {

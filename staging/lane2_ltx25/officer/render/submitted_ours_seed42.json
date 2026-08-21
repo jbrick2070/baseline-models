@@ -264,12 +264,10 @@
         "loadimage",
         0
       ],
-      "resize_type": {
-        "crop": "center",
-        "height": 480,
-        "resize_type": "scale dimensions",
-        "width": 832
-      },
+      "resize_type": "scale dimensions",
+      "resize_type.crop": "center",
+      "resize_type.height": 480,
+      "resize_type.width": 832,
       "scale_method": "lanczos"
     }
   },
