@@ -562,8 +562,24 @@ def _builder_fixture(engine) -> dict[str, Any]:
     }
 
 
-def _invoke_graph_builder(engine) -> tuple[dict, dict]:
-    builder = engine._build_graph
+def _invoke_graph_builder(engine, builder_name: str = "_build_graph") -> tuple[dict, dict]:
+    """Invoke ONE of the engine's graph builders, filling args from the fixture.
+
+    ``builder_name`` exists because an engine may ship SEVERAL builders and the
+    default is not always the one production runs. ``eng_ltx_video`` is the
+    worked example: ``_build_graph`` is text-only, while ``_build_graph_i2v``
+    is what ``render_clip`` reaches for whenever ``OTR_ENABLE_LTX_I2V`` is set
+    -- and it defaults to on. Lane 3 staged through the default and therefore
+    screened a path production does not use, a bound its completeness critic
+    had to add after the fact. Naming the builder makes that choice explicit at
+    the call site instead of silent.
+    """
+    builder = getattr(engine, builder_name, None)
+    if builder is None or not callable(builder):
+        raise UnsupportedGraphError(
+            f"{getattr(engine, 'name', type(engine).__name__)}: no callable "
+            f"builder named {builder_name!r}"
+        )
     fixture = _builder_fixture(engine)
     kwargs = {}
     unknown = []
@@ -883,7 +899,8 @@ def _api_inputs(inputs: dict) -> dict:
 
 
 def build_api_graph(identifier: str, otr_root: str = OTR_ROOT,
-                    allow_local: frozenset = frozenset()) -> tuple[dict, dict]:
+                    allow_local: frozenset = frozenset(),
+                    builder_name: str = "_build_graph") -> tuple[dict, dict]:
     """The engine's OWN graph in ComfyUI API form, literals and wires intact.
 
     ``_build_engine_graph`` answers "what does this engine DIFF like": it
@@ -899,7 +916,7 @@ def build_api_graph(identifier: str, otr_root: str = OTR_ROOT,
     would stage an arm that cannot execute over the HTTP API.
     """
     with resolved_engine(identifier, otr_root) as engine:
-        raw, fixture = _invoke_graph_builder(engine)
+        raw, fixture = _invoke_graph_builder(engine, builder_name)
         mapping = _candidate_map(engine)
         internal = _internal_class_map(engine)
         declared = {name for choices in mapping.values() for name in choices}

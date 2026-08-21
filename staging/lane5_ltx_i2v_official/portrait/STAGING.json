@@ -1,0 +1,26 @@
+{
+  "arm_sha256": {
+    "official": "c88c6bd82ddbcfdad91b9ef392afd04f120983ce08be6dbd038c5014976b9afc",
+    "ours": "a4180a646135dc2fc402e87a79ea1640b4df5355ed02dde89e82ae87854d6992"
+  },
+  "builder": "_build_graph_i2v",
+  "bundled_screen": "file AND strength move together because that pair IS the official configuration; a win cannot be attributed to either alone",
+  "declared_contrast": {
+    "lora.lora_name": "ltxv\\ltx2\\ltx_2.3_22b_distilled_1.1_lora_dynamic_fro09_avg_rank_111_bf16.safetensors",
+    "lora.strength_model": 0.5
+  },
+  "engine": "eng_ltx_video",
+  "fixture": "portrait",
+  "image": "portrait_16_9.png",
+  "lane": "lane5_ltx_i2v_official",
+  "prompt": "1950s cinematic close-up of a radio announcer at a chrome microphone, warm tungsten key light, tweed jacket and striped tie, he speaks calmly with small natural head movements, shallow depth of field, single continuous shot",
+  "role": "identity / face, conditioning still at EXACTLY the render canvas",
+  "shared_adapts": [
+    {
+      "engine_authors": "_SigmasFromValues (local)",
+      "node": "sigmas",
+      "staged_as": "ManualSigmas (registered)",
+      "why": "Bible 12.122; lane 2/3 precedent"
+    }
+  ]
+}

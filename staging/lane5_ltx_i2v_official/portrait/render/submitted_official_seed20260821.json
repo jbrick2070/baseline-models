@@ -1,0 +1,188 @@
+{
+  "cond": {
+    "class_type": "LTXVConditioning",
+    "inputs": {
+      "frame_rate": 25.0,
+      "negative": [
+        "neg",
+        0
+      ],
+      "positive": [
+        "pos",
+        0
+      ]
+    }
+  },
+  "guider": {
+    "class_type": "CFGGuider",
+    "inputs": {
+      "cfg": 1.0,
+      "model": [
+        "lora",
+        0
+      ],
+      "negative": [
+        "cond",
+        1
+      ],
+      "positive": [
+        "cond",
+        0
+      ]
+    }
+  },
+  "img2vid": {
+    "class_type": "LTXVImgToVideoConditionOnly",
+    "inputs": {
+      "image": [
+        "loadimage",
+        0
+      ],
+      "latent": [
+        "latent",
+        0
+      ],
+      "strength": 0.75,
+      "vae": [
+        "videovae",
+        0
+      ]
+    }
+  },
+  "latent": {
+    "class_type": "EmptyLTXVLatentVideo",
+    "inputs": {
+      "batch_size": 1,
+      "height": 576,
+      "length": 97,
+      "width": 1024
+    }
+  },
+  "loadimage": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait_16_9.png"
+    }
+  },
+  "lora": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "lora_name": "ltxv\\ltx2\\ltx_2.3_22b_distilled_1.1_lora_dynamic_fro09_avg_rank_111_bf16.safetensors",
+      "model": [
+        "unet",
+        0
+      ],
+      "strength_model": 0.5
+    }
+  },
+  "neg": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "te",
+        0
+      ],
+      "text": "low quality, worst quality, blurry, distorted, watermark, text, static"
+    }
+  },
+  "noise": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 20260821
+    }
+  },
+  "pos": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "te",
+        0
+      ],
+      "text": "1950s cinematic close-up of a radio announcer at a chrome microphone, warm tungsten key light, tweed jacket and striped tie, he speaks calmly with small natural head movements, shallow depth of field, single continuous shot"
+    }
+  },
+  "sampleradv": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "guider": [
+        "guider",
+        0
+      ],
+      "latent_image": [
+        "img2vid",
+        0
+      ],
+      "noise": [
+        "noise",
+        0
+      ],
+      "sampler": [
+        "samplersel",
+        0
+      ],
+      "sigmas": [
+        "sigmas",
+        0
+      ]
+    }
+  },
+  "samplersel": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "euler_cfg_pp"
+    }
+  },
+  "save": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "baseline_output/lane5_ltx_i2v_official/portrait/official_seed20260821/frame",
+      "images": [
+        "vaedecode",
+        0
+      ]
+    }
+  },
+  "sigmas": {
+    "class_type": "ManualSigmas",
+    "inputs": {
+      "sigmas": "1.0, 0.99375, 0.9875, 0.98125, 0.975, 0.909375, 0.725, 0.421875, 0.0"
+    }
+  },
+  "te": {
+    "class_type": "LTXAVTextEncoderLoader",
+    "inputs": {
+      "ckpt_name": "ltx-2.3-22b-dev.safetensors",
+      "device": "default",
+      "text_encoder": "gemma_3_12B_it_fp4_mixed.safetensors"
+    }
+  },
+  "unet": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "ltx-2.3-22b-dev-Q3_K_M.gguf"
+    }
+  },
+  "vaedecode": {
+    "class_type": "VAEDecodeTiled",
+    "inputs": {
+      "overlap": 64,
+      "samples": [
+        "sampleradv",
+        0
+      ],
+      "temporal_overlap": 8,
+      "temporal_size": 4096,
+      "tile_size": 512,
+      "vae": [
+        "videovae",
+        0
+      ]
+    }
+  },
+  "videovae": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "ltx-2.3-22b-dev_video_vae.safetensors"
+    }
+  }
+}

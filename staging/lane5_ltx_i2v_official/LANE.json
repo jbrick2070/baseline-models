@@ -1,0 +1,64 @@
+{
+  "arm_sha256": {
+    "crowd": {
+      "official": "122263eaa278e0961238c88f9273277a766bda8fef55d13efe8a24bce3f4269a",
+      "ours": "46b5d31cf3045e35acdc52d83ce5a95eba7049cf04795a37e3e6db443a0a90c3"
+    },
+    "portrait": {
+      "official": "c88c6bd82ddbcfdad91b9ef392afd04f120983ce08be6dbd038c5014976b9afc",
+      "ours": "a4180a646135dc2fc402e87a79ea1640b4df5355ed02dde89e82ae87854d6992"
+    }
+  },
+  "builder": "_build_graph_i2v",
+  "closes_bounds": [
+    "lane 3 path bound: screened text-only while OTR_ENABLE_LTX_I2V defaults to 1 (eng_ltx_video.py:931)",
+    "lane 3 file bound: tested 0.7 vs 0.5 on OUR file only; the official 0.5 pairs with the rank-111 dynamic LoRA"
+  ],
+  "declared_contrast": {
+    "lora.lora_name": "ltxv\\ltx2\\ltx_2.3_22b_distilled_1.1_lora_dynamic_fro09_avg_rank_111_bf16.safetensors",
+    "lora.strength_model": 0.5
+  },
+  "engine": "eng_ltx_video",
+  "fixtures": {
+    "crowd": {
+      "output_subdir": "crowd",
+      "role": "ORPHAN-OBJECT hunt -- busy scene, many people and held objects"
+    },
+    "portrait": {
+      "output_subdir": "portrait",
+      "role": "identity / face, conditioning still at EXACTLY the render canvas"
+    }
+  },
+  "lane": "lane5_ltx_i2v_official",
+  "provenance": {
+    "allowed_local_nodes": [
+      "sigmas"
+    ],
+    "builder_fixture_plan": {
+      "audio_path": "diffomatic.wav",
+      "init_image": "diffomatic.png",
+      "negative_prompt": "",
+      "seed": 42,
+      "target_frame_count": 97,
+      "text_prompt": "a vintage radio broadcast scene, subtle natural motion"
+    },
+    "builder_signature": "(plan, length, width, height)",
+    "engine_class": "LtxVideoEngine",
+    "engine_id": "ltx_video",
+    "engine_module": "nodes._otr_video_engines.eng_ltx_video",
+    "render_canvas": [
+      1024,
+      576
+    ]
+  },
+  "verdict_matrix": {
+    "candidate_win": "official pairing WINS -> refutation panel, then a decomposition lane to separate file from strength before anything reaches otr_canonical.json",
+    "identity_hold": "i2v conditions on a still, so likeness to that still is a GATE, not a score: an arm that loses the man loses outright",
+    "notes": [
+      "i2v arms share a conditioning still, so unlike lane 3's t2v the arms should render the SAME scene; arm-to-arm NCC is therefore a real admission gate here, not merely a flag.",
+      "A bundled screen: file and strength move together."
+    ],
+    "null_at_shipping_output": "LOSS for the candidate; the shipped 0.70 on our file stands, now proven on the path production actually uses",
+    "structural_regression": "an arm with materially more structural defects LOSES regardless of sharpness. ORPHAN OBJECTS are a named, counted sub-class here -- the operator found one in the shipped arm on lane 3 march/seed20260821 and it is the defect most likely to embarrass a published episode"
+  }
+}

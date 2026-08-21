@@ -1,0 +1,28 @@
+{
+  "audio_finding": "audio engines are NOT graph-based -- eng_kokoro, eng_bark, eng_chatterbox, eng_musicgen, eng_stable_audio* import their model and run it in Python. No ComfyUI graph exists to diff. Structural, not a gap.",
+  "cloud_engines_excluded": "cloud_flux_pro, cloud_krea_2_turbo, cloud_luma_photon_flash, cloud_nano_banana_2, cloud_seedream_2, google_image, ideo carry no graph builder at all -- they are API calls.",
+  "image_contract": "two-step: params = engine.<family>_params(request), then graph = engine.<family>_build_graph(params, wire). Builders are family-named, so build_api_graph needs its builder_name argument plus a params step.",
+  "probe": "can the local image engines be graph-diffed",
+  "results": {
+    "flux2_klein": {
+      "builder": "_build_klein_graph",
+      "params_method": "_klein_params",
+      "status": "no usable fixture: UnsupportedGraphError: flux2_klein: no positive two-integer render_canvas declaration; refusing an invented fixture"
+    },
+    "flux_gen1": {
+      "builder": "_build_flux_graph",
+      "params_method": "_flux_params",
+      "status": "no usable fixture: UnsupportedGraphError: flux_gen1: no positive two-integer render_canvas declaration; refusing an invented fixture"
+    },
+    "lumina_image": {
+      "builder": "_build_lumina_graph",
+      "params_method": "_lumina_params",
+      "status": "no usable fixture: UnsupportedGraphError: lumina_image: no positive two-integer render_canvas declaration; refusing an invented fixture"
+    },
+    "z_image_turbo": {
+      "builder": "_build_zimage_graph",
+      "params_method": "_zimage_params",
+      "status": "no usable fixture: UnsupportedGraphError: z_image_turbo: no positive two-integer render_canvas declaration; refusing an invented fixture"
+    }
+  }
+}

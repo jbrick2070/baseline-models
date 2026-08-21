@@ -1,0 +1,26 @@
+{
+  "arm_sha256": {
+    "official": "122263eaa278e0961238c88f9273277a766bda8fef55d13efe8a24bce3f4269a",
+    "ours": "46b5d31cf3045e35acdc52d83ce5a95eba7049cf04795a37e3e6db443a0a90c3"
+  },
+  "builder": "_build_graph_i2v",
+  "bundled_screen": "file AND strength move together because that pair IS the official configuration; a win cannot be attributed to either alone",
+  "declared_contrast": {
+    "lora.lora_name": "ltxv\\ltx2\\ltx_2.3_22b_distilled_1.1_lora_dynamic_fro09_avg_rank_111_bf16.safetensors",
+    "lora.strength_model": 0.5
+  },
+  "engine": "eng_ltx_video",
+  "fixture": "crowd",
+  "image": "lane1_crowd.png",
+  "lane": "lane5_ltx_i2v_official",
+  "prompt": "A crowded 1950s tent hall at night, dozens of people shoulder to shoulder watching a large wooden valve radio with a chrome antenna and glowing vacuum tubes on a table in the foreground, warm lantern light overhead, only subtle breathing, small head turns in the crowd and a faint flicker in the tube filaments, static locked-off camera, single continuous shot, no cut, no scene change, no camera move.",
+  "role": "ORPHAN-OBJECT hunt -- busy scene, many people and held objects",
+  "shared_adapts": [
+    {
+      "engine_authors": "_SigmasFromValues (local)",
+      "node": "sigmas",
+      "staged_as": "ManualSigmas (registered)",
+      "why": "Bible 12.122; lane 2/3 precedent"
+    }
+  ]
+}
