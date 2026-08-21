@@ -102,29 +102,100 @@ Supporting refutations, all verifiable in the receipts:
   crop box, official shifts +15.7px against ours at +1.1px, so a fixed box lands
   on ~7% different content.
 
+## The A/A control, run after the refutation
+
+The refutation's cheapest-settling-move was a null: render one arm twice and
+judge it against itself. It was run.
+
+**The pipeline is bit-exact.** `official_seed20260821` re-submitted from its own
+byte-identical graph produced 97 frames identical to the first run by sha256,
+NCC 1.0000 and mean absolute difference 0.000 at every frame.
+
+**The panel passed its null.** Three seats on those byte-identical frames
+returned TIE, margin none, all three. One wrote that naming a winner "would
+mean inventing a difference I cannot see."
+
+Two consequences, and they pull in opposite directions:
+
+* **The seed-noise framing was wrong, and it was mine to correct.** There is no
+  run-to-run nondeterminism, so the crowd/seed20260821 divergence is not noise
+  -- it is a real, reproducible consequence of the recipe change. The arms
+  genuinely walk into different scenes by frame 97 on that cell.
+* **The judges do not fabricate winners.** So the 3/3 clear call reflects a real
+  pixel difference. What the refutation established is that the difference is
+  contrast and trajectory divergence, not quality -- which is why the verdict
+  still stands.
+
 ## What is actually true
 
-* No detail-resolution difference between the recipes. The instrument says so
-  on both seeds, and contrast-normalized edge energy agrees.
-* `shift 8` renders darker and higher-contrast. That is a real, repeatable
-  tonal difference and it is *not* a quality improvement.
-* Official is ~27% faster (150s vs 205s per 97-frame leg). Irrelevant here:
-  quality did not tie in official's favour, it simply tied, and render-recipe
-  quality is never traded for speed on this project.
+* **No detail-resolution difference.** The instrument says so on both seeds, and
+  contrast-normalized edge energy agrees.
+* **`shift 8` renders darker and higher-contrast.** Real, repeatable, and not a
+  quality improvement.
+* **Official is measurably LESS temporally stable**, on the axis a sampling
+  recipe is most likely to move and which this lane had not measured until the
+  completeness critic said so. Mean absolute frame-to-frame luminance change
+  across all 97 frames, official against ours: officer +31% / +60%,
+  controlroom -5% / +18%, crowd +18% / +37%, testcard +11% / +20%. Official is
+  worse in 7 of 8 cells, with consistently larger worst-case spikes. On the test
+  card the prompt asks for *nothing moving*, so that excess is flicker by
+  definition.
+* **Official loses grey neutrality.** On the card's 16-step neutral wedge, mean
+  channel spread at f097, seed 20260821: ours 2.42, official **11.50** -- both
+  starting from 1.36 at f001. The higher-shift arm drifts the greyscale off
+  neutral by roughly eight times as much.
+* Official is ~27% faster (150s vs 205s per leg). Irrelevant: quality did not
+  tie in official's favour, and render-recipe quality is never traded for speed
+  on this project.
+
+So the result is not merely "no win". Two independent measurements on a
+known-ground-truth target put the official recipe *behind* the shipped one.
+
+## What this lane did NOT screen
+
+The fleet-diff receipt lists nine differences between the official reference and
+ours. This lane screened the three sampler parameters and held the rest at ours
+in **both** arms, which is correct for a sampling-recipe screen but must be
+said plainly so nobody reads this verdict as "the official graph loses":
+
+* fp16 `UNETLoader` vs our Q5_K_M `UnetLoaderGGUF`
+* fp8-scaled `CLIPLoader` vs our Q5_K_M `CLIPLoaderGGUF`
+* untiled `VAEDecode` vs our `VAEDecodeTiled`
+* reference canvas 1280x704 x 121 frames @ 24fps vs our 832x480 x 97 @ 25fps
+* the reference's own negative prompt
+* `CreateVideo` / `SaveVideo` terminal vs our in-process decoder read
+
+Each is its own candidate lane. Several are VRAM discipline and will not be
+given up; the precision deltas are the interesting ones.
+
+**A caveat on `shift` specifically.** The shipped engine documents its value at
+[`eng_wan_ti2v.py:211`](../../ComfyUI-OldTimeRadio/nodes/_otr_video_engines/eng_wan_ti2v.py):
+*"5.0 is the 5B value (the 14B uses 8.0)"*, and the official reference pairs
+shift 8 with the 1280x704 x 121 configuration. Sigma shift interacts with
+resolution and sequence length, so this lane tested it at an operating point it
+was not authored for. That does not rescue it -- the measurements above put it
+behind at OUR operating point, which is the one that ships -- but a null for
+shift 8 here is not a null for shift 8 everywhere.
 
 ## Open follow-ups (do not reopen this lane for them)
 
-1. **No A/A control exists anywhere in the method.** Re-rendering one arm twice
-   and judging it against itself should return TIE on every seat. Until that
-   null is run, no panel result on this project has a noise floor. This is the
-   cheapest and highest-value fix and it should land before lane 2 is judged.
+1. ~~No A/A control~~ **CLOSED.** Pipeline is bit-exact; the panel returns TIE
+   on identical pixels. `tools/run_aa_control.py`, and re-run it once per lane.
 2. Admit a cell to judging only when arm-to-arm NCC at the final frame clears a
-   threshold (~0.90); below that the arms are not comparable.
+   threshold (~0.90); below that the arms are not rendering the same scene and
+   "which is better" is the wrong question.
 3. Contrast-match before judging, or ask a tonal question explicitly instead of
-   pretending judges can ignore it.
-4. Anchor crops to tracked content, not fixed pixel boxes.
-5. Give the test card continuous readouts alongside the quantized ones.
-6. Hands are the one anatomy gap across the fixture set.
+   pretending judges can ignore tone. They cannot: it feeds their counts.
+4. Anchor crops to tracked content, not fixed pixel boxes (official translates
+   +15.7px against ours at f097, so a fixed box lands on ~7% different content).
+5. Give the test card continuous readouts alongside the quantized ones, and add
+   crops for the grey wedge, colour bars and gradient -- authored but never
+   judged in this lane.
+6. Write mean and max frame-to-frame delta into `RENDER.json` per leg. One numpy
+   pass, no re-render, and every future lane gets a temporal baseline.
+7. Re-test one cell at the reference canvas (1280x704 x 121) to close the shift
+   transplant objection for good.
+8. Hands are the one anatomy gap across the fixture set.
 
 ## Provenance
 

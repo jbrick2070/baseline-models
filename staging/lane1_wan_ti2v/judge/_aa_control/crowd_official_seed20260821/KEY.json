@@ -1,0 +1,131 @@
+{
+  "control": "A/A null",
+  "files": {
+    "A_f001.png": {
+      "frame": 1,
+      "leg": "official_seed20260821",
+      "run": "run1"
+    },
+    "A_f049.png": {
+      "frame": 49,
+      "leg": "official_seed20260821",
+      "run": "run1"
+    },
+    "A_f097.png": {
+      "frame": 97,
+      "leg": "official_seed20260821",
+      "run": "run1"
+    },
+    "B_f001.png": {
+      "frame": 1,
+      "leg": "official_seed20260821_RUN2",
+      "run": "run2"
+    },
+    "B_f049.png": {
+      "frame": 49,
+      "leg": "official_seed20260821_RUN2",
+      "run": "run2"
+    },
+    "B_f097.png": {
+      "frame": 97,
+      "leg": "official_seed20260821_RUN2",
+      "run": "run2"
+    },
+    "P_f049_faces.png": {
+      "frame": 49,
+      "leg": "official_seed20260821",
+      "region": "faces",
+      "run": "run1"
+    },
+    "P_f049_meter.png": {
+      "frame": 49,
+      "leg": "official_seed20260821",
+      "region": "meter",
+      "run": "run1"
+    },
+    "P_f097_faces.png": {
+      "frame": 97,
+      "leg": "official_seed20260821",
+      "region": "faces",
+      "run": "run1"
+    },
+    "P_f097_meter.png": {
+      "frame": 97,
+      "leg": "official_seed20260821",
+      "region": "meter",
+      "run": "run1"
+    },
+    "Q_f049_faces.png": {
+      "frame": 49,
+      "leg": "official_seed20260821_RUN2",
+      "region": "faces",
+      "run": "run2"
+    },
+    "Q_f049_meter.png": {
+      "frame": 49,
+      "leg": "official_seed20260821_RUN2",
+      "region": "meter",
+      "run": "run2"
+    },
+    "Q_f097_faces.png": {
+      "frame": 97,
+      "leg": "official_seed20260821_RUN2",
+      "region": "faces",
+      "run": "run2"
+    },
+    "Q_f097_meter.png": {
+      "frame": 97,
+      "leg": "official_seed20260821_RUN2",
+      "region": "meter",
+      "run": "run2"
+    },
+    "X_f001.png": {
+      "frame": 1,
+      "leg": "official_seed20260821_RUN2",
+      "run": "run2"
+    },
+    "X_f049.png": {
+      "frame": 49,
+      "leg": "official_seed20260821_RUN2",
+      "run": "run2"
+    },
+    "X_f097.png": {
+      "frame": 97,
+      "leg": "official_seed20260821_RUN2",
+      "run": "run2"
+    },
+    "Y_f001.png": {
+      "frame": 1,
+      "leg": "official_seed20260821",
+      "run": "run1"
+    },
+    "Y_f049.png": {
+      "frame": 49,
+      "leg": "official_seed20260821",
+      "run": "run1"
+    },
+    "Y_f097.png": {
+      "frame": 97,
+      "leg": "official_seed20260821",
+      "run": "run1"
+    }
+  },
+  "legs": {
+    "run1": "official_seed20260821",
+    "run2": "official_seed20260821_RUN2"
+  },
+  "seats": {
+    "seat1_full": {
+      "run1": "A",
+      "run2": "B"
+    },
+    "seat2_full": {
+      "run1": "Y",
+      "run2": "X"
+    },
+    "seat3_crops": {
+      "run1": "P",
+      "run2": "Q"
+    }
+  }
+}
