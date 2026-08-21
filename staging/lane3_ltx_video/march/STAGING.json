@@ -1,0 +1,24 @@
+{
+  "arm_sha256": {
+    "half": "8ed11739db628d5ccc2940faffada56e18fd10ba7fd1186c83437045754b2f11",
+    "ours": "81c18ce0a6a81b2dc12a53d0a03542202c3b40d111d95dc14864dd005eeb8683"
+  },
+  "bound": "official pairs 0.5 with the download-gated rank-111 LoRA; this lane tests strength on OUR file only",
+  "declared_contrast": {
+    "lora.strength_model": 0.5
+  },
+  "engine": "eng_ltx_video",
+  "fixture": "march",
+  "lane": "lane3_ltx_video",
+  "prompt": "A 1950s marching band parades left to right across the frame down a small-town main street, five brass players in red uniforms swinging their arms in step, a drum major twirling a baton out front, onlookers waving from the sidewalk, bright afternoon light, the camera holds position as the band crosses",
+  "role": "MOTION-demanding (the axis lane 2 could not test)",
+  "same_lora_file_both_arms": "ltxv\\ltx2\\ltx-2.3-22b-distilled-lora-384-1.1.safetensors",
+  "shared_adapts": [
+    {
+      "engine_authors": "_SigmasFromValues (local class, values list)",
+      "node": "sigmas",
+      "staged_as": "ManualSigmas (registered), comma-joined string",
+      "why": "Bible 12.122; the lane 2 refine_sigmas precedent"
+    }
+  ]
+}

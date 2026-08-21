@@ -1,0 +1,67 @@
+{
+  "arm_sha256": {
+    "march": {
+      "half": "8ed11739db628d5ccc2940faffada56e18fd10ba7fd1186c83437045754b2f11",
+      "ours": "81c18ce0a6a81b2dc12a53d0a03542202c3b40d111d95dc14864dd005eeb8683"
+    },
+    "portrait": {
+      "half": "ec82c1cdfd34d73c7fca6ae0fefe05a16da763650373fb1aee8360f898d5da2b",
+      "ours": "3835561a973c686439457547bcac4ad91197a381f83533f201d4ca09da1e9277"
+    },
+    "radio": {
+      "half": "4ad3004b7c3afde671178b59768f5d23a8a8963a40cb897288eb839f50ab1e56",
+      "ours": "682231dbd308e345c46478c80a4106fc9f9cbebfeb97b2c5208a5e7613bb5c5b"
+    }
+  },
+  "declared_contrast": {
+    "lora.strength_model": 0.5
+  },
+  "engine": "eng_ltx_video",
+  "fixtures": {
+    "march": {
+      "output_subdir": "march",
+      "role": "MOTION-demanding (the axis lane 2 could not test)"
+    },
+    "portrait": {
+      "output_subdir": "portrait",
+      "role": "coherence / facial detail (near-static subject)"
+    },
+    "radio": {
+      "output_subdir": "radio",
+      "role": "countable fine structure (tubes, dials, grille)"
+    }
+  },
+  "lane": "lane3_ltx_video",
+  "provenance": {
+    "allowed_local_nodes": [
+      "sigmas"
+    ],
+    "builder_fixture_plan": {
+      "audio_path": "diffomatic.wav",
+      "init_image": "diffomatic.png",
+      "negative_prompt": "",
+      "seed": 42,
+      "target_frame_count": 97,
+      "text_prompt": "a vintage radio broadcast scene, subtle natural motion"
+    },
+    "builder_signature": "(plan, length, width, height)",
+    "engine_class": "LtxVideoEngine",
+    "engine_id": "ltx_video",
+    "engine_module": "nodes._otr_video_engines.eng_ltx_video",
+    "render_canvas": [
+      1024,
+      576
+    ]
+  },
+  "verdict_matrix": {
+    "coherence_hold_plus_material_gain": "candidate WIN -> refutation panel",
+    "motion_collapse": "if either arm fails to produce the demanded march motion, that is a countable finding on that arm, judged by temporal receipts AND seats",
+    "notes": [
+      "No conditioning still exists on a t2v lane, so 12.121's input-purity receipt reduces to: the prompt is the only shared input, identical in both arms, and each fixture's questions ask only about content the prompt itself demands.",
+      "Expected knob axis: LoRA strength trades detail against overcooking. Questions count resolvable structure and defects, never 'prettier'.",
+      "Arm-to-arm NCC is a divergence flag only; a t2v pair at different LoRA strengths may legitimately compose different scenes from the same seed -- if scenes diverge fully, seats judge each arm against the PROMPT's countable demands rather than against each other."
+    ],
+    "null_at_shipping_output": "LOSS for the candidate; shipped 0.7 stands",
+    "structural_regression": "an arm with materially more structural defects (melted faces, broken limbs, collapsed objects) LOSES regardless of sharpness"
+  }
+}

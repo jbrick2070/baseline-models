@@ -1,0 +1,24 @@
+{
+  "arm_sha256": {
+    "half": "ec82c1cdfd34d73c7fca6ae0fefe05a16da763650373fb1aee8360f898d5da2b",
+    "ours": "3835561a973c686439457547bcac4ad91197a381f83533f201d4ca09da1e9277"
+  },
+  "bound": "official pairs 0.5 with the download-gated rank-111 LoRA; this lane tests strength on OUR file only",
+  "declared_contrast": {
+    "lora.strength_model": 0.5
+  },
+  "engine": "eng_ltx_video",
+  "fixture": "portrait",
+  "lane": "lane3_ltx_video",
+  "prompt": "1950s cinematic close-up of a radio announcer at a chrome microphone, warm tungsten key light, tweed jacket and striped tie, he speaks calmly into the microphone with small natural head movements, shallow depth of field, single continuous shot",
+  "role": "coherence / facial detail (near-static subject)",
+  "same_lora_file_both_arms": "ltxv\\ltx2\\ltx-2.3-22b-distilled-lora-384-1.1.safetensors",
+  "shared_adapts": [
+    {
+      "engine_authors": "_SigmasFromValues (local class, values list)",
+      "node": "sigmas",
+      "staged_as": "ManualSigmas (registered), comma-joined string",
+      "why": "Bible 12.122; the lane 2 refine_sigmas precedent"
+    }
+  ]
+}

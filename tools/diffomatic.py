@@ -882,7 +882,8 @@ def _api_inputs(inputs: dict) -> dict:
     return out
 
 
-def build_api_graph(identifier: str, otr_root: str = OTR_ROOT) -> tuple[dict, dict]:
+def build_api_graph(identifier: str, otr_root: str = OTR_ROOT,
+                    allow_local: frozenset = frozenset()) -> tuple[dict, dict]:
     """The engine's OWN graph in ComfyUI API form, literals and wires intact.
 
     ``_build_engine_graph`` answers "what does this engine DIFF like": it
@@ -908,11 +909,20 @@ def build_api_graph(identifier: str, otr_root: str = OTR_ROOT) -> tuple[dict, di
             if logical in mapping:
                 class_type = mapping[logical][0]
             elif logical in internal:
-                raise UnsupportedGraphError(
-                    f"{identifier}: node {node_id!r} resolves to local class "
-                    f"{internal[logical]!r}, which is not a registered ComfyUI "
-                    "node and cannot be submitted over the API"
-                )
+                if str(node_id) in allow_local:
+                    # Explicit opt-in: the caller has DECLARED it will replace
+                    # this node with a registered equivalent before submitting
+                    # (the documented-ADAPT pattern, e.g. _SigmasFromValues ->
+                    # ManualSigmas). The local name is emitted so a forgotten
+                    # replacement still fails loudly at the server, and the
+                    # provenance records the debt.
+                    class_type = internal[logical]
+                else:
+                    raise UnsupportedGraphError(
+                        f"{identifier}: node {node_id!r} resolves to local class "
+                        f"{internal[logical]!r}, which is not a registered ComfyUI "
+                        "node and cannot be submitted over the API"
+                    )
             elif logical in declared:
                 class_type = logical
             else:
@@ -939,6 +949,8 @@ def build_api_graph(identifier: str, otr_root: str = OTR_ROOT) -> tuple[dict, di
             "builder_signature": str(inspect.signature(engine._build_graph)),
             "builder_fixture_plan": copy.deepcopy(fixture["plan"]),
         }
+        if allow_local:
+            provenance["allowed_local_nodes"] = sorted(allow_local)
     return api, provenance
 
 
