@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import argparse
 import ast
+import copy
 import functools
 import hashlib
 import importlib
@@ -747,7 +748,16 @@ def _normalise_dynamic_graph(engine, graph: dict) -> LoadedGraph:
     )
 
 
-def _build_engine_graph(identifier: str, otr_root: str = OTR_ROOT) -> LoadedGraph:
+@contextmanager
+def resolved_engine(identifier: str, otr_root: str = OTR_ROOT):
+    """Yield the ONE registered OTR engine an identifier names.
+
+    Engine resolution lives here alone so the differ, the fleet sweep and the
+    A/B staging lanes all reach the same adapter by the same evidence; a second
+    copy of this lookup is a second answer waiting to drift.  The engine is
+    yielded INSIDE the isolated-import context because its module graph only
+    exists while OTR owns the top-level ``nodes`` package.
+    """
     match = _ENGINE_ID.fullmatch(identifier or "")
     if not match:
         raise UnsupportedGraphError(f"invalid OTR engine identifier {identifier!r}")
@@ -791,8 +801,110 @@ def _build_engine_graph(identifier: str, otr_root: str = OTR_ROOT) -> LoadedGrap
                 detail = "identifier exists in both video and image registries"
             raise UnsupportedGraphError(f"{identifier}: {detail}")
         _kind, engine = hits[0]
+        yield engine
+
+
+def _build_engine_graph(identifier: str, otr_root: str = OTR_ROOT) -> LoadedGraph:
+    with resolved_engine(identifier, otr_root) as engine:
         graph, _fixture = _invoke_graph_builder(engine)
         return _normalise_dynamic_graph(engine, graph)
+
+
+def _is_wire(value: Any) -> bool:
+    """A graph edge, distinguished from a literal two-item list by its TYPE.
+
+    OTR's ``wrapper_bridge.Wire`` is a 2-tuple subclass ``(src, slot)`` and the
+    bridge itself checks it before any generic tuple; this mirrors that rule so
+    a literal ``["a", 0]`` parameter is never mistaken for wiring.
+    """
+    return (
+        isinstance(value, tuple)
+        and type(value) is not tuple
+        and len(value) == 2
+        and isinstance(value[0], str)
+        and isinstance(value[1], int)
+        and not isinstance(value[1], bool)
+    )
+
+
+def _api_value(value: Any):
+    """Convert one builder input into JSON-native ComfyUI API form.
+
+    This exists INSTEAD of ``copy.deepcopy``.  ``Wire`` subclasses ``tuple``
+    while taking two constructor arguments, so it inherits
+    ``tuple.__getnewargs__`` and a deep copy rebuilds it as ``Wire(('pos', 0))``
+    -- the whole wire slides into the ``src`` slot and comes back nested as
+    ``(('pos', 0), 0)``.  The copy still walks, indexes and serialises like a
+    wire, so the corruption is silent and lands as an unresolvable link at
+    submit time.  Converting explicitly avoids the copy entirely.
+    """
+    if _is_wire(value):
+        return [str(value[0]), int(value[1])]
+    if isinstance(value, dict):
+        return {str(k): _api_value(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_api_value(item) for item in value]
+    return value
+
+
+def build_api_graph(identifier: str, otr_root: str = OTR_ROOT) -> tuple[dict, dict]:
+    """The engine's OWN graph in ComfyUI API form, literals and wires intact.
+
+    ``_build_engine_graph`` answers "what does this engine DIFF like": it
+    flattens params to dotted comparison keys, drops empty containers and lifts
+    wires out into ``edges``.  Every one of those is lossy for EXECUTION, so an
+    A/B arm rebuilt from a ``LoadedGraph`` would carry quietly altered literals.
+    This reads the raw builder output instead and changes exactly one thing --
+    the logical class token becomes the concrete node class the engine's own
+    ``_node_candidates`` declares.
+
+    Fails closed on a node the engine implements as a LOCAL Python class (the
+    LTX sigma injectors): nothing is registered behind those, so emitting one
+    would stage an arm that cannot execute over the HTTP API.
+    """
+    with resolved_engine(identifier, otr_root) as engine:
+        raw, fixture = _invoke_graph_builder(engine)
+        mapping = _candidate_map(engine)
+        internal = _internal_class_map(engine)
+        declared = {name for choices in mapping.values() for name in choices}
+        api = {}
+        for node_id, node in raw.items():
+            logical = node.get("class")
+            if logical in mapping:
+                class_type = mapping[logical][0]
+            elif logical in internal:
+                raise UnsupportedGraphError(
+                    f"{identifier}: node {node_id!r} resolves to local class "
+                    f"{internal[logical]!r}, which is not a registered ComfyUI "
+                    "node and cannot be submitted over the API"
+                )
+            elif logical in declared:
+                class_type = logical
+            else:
+                raise UnsupportedGraphError(
+                    f"{identifier}: node {node_id!r} uses logical class "
+                    f"{logical!r}, absent from the engine's _node_candidates"
+                )
+            inputs = node.get("inputs") or {}
+            if not isinstance(inputs, dict):
+                raise UnsupportedGraphError(
+                    f"{identifier}: node {node_id!r} inputs are "
+                    f"{type(inputs).__name__}, not a dict"
+                )
+            api[str(node_id)] = {
+                "class_type": class_type,
+                "inputs": {k: _api_value(v) for k, v in inputs.items()},
+            }
+        width, height = _declared_canvas(engine)
+        provenance = {
+            "engine_id": str(getattr(engine, "name", type(engine).__name__)),
+            "engine_class": type(engine).__name__,
+            "engine_module": type(engine).__module__,
+            "render_canvas": [width, height],
+            "builder_signature": str(inspect.signature(engine._build_graph)),
+            "builder_fixture_plan": copy.deepcopy(fixture["plan"]),
+        }
+    return api, provenance
 
 
 _LEGACY_WIDGET_TYPES = {"INT", "FLOAT", "STRING", "BOOLEAN", "COMBO"}
