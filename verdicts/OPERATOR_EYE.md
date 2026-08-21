@@ -65,6 +65,51 @@ the seat the method reserved as final.
   eye and the instrument are pointing at different cells, so neither
   corroborates the other here.
 
+## ADDENDUM -- the operator returned to a SKIPPED segment with a specific defect
+
+After submitting his calls the operator went back to segment 15
+(**lane 3 march seed 20260821**, which he had SKIPPED) and pointed at the RIGHT
+panel: *"drum is by itself, no person playing it."* lane 3 march is
+`LEFT=half, RIGHT=ours`, so he was pointing at the **SHIPPED 0.70 arm**.
+
+**Verified by the driver at native pixels, both arms, same seed, same frame:**
+
+* `ours_seed20260821/frame_00049_.png` -- four bandsmen, **all four playing
+  trumpets**, and the snare drum floating at waist height between the first two
+  with no carrier: no straps, no arms on it, no drummer. An orphan object.
+* `ours_seed20260821/frame_00097_.png` -- the drum is still there with a
+  partially formed red figure behind it, half-attached rather than carried.
+* `half_seed20260821/frame_00049_.png` -- the drum is **carried by a
+  red-uniformed bandsman with visible hands on it**.
+
+**This is a third independent convergence on the same observation.** Blinded
+seat1 recorded it for this exact cell -- "its snare drum is carried and played
+by a visible drummer in every frame, while A's drum floats with no carrier in
+two of three frames -- an at-a-glance orphan object" -- and the KEY for
+march/seed20260821 makes seat1's A the `ours` arm. The seat, the operator's
+eye, and the frames agree.
+
+**What it changes.** Not the verdict: this cell already voted `half` in the
+tally (march 3-3), so the finding is counted, and the candidate still showed no
+material gain overall. What it does is finish off the driver's withdrawn strip
+read. That read claimed "ours plays its instruments (trumpets raised, snare
+carried), half mostly carries horns at its sides." The critic showed the seats
+contradicted it at seed 42; the operator has now contradicted it at seed
+20260821, on the very detail it asserted. The claim was wrong at BOTH seeds and
+its withdrawal is correct at both.
+
+**What it does NOT license, and this bound is load-bearing.** It is ONE cell of
+ONE lane, on a t2v lane where the arms legitimately compose different scenes
+from the same seed (arm-to-arm NCC 0.2587 here -- essentially uncorrelated), so
+an orphan object in one arm is substantially scene luck rather than a proven
+property of the strength value. **And it is on the TEXT-ONLY path, which
+production does not use by default** (`OTR_ENABLE_LTX_I2V` defaults to `"1"`).
+So it is not evidence that shipped episodes carry orphan objects. It IS a
+concrete reason to look for structural defects on the i2v path when lane 5
+runs -- an operator-visible orphan object is exactly the class of defect that
+would embarrass a published episode, and nobody has yet looked for it on the
+path production actually renders.
+
 ## Bound
 
 Four skipped segments (lane 1 crowd/42, lane 1 officer/20260821, lane 2
