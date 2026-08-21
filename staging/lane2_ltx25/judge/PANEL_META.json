@@ -1,0 +1,12 @@
+{
+  "errors": 0,
+  "judge_model": "workflow agents inherit the session model; the session was set to claude-fable-5 when this panel launched",
+  "prompts": "PANEL_PROMPTS.js (the exact workflow script, questions inline)",
+  "references": {
+    "crowd": "lane1_crowd.png",
+    "officer": "portrait_16_9.png",
+    "testcard": "lane1_testcard.png"
+  },
+  "run_id": "wf_4d925968-580",
+  "seats": 18
+}

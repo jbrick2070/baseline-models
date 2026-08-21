@@ -37,9 +37,20 @@ arm difference below is 100% the anchor knob.
 
 ## The panel
 
-18 blinded seats (3 fixtures x 2 seeds x 3 seats), per-cell label permutations
-(the lane 1 fixed-map defect is fixed and verified: 5 distinct configurations
-across cells), countable questions only, identity asked first on the officer.
+18 blinded seats (3 fixtures x 2 seeds x 3 seats), per-cell label permutations,
+countable questions only, identity asked first on the officer.
+
+**CORRECTION (completeness critic, verified by the driver):** this verdict
+first claimed the permutation fix gave "5 distinct configurations across
+cells". That number was lane 1's, measured over lane 1's eight cells, pasted
+here unchecked. Over lane 2's SIX cells the digest yields only **3 distinct
+maps, and seat1 read the soft arm first in 5 of 6 cells** -- all four of
+seat1's decided votes went to that first-read label. The permutation was
+therefore weaker than claimed. It does not change the outcome (those votes are
+marginal, in the direction the verdict already discounts, and the identity
+gate is unanimous across all seat positions), but the receipt now says what
+actually ran. `seat_plan` has been re-derived to include the lane name and
+seat index in the digest so the variation is real next lane.
 
 | | soft | ours | TIE |
 | :--- | :---: | :---: | :---: |
@@ -75,9 +86,26 @@ the fixture that matters.
   (a new conditioning still per beat); this lane tested still-to-clip
   retention. A multi-beat identity probe is a different lane.
 * This operating point only: 832x480 latent x 97 frames, the shipping canvas.
-* The expected "freer motion" benefit of 0.7 was an assumption imported from
-  an audio-driven sibling; with empty audio and modality guidance at its
-  disabled value, no seat found a countable motion advantage.
+* **The motion axis was structurally untested, not measured null (completeness
+  critic; verified).** Every fixture prompt demands stillness ("static
+  locked-off camera ... no camera move"), and the seats judged three still
+  frames per arm -- on stillness-prompted fixtures judged from stills, "no
+  motion advantage" was guaranteed regardless of the knob. The long-motion
+  fixture the driver anchor planned (and r1 accepted pending a 12.121 purity
+  receipt) was dropped without being recorded; this line is that record. The
+  driver's motion read from the temporal receipts and frame inspections:
+  officer motion is breathing-level in both arms (means 0.43-0.51), the crowd
+  walks in both arms with soft walking further, the card is static in both.
+  If the soft anchor is ever re-argued, it must be on a motion-demanding
+  fixture -- 4 legs on the existing harness.
+* **Two receipt notes from the critic, both verified:** soft's worst-case
+  temporal spikes on the officer sit at the FIRST frame pair on both seeds
+  (a start transient -- the discontinuity family r1 predicted -- where ours
+  peaks mid-clip at pairs 82/69); and two crop regions mis-framed their
+  questions (the crowd meter exits the fixed crop by f097; the card crops
+  carry no colour-bar region), so the affected counts were answered from
+  partial evidence -- including the lane's only CLEAR call. Crop regions get
+  a per-fixture overlay check next lane.
 
 ## Provenance
 

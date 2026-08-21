@@ -1,6 +1,16 @@
 {
   "control": "A/A null",
   "elapsed_s": 286.3,
+  "frame_compare": {
+    "dirs": [
+      "crowd/ours_seed42",
+      "crowd/ours_seed42_RUN2"
+    ],
+    "identical": 97,
+    "method": "sha256 per frame, run1 vs run2",
+    "note": "Added after the completeness critic observed the byte-identity claim had no receipt; the comparison itself was run at verdict time and re-run here.",
+    "total": 97
+  },
   "frame_count": 97,
   "note": "Same recipe, same seed, same graph -- only the destination differs. A panel that does not return TIE here is reading noise.",
   "output_prefix": "baseline_output/lane2_ltx25/crowd/ours_seed42_RUN2",

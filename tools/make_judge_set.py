@@ -68,19 +68,24 @@ SEAT_LABELS = {
 }
 
 
-def seat_plan(fixture: str, seed: int) -> dict:
+def seat_plan(fixture: str, seed: int, lane_name: str = "") -> dict:
     """Assign each seat a read order, varied per cell rather than fixed.
 
     Two arms admit only two orders, so one order is always used twice. The
     digest decides which seat is the odd one out and which arm leads, so the
     repeat does not land on the same seats in every cell.
     """
-    digest = hashlib.sha256(("%s|%d" % (fixture, seed)).encode("utf-8")).digest()
-    odd_seat = digest[0] % 3
-    ours_leads = bool(digest[1] & 1)
+    # The digest covers lane, fixture, seed AND seat index. The first version
+    # hashed only (fixture, seed): over lane 2's six cells that yielded 3
+    # distinct maps and left seat1 reading the candidate first in 5 of 6 --
+    # a near-constant position dressed as a permutation (completeness critic,
+    # 2026-08-21). Per-seat bytes make the variation real.
+    lane = str(lane_name)
     plan = {}
     for index, (seat, (first, second)) in enumerate(sorted(SEAT_LABELS.items())):
-        leads = not ours_leads if index == odd_seat else ours_leads
+        digest = hashlib.sha256(("%s|%s|%d|%d" % (lane, fixture, seed, index))
+                                .encode("utf-8")).digest()
+        leads = bool(digest[0] & 1)
         ours_label, candidate_label = (first, second) if leads else (second, first)
         plan[seat] = {"ours": ours_label, "candidate": candidate_label,
                       "order": [first, second],
@@ -130,7 +135,7 @@ def main(argv=None) -> int:
     key = {"fixture": fixture, "seed": seed, "legs": legs, "seats": {}, "files": {}}
     manifest = {"fixture": fixture, "seed": seed, "seats": {}}
 
-    for seat, spec in seat_plan(fixture, seed).items():
+    for seat, spec in seat_plan(fixture, seed, lane_name).items():
         seat_dir = out_dir / seat
         seat_dir.mkdir()
         shown = []
