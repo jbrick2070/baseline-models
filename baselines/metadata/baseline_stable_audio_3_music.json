@@ -1,0 +1,15 @@
+{
+  "key": "baseline_stable_audio_3_music",
+  "title": "Stable Audio 3 Small Music Synthesis Baseline",
+  "model_category": "Music",
+  "target_model": "checkpoints/stable_audio_3_small_music.safetensors",
+  "vram_estimate_gb": 3.0,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "CheckpointLoaderSimple",
+  "status": "RUNNABLE_LOCAL",
+  "upstream_source_url": "https://stability.ai/stable-audio",
+  "adaptations_applied": [
+    "Configured single-checkpoint 30s music synthesis pipeline"
+  ],
+  "link_error_count": 0
+}

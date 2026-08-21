@@ -1,0 +1,17 @@
+{
+  "key": "baseline_wan2_2_ti2v_5b",
+  "title": "Wan2.2 TI2V-5B Text+Image-to-Video GGUF Baseline",
+  "model_category": "Video",
+  "target_model": "diffusion_models/Wan2.2-TI2V-5B-Q5_K_M.gguf",
+  "vram_estimate_gb": 8.0,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "UnetLoaderGGUF",
+  "status": "RUNNABLE_LOCAL",
+  "upstream_source_url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/video_wan2_2_5B_ti2v.json",
+  "adaptations_applied": [
+    "UNETLoader: wan2.2_ti2v_5B_fp16.safetensors -> Wan2.2-TI2V-5B-Q5_K_M.gguf",
+    "Changed UNETLoader to UnetLoaderGGUF",
+    "SaveVideo output path set to baseline_output/baseline_wan2_2_ti2v_5b"
+  ],
+  "link_error_count": 0
+}

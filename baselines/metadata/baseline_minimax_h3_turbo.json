@@ -1,0 +1,16 @@
+{
+  "key": "baseline_minimax_h3_turbo",
+  "title": "MiniMax H3 Turbo Video Baseline",
+  "model_category": "Video",
+  "target_model": "diffusion_models/minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+  "vram_estimate_gb": 13.5,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "UNETLoader / MiniMax loaders",
+  "status": "RUNNABLE_LOCAL",
+  "custom_node_pack": "ComfyUI-MiniMax-H3-Turbo",
+  "upstream_source_url": "https://github.com/Comfy-Org/ComfyUI-MiniMax-H3-Turbo",
+  "adaptations_applied": [
+    "Mapped exact installed minimax_h3_fl2va_pruned_int8_convrot.safetensors"
+  ],
+  "link_error_count": 0
+}

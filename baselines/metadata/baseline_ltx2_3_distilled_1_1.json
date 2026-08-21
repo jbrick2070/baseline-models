@@ -1,0 +1,16 @@
+{
+  "key": "baseline_ltx2_3_distilled_1_1",
+  "title": "LTX-2.3 22B Distilled-1.1 GGUF Baseline",
+  "model_category": "Video",
+  "target_model": "unet/distilled-1.1/ltx-2.3-22b-distilled-1.1-Q3_K_M.gguf",
+  "vram_estimate_gb": 11.5,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "UnetLoaderGGUF",
+  "status": "RUNNABLE_LOCAL",
+  "upstream_source_url": "https://raw.githubusercontent.com/Lightricks/ComfyUI-LTXVideo/refs/heads/master/example_workflows/2.3/LTX-2.3_T2V_I2V_Single_Stage_Distilled_Full.json",
+  "adaptations_applied": [
+    "SaveVideo output path set to baseline_output/baseline_ltx2_3_distilled_1_1",
+    "SaveVideo output path set to baseline_output/baseline_ltx2_3_distilled_1_1"
+  ],
+  "link_error_count": 0
+}

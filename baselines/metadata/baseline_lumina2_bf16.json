@@ -1,0 +1,15 @@
+{
+  "key": "baseline_lumina2_bf16",
+  "title": "Lumina-Image 2.0 Text-to-Image Baseline",
+  "model_category": "Image",
+  "target_model": "diffusion_models/lumina_2_model_bf16.safetensors",
+  "vram_estimate_gb": 9.5,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "UNETLoader",
+  "status": "RUNNABLE_LOCAL",
+  "upstream_source_url": "https://github.com/Alpha-VLLM/Lumina-Image-2.0",
+  "adaptations_applied": [
+    "Mapped lumina_2_model_bf16, gemma4 text encoder, and lumina2_ae VAE"
+  ],
+  "link_error_count": 0
+}

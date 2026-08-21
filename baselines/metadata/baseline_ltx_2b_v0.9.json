@@ -1,0 +1,17 @@
+{
+  "key": "baseline_ltx_2b_v0.9",
+  "title": "LTX-Video 2B v0.9 Text-to-Video Baseline",
+  "model_category": "Video",
+  "target_model": "checkpoints/ltx-video-2b-v0.9.safetensors",
+  "vram_estimate_gb": 9.5,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "CheckpointLoaderSimple",
+  "status": "RUNNABLE_LOCAL",
+  "upstream_source_url": "https://comfyanonymous.github.io/ComfyUI_examples/ltxv/ltxv_text_to_video_0.9.5.json",
+  "adaptations_applied": [
+    "CheckpointLoaderSimple: ltx-video-2b-v0.9.5.safetensors -> ltx-video-2b-v0.9.safetensors",
+    "SaveWEBM output path set to baseline_output/baseline_ltx_2b_v0.9",
+    "SaveAnimatedWEBP output path set to baseline_output/baseline_ltx_2b_v0.9"
+  ],
+  "link_error_count": 0
+}

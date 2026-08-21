@@ -1,0 +1,16 @@
+{
+  "key": "baseline_kokorotts",
+  "title": "Kokoro-82M Fast Local TTS Baseline",
+  "model_category": "TTS",
+  "target_model": "huggingface/hub/models--hexgrad--Kokoro-82M/snapshots/f3ff3571791e39611d31c381e3a41a3af07b4987/kokoro-v1_0.pth",
+  "vram_estimate_gb": 1.5,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "KokoroTTS",
+  "status": "RUNNABLE_LOCAL",
+  "custom_node_pack": "comfyui-kokorotts",
+  "upstream_source_url": "https://github.com/danirollins/comfyui-kokorotts",
+  "adaptations_applied": [
+    "Configured direct TTS to SaveAudio pipeline"
+  ],
+  "link_error_count": 0
+}

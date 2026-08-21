@@ -1,0 +1,15 @@
+{
+  "key": "baseline_flux_dev",
+  "title": "FLUX.1 [dev] Minimal Checkpoint Baseline",
+  "model_category": "Image",
+  "target_model": "checkpoints/flux1-dev-fp8.safetensors",
+  "vram_estimate_gb": 12.5,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "CheckpointLoaderSimple",
+  "status": "RUNNABLE_LOCAL",
+  "upstream_source_url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/flux_dev_checkpoint_example.json",
+  "adaptations_applied": [
+    "SaveImage output path set to baseline_output/baseline_flux_dev"
+  ],
+  "link_error_count": 0
+}

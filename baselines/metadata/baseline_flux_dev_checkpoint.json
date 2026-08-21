@@ -1,0 +1,18 @@
+{
+  "key": "baseline_flux_dev_checkpoint",
+  "title": "FLUX.1 [dev] FP8 All-In-One Checkpoint Baseline",
+  "model_category": "Image",
+  "target_model": "checkpoints/flux1-dev-fp8.safetensors",
+  "vram_estimate_gb": 12.5,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "CheckpointLoaderSimple",
+  "status": "RUNNABLE_LOCAL",
+  "upstream_source_url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/flux_dev_checkpoint_example.json",
+  "adaptations_applied": [
+    "Configured for all-in-one flux1-dev-fp8.safetensors in checkpoints directory",
+    "FluxGuidance set to 3.5",
+    "KSampler configured with 20 steps, euler/simple, CFG 1.0",
+    "SaveImage path set to baseline_output/baseline_flux_dev_checkpoint"
+  ],
+  "link_error_count": 0
+}

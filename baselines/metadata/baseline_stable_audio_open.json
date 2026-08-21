@@ -1,0 +1,15 @@
+{
+  "key": "baseline_stable_audio_open",
+  "title": "Stable Audio Open 1.0 Soundscape & Music Baseline",
+  "model_category": "Audio",
+  "target_model": "checkpoints/stable-audio-open-1.0.safetensors",
+  "vram_estimate_gb": 5.0,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "CheckpointLoaderSimple",
+  "status": "RUNNABLE_LOCAL",
+  "upstream_source_url": "https://comfyanonymous.github.io/ComfyUI_examples/audio/",
+  "adaptations_applied": [
+    "Configured single-checkpoint audio pipeline with 47.5s latent duration"
+  ],
+  "link_error_count": 0
+}

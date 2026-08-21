@@ -1,0 +1,478 @@
+[
+  {
+    "file": "baseline_dmm_music_enhancer.json",
+    "valid_json": true,
+    "node_count": 3,
+    "link_count": 2,
+    "dangling_links": [],
+    "node_types": [
+      "DMM_MusicEnhancer",
+      "LoadAudio",
+      "SaveAudio"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": []
+  },
+  {
+    "file": "baseline_flux_dev.json",
+    "valid_json": true,
+    "node_count": 3,
+    "link_count": 1,
+    "dangling_links": [],
+    "node_types": [
+      "MarkdownNote",
+      "SaveImage",
+      "e2a55522-bf16-4d9f-a222-5b8788ef2982"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": []
+  },
+  {
+    "file": "baseline_flux_dev_checkpoint.json",
+    "valid_json": true,
+    "node_count": 8,
+    "link_count": 10,
+    "dangling_links": [],
+    "node_types": [
+      "CLIPTextEncode",
+      "CheckpointLoaderSimple",
+      "EmptySD3LatentImage",
+      "FluxGuidance",
+      "KSampler",
+      "SaveImage",
+      "VAEDecode"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": [
+      {
+        "node_id": 30,
+        "node_type": "CheckpointLoaderSimple",
+        "target": "flux1-dev-fp8.safetensors",
+        "found_on_disk": true
+      }
+    ]
+  },
+  {
+    "file": "baseline_humo_17b.json",
+    "valid_json": true,
+    "node_count": 20,
+    "link_count": 20,
+    "dangling_links": [],
+    "node_types": [
+      "AudioEncoderEncode",
+      "AudioEncoderLoader",
+      "CLIPLoader",
+      "CLIPTextEncode",
+      "CreateVideo",
+      "KSampler",
+      "LoadAudio",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "MarkdownNote",
+      "ModelSamplingSD3",
+      "RecordAudio",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAELoader",
+      "WanHuMoImageToVideo"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": [
+      {
+        "node_id": 37,
+        "node_type": "UNETLoader",
+        "target": "humo_17B_fp8_e4m3fn.safetensors",
+        "found_on_disk": true
+      }
+    ]
+  },
+  {
+    "file": "baseline_hunyuan3d_v2_mv.json",
+    "valid_json": true,
+    "node_count": 18,
+    "link_count": 21,
+    "dangling_links": [],
+    "node_types": [
+      "CLIPVisionEncode",
+      "EmptyLatentHunyuan3Dv2",
+      "Hunyuan3Dv2ConditioningMultiView",
+      "ImageOnlyCheckpointLoader",
+      "KSampler",
+      "LoadImage",
+      "MarkdownNote",
+      "ModelSamplingAuraFlow",
+      "SaveGLB",
+      "VAEDecodeHunyuan3D",
+      "VoxelToMesh"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": [
+      {
+        "node_id": 54,
+        "node_type": "ImageOnlyCheckpointLoader",
+        "target": "hunyuan3d-dit-v2-mv.safetensors",
+        "found_on_disk": true
+      }
+    ]
+  },
+  {
+    "file": "baseline_hunyuanworldmirror.json",
+    "valid_json": true,
+    "node_count": 5,
+    "link_count": 4,
+    "dangling_links": [],
+    "node_types": [
+      "HWMInference",
+      "LoadHunyuanWorldMirrorModel",
+      "LoadImage",
+      "PreprocessImagesForHWM",
+      "SavePointCloud"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": [
+      {
+        "node_id": 3,
+        "node_type": "LoadHunyuanWorldMirrorModel",
+        "target": "C:/ComfyUI-Models/WorldMirror-V2/HY-WorldMirror-2.0/model.safetensors",
+        "found_on_disk": true
+      }
+    ]
+  },
+  {
+    "file": "baseline_kokorotts.json",
+    "valid_json": true,
+    "node_count": 2,
+    "link_count": 1,
+    "dangling_links": [],
+    "node_types": [
+      "KokoroTTS",
+      "SaveAudio"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": []
+  },
+  {
+    "file": "baseline_ltx2_3_dev_t2v.json",
+    "valid_json": true,
+    "node_count": 3,
+    "link_count": 1,
+    "dangling_links": [],
+    "node_types": [
+      "MarkdownNote",
+      "SaveVideo",
+      "b94257db-cdc1-45d3-8913-ca61e782d9c1"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": []
+  },
+  {
+    "file": "baseline_ltx2_3_distilled_1_1.json",
+    "valid_json": true,
+    "node_count": 44,
+    "link_count": 60,
+    "dangling_links": [],
+    "node_types": [
+      "CFGGuider",
+      "CLIPTextEncode",
+      "CheckpointLoaderSimple",
+      "ClownSampler_Beta",
+      "CreateVideo",
+      "EmptyLTXVLatentVideo",
+      "GemmaAPITextEncode",
+      "GuiderParameters",
+      "KSamplerSelect",
+      "LTXAVTextEncoderLoader",
+      "LTXFloatToInt",
+      "LTXVAudioVAEDecode",
+      "LTXVAudioVAELoader",
+      "LTXVConcatAVLatent",
+      "LTXVConditioning",
+      "LTXVEmptyLatentAudio",
+      "LTXVImgToVideoConditionOnly",
+      "LTXVPreprocess",
+      "LTXVScheduler",
+      "LTXVSeparateAVLatent",
+      "LTXVTiledVAEDecode",
+      "LoadImage",
+      "LoraLoaderModelOnly",
+      "ManualSigmas",
+      "MultimodalGuider",
+      "PrimitiveBoolean",
+      "PrimitiveFloat",
+      "PrimitiveInt",
+      "PrimitiveString",
+      "RandomNoise",
+      "ResizeImageMaskNode",
+      "SamplerCustomAdvanced",
+      "SaveVideo"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": [
+      {
+        "node_id": 3940,
+        "node_type": "CheckpointLoaderSimple",
+        "target": "ltx-2.3-22b-dev.safetensors",
+        "found_on_disk": true
+      }
+    ]
+  },
+  {
+    "file": "baseline_ltx_2b_v0.9.json",
+    "valid_json": true,
+    "node_count": 13,
+    "link_count": 15,
+    "dangling_links": [],
+    "node_types": [
+      "CLIPLoader",
+      "CLIPTextEncode",
+      "CheckpointLoaderSimple",
+      "EmptyLTXVLatentVideo",
+      "KSamplerSelect",
+      "LTXVConditioning",
+      "LTXVScheduler",
+      "Note",
+      "SamplerCustom",
+      "SaveAnimatedWEBP",
+      "SaveWEBM",
+      "VAEDecode"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": [
+      {
+        "node_id": 44,
+        "node_type": "CheckpointLoaderSimple",
+        "target": "ltx-video-2b-v0.9.safetensors",
+        "found_on_disk": true
+      }
+    ]
+  },
+  {
+    "file": "baseline_ltx_spatial_upscaler_x2.json",
+    "valid_json": true,
+    "node_count": 7,
+    "link_count": 7,
+    "dangling_links": [],
+    "node_types": [
+      "LatentUpscaleByModel",
+      "LatentUpscaleModelLoader",
+      "LoadImage",
+      "SaveImage",
+      "VAEDecode",
+      "VAEEncode",
+      "VAELoader"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": []
+  },
+  {
+    "file": "baseline_lumina2_bf16.json",
+    "valid_json": true,
+    "node_count": 8,
+    "link_count": 7,
+    "dangling_links": [],
+    "node_types": [
+      "CLIPLoader",
+      "CLIPTextEncode",
+      "EmptySD3LatentImage",
+      "KSampler",
+      "SaveImage",
+      "UNETLoader",
+      "VAEDecode",
+      "VAELoader"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": [
+      {
+        "node_id": 1,
+        "node_type": "UNETLoader",
+        "target": "lumina_2_model_bf16.safetensors",
+        "found_on_disk": true
+      }
+    ]
+  },
+  {
+    "file": "baseline_minimax_h3_turbo.json",
+    "valid_json": true,
+    "node_count": 21,
+    "link_count": 22,
+    "dangling_links": [],
+    "node_types": [
+      "BasicGuider",
+      "BasicScheduler",
+      "CLIPLoader",
+      "ComfyMathExpression",
+      "CreateVideo",
+      "MarkdownNote",
+      "MiniMaxH3ImageToVideo",
+      "MiniMaxH3TurboLoRA",
+      "MiniMaxH3TurboSampler",
+      "PrimitiveFloat",
+      "RandomNoise",
+      "ResolutionSelector",
+      "SamplerCustomAdvanced",
+      "SaveVideo",
+      "UNETLoader",
+      "VAEDecode",
+      "VAEDecodeAudio",
+      "VAELoader"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": [
+      {
+        "node_id": 127,
+        "node_type": "UNETLoader",
+        "target": "minimax_h3_fl2va_pruned_int8_convrot.safetensors",
+        "found_on_disk": true
+      }
+    ]
+  },
+  {
+    "file": "baseline_stable_audio_3_music.json",
+    "valid_json": true,
+    "node_count": 7,
+    "link_count": 8,
+    "dangling_links": [],
+    "node_types": [
+      "CLIPTextEncode",
+      "CheckpointLoaderSimple",
+      "EmptyLatentAudio",
+      "KSampler",
+      "SaveAudio",
+      "VAEDecodeAudio"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": [
+      {
+        "node_id": 1,
+        "node_type": "CheckpointLoaderSimple",
+        "target": "stable_audio_3_small_music.safetensors",
+        "found_on_disk": true
+      }
+    ]
+  },
+  {
+    "file": "baseline_stable_audio_open.json",
+    "valid_json": true,
+    "node_count": 7,
+    "link_count": 8,
+    "dangling_links": [],
+    "node_types": [
+      "CLIPTextEncode",
+      "CheckpointLoaderSimple",
+      "EmptyLatentAudio",
+      "KSampler",
+      "SaveAudio",
+      "VAEDecodeAudio"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": [
+      {
+        "node_id": 1,
+        "node_type": "CheckpointLoaderSimple",
+        "target": "stable-audio-open-1.0.safetensors",
+        "found_on_disk": true
+      }
+    ]
+  },
+  {
+    "file": "baseline_trellis2_meshonly.json",
+    "valid_json": true,
+    "node_count": 18,
+    "link_count": 27,
+    "dangling_links": [],
+    "node_types": [
+      "Preview3D",
+      "PrimitiveInt",
+      "PrimitiveString",
+      "Trellis2DecodeLatents",
+      "Trellis2ExportMesh",
+      "Trellis2FillHolesNicelyWithMeshlib",
+      "Trellis2FillHolesWithCuMesh",
+      "Trellis2ImageCondGenerator",
+      "Trellis2LoadImageWithTransparency",
+      "Trellis2LoadModel",
+      "Trellis2MeshWithVoxelToTrimesh",
+      "Trellis2PreProcessImage",
+      "Trellis2ReconstructMeshWithQuad",
+      "Trellis2ShapeCascadeGenerator",
+      "Trellis2ShapeGenerator",
+      "Trellis2SimplifyMesh",
+      "Trellis2SparseGenerator"
+    ],
+    "missing_custom_nodes": [
+      {
+        "node": "Trellis2LoadImageWithTransparency",
+        "required_package": "ComfyUI-Trellis2"
+      }
+    ],
+    "loader_targets": []
+  },
+  {
+    "file": "baseline_wan2_2_14b_i2v.json",
+    "valid_json": true,
+    "node_count": 5,
+    "link_count": 2,
+    "dangling_links": [],
+    "node_types": [
+      "84e2cf3f-de93-40ef-ab22-b9375296917b",
+      "LoadImage",
+      "MarkdownNote",
+      "SaveVideo"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": []
+  },
+  {
+    "file": "baseline_wan2_2_ti2v_5b.json",
+    "valid_json": true,
+    "node_count": 13,
+    "link_count": 13,
+    "dangling_links": [],
+    "node_types": [
+      "CLIPLoader",
+      "CLIPTextEncode",
+      "CreateVideo",
+      "KSampler",
+      "LoadImage",
+      "MarkdownNote",
+      "ModelSamplingSD3",
+      "SaveVideo",
+      "UnetLoaderGGUF",
+      "VAEDecode",
+      "VAELoader",
+      "Wan22ImageToVideoLatent"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": [
+      {
+        "node_id": 37,
+        "node_type": "UnetLoaderGGUF",
+        "target": "Wan2.2-TI2V-5B-Q5_K_M.gguf",
+        "found_on_disk": true
+      }
+    ]
+  },
+  {
+    "file": "baseline_wanmove_480p.json",
+    "valid_json": true,
+    "node_count": 16,
+    "link_count": 13,
+    "dangling_links": [],
+    "node_types": [
+      "0ad975d5-38e9-46ed-a943-85b7c5594051",
+      "CreateVideo",
+      "GenerateTracks",
+      "ImageScale",
+      "LoadImage",
+      "MarkdownNote",
+      "PreviewImage",
+      "SaveVideo",
+      "WanMoveConcatTrack",
+      "WanMoveTracksFromCoords",
+      "WanMoveVisualizeTracks"
+    ],
+    "missing_custom_nodes": [],
+    "loader_targets": []
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "key": "baseline_hunyuanworldmirror",
+  "title": "HunyuanWorld-Mirror Universal 3D Reconstruction Baseline",
+  "model_category": "3D",
+  "target_model": "WorldMirror-V2/HY-WorldMirror-2.0/model.safetensors",
+  "vram_estimate_gb": 8.0,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "LoadHunyuanWorldMirrorModel",
+  "status": "RUNNABLE_LOCAL",
+  "custom_node_pack": "ComfyUI-HunyuanWorld-Mirror",
+  "upstream_source_url": "https://github.com/cedarconnor/ComfyUI-HunyuanWorld-Mirror",
+  "adaptations_applied": [
+    "Used absolute local path C:/ComfyUI-Models/WorldMirror-V2/HY-WorldMirror-2.0/model.safetensors to avoid remote HF downloads",
+    "Verified link type HWMIRROR_MODEL matches nodes.py",
+    "Set SavePointCloud output path to baseline_output/baseline_hunyuanworldmirror"
+  ],
+  "link_error_count": 0
+}

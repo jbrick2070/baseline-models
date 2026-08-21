@@ -1,0 +1,168 @@
+{
+  "last_node_id": 42,
+  "last_link_id": 63,
+  "nodes": [
+    {
+      "id": 35,
+      "type": "FluxGuidance",
+      "pos": [560, -10],
+      "size": [211.6, 58],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {"name": "conditioning", "type": "CONDITIONING", "link": 56}
+      ],
+      "outputs": [
+        {"name": "CONDITIONING", "type": "CONDITIONING", "links": [57], "slot_index": 0, "shape": 3}
+      ],
+      "properties": {"Node name for S&R": "FluxGuidance", "cnr_id": "comfy-core", "ver": "0.3.23"},
+      "widgets_values": [3.5]
+    },
+    {
+      "id": 33,
+      "type": "CLIPTextEncode",
+      "pos": [250, 220],
+      "size": [285.6, 88],
+      "flags": {"collapsed": true},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {"name": "clip", "type": "CLIP", "link": 54, "slot_index": 0}
+      ],
+      "outputs": [
+        {"name": "CONDITIONING", "type": "CONDITIONING", "links": [55], "slot_index": 0}
+      ],
+      "title": "CLIP Text Encode (Negative Prompt)",
+      "properties": {"Node name for S&R": "CLIPTextEncode", "cnr_id": "comfy-core", "ver": "0.3.23"},
+      "widgets_values": ["low quality, blurry, distorted, bad anatomy"],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [1100, -10],
+      "size": [210, 46],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {"name": "samples", "type": "LATENT", "link": 52},
+        {"name": "vae", "type": "VAE", "link": 62}
+      ],
+      "outputs": [
+        {"name": "IMAGE", "type": "IMAGE", "links": [9], "slot_index": 0}
+      ],
+      "properties": {"Node name for S&R": "VAEDecode", "cnr_id": "comfy-core", "ver": "0.3.23"},
+      "widgets_values": []
+    },
+    {
+      "id": 27,
+      "type": "EmptySD3LatentImage",
+      "pos": [250, 270],
+      "size": [280, 110],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {"name": "LATENT", "type": "LATENT", "links": [51], "slot_index": 0, "shape": 3}
+      ],
+      "properties": {"Node name for S&R": "EmptySD3LatentImage", "cnr_id": "comfy-core", "ver": "0.3.23"},
+      "widgets_values": [1024, 1024, 1],
+      "color": "#323",
+      "bgcolor": "#535"
+    },
+    {
+      "id": 30,
+      "type": "CheckpointLoaderSimple",
+      "pos": [-90, -10],
+      "size": [315, 98],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {"name": "MODEL", "type": "MODEL", "links": [63], "slot_index": 0, "shape": 3},
+        {"name": "CLIP", "type": "CLIP", "links": [45, 54], "slot_index": 1, "shape": 3},
+        {"name": "VAE", "type": "VAE", "links": [62], "slot_index": 2, "shape": 3}
+      ],
+      "properties": {"Node name for S&R": "CheckpointLoaderSimple", "cnr_id": "comfy-core", "ver": "0.3.23"},
+      "widgets_values": ["flux1-dev-fp8.safetensors"],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 9,
+      "type": "SaveImage",
+      "pos": [1325.2, -19.1],
+      "size": [270, 280],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {"name": "images", "type": "IMAGE", "link": 9}
+      ],
+      "outputs": [],
+      "properties": {"Node name for S&R": "SaveImage", "cnr_id": "comfy-core", "ver": "0.3.23"},
+      "widgets_values": ["baseline_output/baseline_flux_dev_checkpoint"]
+    },
+    {
+      "id": 31,
+      "type": "KSampler",
+      "pos": [790, -10],
+      "size": [280, 262],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {"name": "model", "type": "MODEL", "link": 63},
+        {"name": "positive", "type": "CONDITIONING", "link": 57},
+        {"name": "negative", "type": "CONDITIONING", "link": 55},
+        {"name": "latent_image", "type": "LATENT", "link": 51}
+      ],
+      "outputs": [
+        {"name": "LATENT", "type": "LATENT", "links": [52], "slot_index": 0, "shape": 3}
+      ],
+      "properties": {"Node name for S&R": "KSampler", "cnr_id": "comfy-core", "ver": "0.3.23"},
+      "widgets_values": [42, "randomize", 20, 1.0, "euler", "simple", 1.0]
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [250, -10],
+      "size": [285.6, 180],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {"name": "clip", "type": "CLIP", "link": 45}
+      ],
+      "outputs": [
+        {"name": "CONDITIONING", "type": "CONDITIONING", "links": [56], "slot_index": 0}
+      ],
+      "title": "CLIP Text Encode (Positive Prompt)",
+      "properties": {"Node name for S&R": "CLIPTextEncode", "cnr_id": "comfy-core", "ver": "0.3.23"},
+      "widgets_values": ["A cinematic photographic portrait, high detail, 8k"],
+      "color": "#232",
+      "bgcolor": "#353"
+    }
+  ],
+  "links": [
+    [9, 8, 0, 9, 0, "IMAGE"],
+    [45, 30, 1, 6, 0, "CLIP"],
+    [51, 27, 0, 31, 3, "LATENT"],
+    [52, 31, 0, 8, 0, "LATENT"],
+    [54, 30, 1, 33, 0, "CLIP"],
+    [55, 33, 0, 31, 2, "CONDITIONING"],
+    [56, 6, 0, 35, 0, "CONDITIONING"],
+    [57, 35, 0, 31, 1, "CONDITIONING"],
+    [62, 30, 2, 8, 1, "VAE"],
+    [63, 30, 0, 31, 0, "MODEL"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

@@ -1,0 +1,15 @@
+{
+  "key": "baseline_humo_17b",
+  "title": "HuMo 17B Video Baseline",
+  "model_category": "Video",
+  "target_model": "diffusion_models/humo_17B_fp8_e4m3fn.safetensors",
+  "vram_estimate_gb": 15.0,
+  "vram_rtx5080_sustainable": false,
+  "loader_node": "UNETLoader",
+  "status": "RUNNABLE_LOCAL",
+  "upstream_source_url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/video_humo.json",
+  "adaptations_applied": [
+    "SaveVideo output path set to baseline_output/baseline_humo_17b"
+  ],
+  "link_error_count": 0
+}

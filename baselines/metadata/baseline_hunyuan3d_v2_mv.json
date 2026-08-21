@@ -1,0 +1,16 @@
+{
+  "key": "baseline_hunyuan3d_v2_mv",
+  "title": "Hunyuan3D-2 Multiview-to-3D Baseline",
+  "model_category": "3D",
+  "target_model": "checkpoints/hunyuan3d-dit-v2-mv.safetensors",
+  "vram_estimate_gb": 11.0,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "ImageOnlyCheckpointLoader",
+  "status": "RUNNABLE_LOCAL",
+  "upstream_source_url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/3d_hunyuan3d_multiview_to_model.json",
+  "adaptations_applied": [
+    "SaveGLB output path set to baseline_output/baseline_hunyuan3d_v2_mv",
+    "ImageOnlyCheckpointLoader: hunyuan3d-dit-v2-mv_fp16.safetensors -> hunyuan3d-dit-v2-mv.safetensors"
+  ],
+  "link_error_count": 0
+}

@@ -1,0 +1,13 @@
+{
+  "key": "baseline_trellis2_meshonly",
+  "title": "Trellis2 MeshOnly 3D Baseline (Reference)",
+  "model_category": "3D",
+  "target_model": "trellis2 weights",
+  "vram_estimate_gb": 18.0,
+  "vram_rtx5080_sustainable": false,
+  "loader_node": "Trellis2ModelLoader",
+  "status": "REFERENCE_ONLY_EXCEEDS_VRAM",
+  "upstream_source_url": "https://raw.githubusercontent.com/visualbruno/ComfyUI-Trellis2/main/example_workflows/MeshOnly.json",
+  "adaptations_applied": [],
+  "link_error_count": 0
+}

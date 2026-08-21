@@ -1,0 +1,16 @@
+{
+  "key": "baseline_dmm_music_enhancer",
+  "title": "DMM Music Enhancer (MusicGen Melody Audio-to-Audio) Baseline",
+  "model_category": "Music",
+  "target_model": "musicgen_cache",
+  "vram_estimate_gb": 1.5,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "DMM_MusicEnhancer",
+  "status": "RUNNABLE_LOCAL",
+  "custom_node_pack": "DMM_MusicEnhancer",
+  "upstream_source_url": "https://github.com/jbrick2070/DMM_MusicEnhancer",
+  "adaptations_applied": [
+    "Configured audio input to MusicGen chroma-guided enhancement and output pipeline"
+  ],
+  "link_error_count": 0
+}

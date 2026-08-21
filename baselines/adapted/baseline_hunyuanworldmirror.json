@@ -1,0 +1,114 @@
+{
+  "id": "hwm-baseline-minimal",
+  "revision": 0,
+  "last_node_id": 5,
+  "last_link_id": 4,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [0, 0],
+      "size": [274, 314],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {"name": "IMAGE", "type": "IMAGE", "links": [1]},
+        {"name": "MASK", "type": "MASK", "links": null}
+      ],
+      "properties": {"Node name for S&R": "LoadImage"},
+      "widgets_values": ["example.png", "image"]
+    },
+    {
+      "id": 2,
+      "type": "PreprocessImagesForHWM",
+      "pos": [350, 0],
+      "size": [300, 106],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {"name": "images", "type": "IMAGE", "link": 1}
+      ],
+      "outputs": [
+        {"name": "IMAGE", "type": "IMAGE", "links": [2]}
+      ],
+      "properties": {"Node name for S&R": "PreprocessImagesForHWM"},
+      "widgets_values": ["crop", 518]
+    },
+    {
+      "id": 3,
+      "type": "LoadHunyuanWorldMirrorModel",
+      "pos": [0, 350],
+      "size": [300, 106],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {"name": "MODEL", "type": "HWMIRROR_MODEL", "links": [3]}
+      ],
+      "properties": {"Node name for S&R": "LoadHunyuanWorldMirrorModel"},
+      "widgets_values": ["C:/ComfyUI-Models/WorldMirror-V2/HY-WorldMirror-2.0/model.safetensors", "auto", "fp16", false]
+    },
+    {
+      "id": 4,
+      "type": "HWMInference",
+      "pos": [350, 200],
+      "size": [300, 220],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {"name": "model", "type": "HWMIRROR_MODEL", "link": 3},
+        {"name": "images", "type": "IMAGE", "link": 2}
+      ],
+      "outputs": [
+        {"name": "depth", "type": "DEPTH", "links": null},
+        {"name": "normals", "type": "NORMALS", "links": null},
+        {"name": "points3d", "type": "POINTS3D", "links": [4]},
+        {"name": "camera_poses", "type": "POSES", "links": null},
+        {"name": "camera_intrinsics", "type": "INTRINSICS", "links": null},
+        {"name": "gaussians", "type": "GAUSSIANS", "links": null},
+        {"name": "depth_conf", "type": "CONFIDENCE", "links": null},
+        {"name": "normals_conf", "type": "CONFIDENCE", "links": null},
+        {"name": "pts3d_conf", "type": "CONFIDENCE", "links": null}
+      ],
+      "properties": {"Node name for S&R": "HWMInference"},
+      "widgets_values": [-1, 16]
+    },
+    {
+      "id": 5,
+      "type": "SavePointCloud",
+      "pos": [700, 200],
+      "size": [300, 150],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {"name": "points3d", "type": "POINTS3D", "link": 4}
+      ],
+      "outputs": [
+        {"name": "filepath", "type": "STRING", "links": null}
+      ],
+      "properties": {"Node name for S&R": "SavePointCloud"},
+      "widgets_values": ["baseline_output/baseline_hunyuanworldmirror", "ply", 0.0, 1]
+    }
+  ],
+  "links": [
+    [1, 1, 0, 2, 0, "IMAGE"],
+    [2, 2, 0, 4, 1, "IMAGE"],
+    [3, 3, 0, 4, 0, "HWMIRROR_MODEL"],
+    [4, 4, 2, 5, 0, "POINTS3D"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "info": {
+      "name": "HunyuanWorld-Mirror Minimal Baseline",
+      "note": "Documented basic 3D reconstruction pipeline using ComfyUI-HunyuanWorld-Mirror custom node pack and local HY-WorldMirror-2.0 model.safetensors."
+    }
+  },
+  "version": 0.4
+}

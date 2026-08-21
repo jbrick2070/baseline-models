@@ -1,0 +1,16 @@
+{
+  "key": "baseline_wanmove_480p",
+  "title": "WanMove 480p Baseline (Reference)",
+  "model_category": "Video",
+  "target_model": "Wan21-WanMove_fp8_scaled_e4m3fn_KJ.safetensors",
+  "vram_estimate_gb": 14.0,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "UNETLoader",
+  "status": "REFERENCE_ONLY_WEIGHTS_NOT_INSTALLED",
+  "upstream_source_url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/video_wanmove_480p.json",
+  "adaptations_applied": [
+    "SaveVideo output path set to baseline_output/baseline_wanmove_480p",
+    "SaveVideo output path set to baseline_output/baseline_wanmove_480p"
+  ],
+  "link_error_count": 0
+}

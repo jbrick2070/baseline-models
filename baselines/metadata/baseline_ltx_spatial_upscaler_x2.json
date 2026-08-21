@@ -1,0 +1,15 @@
+{
+  "key": "baseline_ltx_spatial_upscaler_x2",
+  "title": "LTX 2.3 Latent Spatial 2x Upscaler Baseline",
+  "model_category": "Upscalers",
+  "target_model": "latent_upscale_models/ltx-2.3-spatial-upscaler-x2-1.1.safetensors",
+  "vram_estimate_gb": 4.0,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "LatentUpscaleModelLoader",
+  "status": "RUNNABLE_LOCAL",
+  "upstream_source_url": "https://github.com/Lightricks/ComfyUI-LTXVideo",
+  "adaptations_applied": [
+    "Configured latent space 2x upscaling using official LTX-2.3 spatial upscaler model"
+  ],
+  "link_error_count": 0
+}

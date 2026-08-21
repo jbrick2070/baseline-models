@@ -1,0 +1,15 @@
+{
+  "key": "baseline_ltx2_3_dev_t2v",
+  "title": "LTX-2.3 22B Dev Text-to-Video (Reference Source)",
+  "model_category": "Video",
+  "target_model": "unet/ltx-2.3-22b-dev-Q3_K_M.gguf",
+  "vram_estimate_gb": 12.0,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "UnetLoaderGGUF",
+  "status": "ADAPTED_FOR_GGUF",
+  "upstream_source_url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/video_ltx2_3_t2v.json",
+  "adaptations_applied": [
+    "SaveVideo output path set to baseline_output/baseline_ltx2_3_dev_t2v"
+  ],
+  "link_error_count": 0
+}

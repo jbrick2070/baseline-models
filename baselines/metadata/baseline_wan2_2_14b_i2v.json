@@ -1,0 +1,15 @@
+{
+  "key": "baseline_wan2_2_14b_i2v",
+  "title": "Wan2.2 I2V-14B Image-to-Video (Low Noise Expert) Baseline",
+  "model_category": "Video",
+  "target_model": "diffusion_models/wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors",
+  "vram_estimate_gb": 14.5,
+  "vram_rtx5080_sustainable": true,
+  "loader_node": "UNETLoader",
+  "status": "PARTIAL_EXPERT_PRESENT",
+  "upstream_source_url": "https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/video_wan2_2_14B_i2v.json",
+  "adaptations_applied": [
+    "SaveVideo output path set to baseline_output/baseline_wan2_2_14b_i2v"
+  ],
+  "link_error_count": 0
+}
