@@ -1,0 +1,173 @@
+{
+  "rows": [
+    {
+      "basis": "Every countable structural metric ties: both renders keep all 6 tube outlines intact and separate in all frames, both hold face coherence (9/11/12 coherent faces at f001/f049/f097 — the growth comes from the pull-back revealing more crowd, not from repair), and neither shows melted faces, merged heads, doubled limbs, or a clearly hallucinated object. Meter ticks were not reliably countable in any frame, so Q3 is UNKNOWN throughout. The only separation is Q6 framing drift from the reference by the final frame: A stays SLIGHT (radio and meter still fully framed, right foreground figure retained in profile), while B goes LARGE (meter cropped out of the bottom of frame, radio displaced, and both original foreground figures replaced or gone, plus one ambiguous brown mass at the right edge). Since defect counts are equal and the win rests solely on lower drift, the margin is marginal, not clear.",
+      "better_label": "A",
+      "cell": "crowd/seed20260821",
+      "identity_verdict": "N/A",
+      "maps_to": "soft",
+      "margin": "marginal",
+      "seat": "seat1_full"
+    },
+    {
+      "basis": "Structural quality is tied: both labels hold 6 intact, separate tubes in every frame, zero melted/merged faces, zero doubled limbs, zero hallucinated objects, and near-equal coherent-face counts (Y even resolves 2 more faces at f049 because more crowd members turn toward the camera). The separator is drift-linked: by the final frame Y's framing has zoomed/shifted enough to crop the tick-marked meter nearly out of frame (about 12 resolvable ticks vs 18 for X) and pushes the left foreground child out of frame, while X retains all reference content with only slight drift. Tick counts carry roughly +/-2 uncertainty from motion blur, but the ordering at f097 is robust since Y's scale is physically cropped. One question (Q3 at final frame) plus the smaller framing drift favors X; everything else is a tie, so the margin is marginal, not clear.",
+      "better_label": "X",
+      "cell": "crowd/seed20260821",
+      "identity_verdict": "N/A",
+      "maps_to": "soft",
+      "margin": "marginal",
+      "seat": "seat2_full"
+    },
+    {
+      "basis": "P wins Q1 in both frames (5 coherent faces vs 4 — Q's foreground figure turned away and its crowd morphed, removing a countable face). Q wins Q3 at f097 only (17 vs 14 ticks), and that deficit is framing drift sliding P's meter out of the crop, not tick erosion; at f049 ticks tie (~18 each, differences only at high zoom). Q2, Q4, Q5 are exact ties, including an identical hallucinated needle-streak/drip pair in both labels. Q6 is SLIGHT for both. Net: P is ahead on one countable question, Q on one, with P's face advantage present in both frames versus Q's tick advantage in one frame — a marginal edge to P, honestly close to a tie.",
+      "better_label": "P",
+      "cell": "crowd/seed20260821",
+      "identity_verdict": "N/A",
+      "maps_to": "ours",
+      "margin": "marginal",
+      "seat": "seat3_crops"
+    },
+    {
+      "basis": "The two renders are countably almost identical: coherent-face counts match frame for frame (9/7/3), all six tube outlines stay intact and separate in every frame of both, no melted faces, merged heads, or doubled limbs were found in either, and both drift LARGE by f097 via the same progressive pull-back that pushes the meter out of frame. The only countable differences favoring A: B_f049 contains one probable hallucinated object (a rimmed drum/hat-like shape at bottom-left not present in the reference) while A has zero hallucinations across all frames, and B's final frame is pulled back slightly further from the reference framing than A's. A one-object, one-notch difference is a marginal win for A, not a clear one.",
+      "better_label": "A",
+      "cell": "crowd/seed42",
+      "identity_verdict": "N/A",
+      "maps_to": "soft",
+      "margin": "marginal",
+      "seat": "seat1_full"
+    },
+    {
+      "basis": "Both renders are structurally strong and drift by comparable amounts: all 6 tube outlines survive intact in every frame of both labels, both lose the meter below the frame edge by f097, and both show SLIGHT camera drift. The one large countable gap favors X: coherent visible faces at f049 (X 7 vs Y 3) and f097 (X 4 vs Y 2) - though this is mostly Y's crowd turning away rather than melting, so it measures scene drift, not corruption. Pulling the other way, Y is marginally cleaner on pure integrity: no structural defects (X has 1 degraded edge-face at f097), no hallucinated objects (X has 1 ambiguous hat/drum shape at f049), and slightly better tick survival at f049 (17 vs 15, within counting noise). X wins the biggest countable metric; Y wins three small ones by one each. Net verdict X, but honestly marginal - a TIE reading is defensible if face visibility lost to turning-away is discounted.",
+      "better_label": "X",
+      "cell": "crowd/seed42",
+      "identity_verdict": "N/A",
+      "maps_to": "ours",
+      "margin": "marginal",
+      "seat": "seat2_full"
+    },
+    {
+      "basis": "The two labels are tied within counting noise on every metric except face coherence: tick counts (~20-21 each at f049, 0 at f097 when the meter exits both crops), tube integrity (3 intact bases each, same garbled third base), defect count (same mushy background head, same extra red needle fragments, same panel streak), and framing drift (LARGE and near-identical in both). The deciding difference is Q1: Q retains 2 structurally coherent faces at f049 and 1 coherent profile at f097 in the region where the reference shows visible faces, while P shows 0 countable coherent faces at both frames - every head has rotated away or lost its features. That difference is visible at a glance without zoom-flipping, so it is more than marginal, but it rests on a single question with all other counts equal, so the margin is clear rather than large.",
+      "better_label": "Q",
+      "cell": "crowd/seed42",
+      "identity_verdict": "N/A",
+      "maps_to": "ours",
+      "margin": "clear",
+      "seat": "seat3_crops"
+    },
+    {
+      "basis": "A and B are near-duplicate renders (inter-label RMSE 2.6-9.8 gray levels per matched frame) and every counted metric is identical: both keep the reference identity at the final frame, both show 0 structural face defects, both hold rather than drift (the monotonic pixel divergence is the shared push-in plus raw brightening, not likeness loss), both resolve 4 shoulder studs matching the reference's 2+2, and neither hallucinates an object. The only difference found anywhere is a bifurcated stud specular highlight in B visible only at 8x zoom, which rule 5 classifies as marginal at most; it does not change any count. Counts equal on all five questions gives TIE with margin none, and identity_verdict HOLD since both labels keep the same person with zero structural defects.",
+      "better_label": "TIE",
+      "cell": "officer/seed20260821",
+      "identity_verdict": "HOLD",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat1_full"
+    },
+    {
+      "basis": "Every countable metric is equal: both labels keep the reference man's likeness with zero structural defects, both show 4 resolvable studs at f097, both add zero objects, and both exhibit the identical mild pose-straightening/brightening trajectory (face-crop MAD f001-f097: X 31.3 vs Y 31.7). The renders are near pixel-identical to each other (cross-label whole-frame MAD 1.8-3.9), so no label is cleaner than the other.",
+      "better_label": "TIE",
+      "cell": "officer/seed20260821",
+      "identity_verdict": "HOLD",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat2_full"
+    },
+    {
+      "basis": "Every countable measure is equal: both labels keep the same person as the reference (Q1 YES/YES), zero structural face defects on both, both HOLD rather than drift, both resolve exactly 2 shoulder-board studs at the final frame, and neither adds a hallucinated object. The only difference found anywhere is a marginal, expression-level lid-openness change in Q at f097, which is not a defect or likeness loss and cannot break a tie on counts.",
+      "better_label": "TIE",
+      "cell": "officer/seed20260821",
+      "identity_verdict": "HOLD",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat3_crops"
+    },
+    {
+      "basis": "Every countable metric is equal: both labels keep the reference man's identity at frame 97 (verified at 2x magnification), both have zero structural face defects, both HOLD rather than drift, both resolve exactly 4 shoulder-board studs at the final frame, and neither hallucinates any object. The only visible difference is B's slightly more pursed mouth/chin shading at frame 97, which is expression motion, not a defect or likeness loss, and is visible only at high zoom - not a countable advantage for either label.",
+      "better_label": "TIE",
+      "cell": "officer/seed42",
+      "identity_verdict": "HOLD",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat1_full"
+    },
+    {
+      "basis": "Every countable answer is equal: both labels keep the same man at f097 (YES/YES), 0 structural defects each, both HOLD likeness, 4 resolvable studs each, 0 hallucinated objects each. Measured pixel evidence: X_f001 vs Y_f001 MAD 1.9 (shared start confirmed), X_f097 vs Y_f097 MAD 3.0 with p99 of 30 - a difference visible only by flipping at high zoom, hence MARGINAL territory at most; per-label drift from own first frame is 13.2 (X) vs 14.0 (Y) MAD, both from the same slow camera push-in. With identical counts and only flip-level pixel differences, TIE with margin none is the honest verdict.",
+      "better_label": "TIE",
+      "cell": "officer/seed42",
+      "identity_verdict": "HOLD",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat2_full"
+    },
+    {
+      "basis": "Every countable metric is identical: both labels keep the reference man's face structure at the final frame (Q1 YES/YES), zero structural defects on either (Q2 0/0), both hold rather than drift across the shown frames (Q3 HOLDS/HOLDS), both resolve exactly 2 shoulder-board studs at f097 (Q4 2/2), and neither hallucinates an object (Q5 0/0). The only visible P-vs-Q differences are sub-marginal texture variations (faint cheek marks in Q at f049, slightly deeper brow furrow in Q at f097) that require flipping at zoom and count nothing. Identity verdict HOLD: both labels preserve the same person with zero structural defects.",
+      "better_label": "TIE",
+      "cell": "officer/seed42",
+      "identity_verdict": "HOLD",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat3_crops"
+    },
+    {
+      "basis": "Every countable instrument ties at full score: eye-chart row 5 legible on both panels, 3px gratings separated with exact reference bar counts, all 8 colour bars present, zero distinct hallucinated blobs - in all six frames. A wins only on tie-breaks measured from raw pixels: (1) temporal stability against the nothing-moves prompt - A's f001->f049 settle changed 11,021 px by >48 levels vs B's 21,362, with the same near-static tail after f049; (2) first-frame finest-grating contrast - 3px modulation 180/190 (L/D) for A vs 160/166 for B; (3) B carries one extra marginal smear streak under the light-panel 3px label. No count differs by even one step, and the differences are visible only at high zoom or by flipping, so the margin is marginal, not clear.",
+      "better_label": "A",
+      "cell": "testcard/seed20260821",
+      "identity_verdict": "N/A",
+      "maps_to": "soft",
+      "margin": "marginal",
+      "seat": "seat1_full"
+    },
+    {
+      "basis": "Every countable answer is identical between the labels: both keep eye-chart rows 1-5 legible on both panels in all three frames, both hold grating separation down to the 3px group on both panels (verified by scanline modulation and bar-edge counts, not just eyeballing), both keep all 8 colour bars distinct, and neither adds a single hallucinated blob (block-diff against the 2x-upscaled reference found nothing outside the grating strip). Both exhibit the same mild one-time contrast settle between f001 and f049 and are then static. The only differences are sub-count and flip-at-zoom class: X's first frame is marginally crisper on the finest gratings (3px range 198-201 vs Y's 176-180) and its temporal settle is slightly smaller (p99 42 vs 54), while X deviates slightly more from the reference in the light 4px group at f049/f097. Since the counts are equal on every question, the honest verdict is TIE with margin none; if forced beyond the counts, X holds frame-1 fidelity marginally better, which is a MARGINAL difference by rule 5.",
+      "better_label": "TIE",
+      "cell": "testcard/seed20260821",
+      "identity_verdict": "N/A",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat2_full"
+    },
+    {
+      "basis": "All scored counts are identical between P and Q: eye-chart rows 5/5 on both panels in both frames, gratings separated down to 3px on both panels in both frames, 0 hallucinated blobs, no qualifying inter-frame motion for either label. Q5 is UNKNOWN for every cell because no colour-bar crop was provided. The sole pixel-visible difference at native zoom is grating pitch-label text fidelity: P's dark-panel labels stay legible as the reference's 16px/12px/8px/6px in both frames, while Q's dark-panel labels are corrupted (reading roughly 15px/13px/Bpx/Epx) in both frames; light-panel labels are about equally degraded in both labels. That is a cleanliness edge to P, but a marginal one — on the seven scored questions alone this is a dead tie.",
+      "better_label": "P",
+      "cell": "testcard/seed20260821",
+      "identity_verdict": "N/A",
+      "maps_to": "ours",
+      "margin": "marginal",
+      "seat": "seat3_crops"
+    },
+    {
+      "basis": "Every asked count is identical between A and B: eye charts fully legible to row 5 on both panels in all six frames, gratings separated down to 3px on both panels in all six frames, all 8 colour bars present, zero distinct hallucinated blobs (only a faint horizontal seam across the light grating strip, present identically in both labels, not counted). Both labels answer YES on Q7 with the same character of motion: a settle between f001 and f049 (edge breathing plus visible 4px/3px grating shimmer and warping of the tiny pitch-label glyphs), then near-total stasis f049 to f097. The sole difference is drift magnitude, measured on raw pixels: A changed 30,431 px (diff>32) over f001-f049 versus B's 51,558 px, about 1.7x more drift in B; per-frame flip viewing shows this only at high zoom, so per rule 5 it is a marginal edge to A, not a clear one. TIE would also be defensible on the counted questions alone.",
+      "better_label": "A",
+      "cell": "testcard/seed42",
+      "identity_verdict": "N/A",
+      "maps_to": "soft",
+      "margin": "marginal",
+      "seat": "seat1_full"
+    },
+    {
+      "basis": "Every countable question ties exactly: both labels hold eye-chart row 5 on light and dark panels in all three frames, resolve gratings to 3px on both panels in all frames, keep all 8 colour bars distinct, and share the same single hallucinated artifact (a faint horizontal smear band across the mid-height of the light grating strip, absent from the reference). The tiebreaker is Q7 magnitude on a nothing-moves prompt: Y's first frame is measurably softer in the fine gratings (3px column-profile modulation 168/167 light/dark vs X's 188/192) and its f001-to-f049 settle changes about twice as many pixels as X's (3.23% vs 1.91% over threshold 32; 0.57% vs 0.31% over 64), i.e. Y drifts/sharpens more before locking in; both are then statically identical f049-f097. No whole-pixel translation in either (phase correlation 0,0); the difference is visible only at high zoom or by flipping, so per the rules it is marginal, not clear.",
+      "better_label": "X",
+      "cell": "testcard/seed42",
+      "identity_verdict": "N/A",
+      "maps_to": "soft",
+      "margin": "marginal",
+      "seat": "seat2_full"
+    },
+    {
+      "basis": "Every countable metric is equal: both labels hold full eye-chart legibility to row 5 on light and dark panels in both frames (KNORSV clearly resolved in all eight eye crops); grating stripe counts are identical (8/10/15/19/28/37 runs per band) with near-full local modulation (238-255 levels) down to the 3px band on both panels for both labels and both frames; zero hallucinated elements in any crop; and neither label shows visible inter-frame motion - a computed pixel diff between f049 and f097 finds only edge-level flicker on grating boundaries (under half a percent of pixels differing by more than 30 levels), which is not visible without differencing and is essentially the same magnitude for P and Q. The only cross-label pixel differences are slight stripe-edge phase/rendering variations in the light gratings panel, which do not change any count. Colour bars were not included in the provided crops, so Q5 is UNKNOWN for both. With every counted question tied, the honest verdict is TIE with no margin.",
+      "better_label": "TIE",
+      "cell": "testcard/seed42",
+      "identity_verdict": "N/A",
+      "maps_to": "TIE",
+      "margin": "none",
+      "seat": "seat3_crops"
+    }
+  ],
+  "run": "wf_4d925968-580",
+  "seats": 18,
+  "tally": {
+    "TIE": 8,
+    "ours": 4,
+    "soft": 6
+  }
+}

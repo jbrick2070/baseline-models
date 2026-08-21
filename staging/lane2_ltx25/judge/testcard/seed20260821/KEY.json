@@ -1,0 +1,279 @@
+{
+  "files": {
+    "A_f001.png": {
+      "arm": "soft",
+      "frame": 1,
+      "leg": "soft_seed20260821"
+    },
+    "A_f049.png": {
+      "arm": "soft",
+      "frame": 49,
+      "leg": "soft_seed20260821"
+    },
+    "A_f097.png": {
+      "arm": "soft",
+      "frame": 97,
+      "leg": "soft_seed20260821"
+    },
+    "B_f001.png": {
+      "arm": "ours",
+      "frame": 1,
+      "leg": "ours_seed20260821"
+    },
+    "B_f049.png": {
+      "arm": "ours",
+      "frame": 49,
+      "leg": "ours_seed20260821"
+    },
+    "B_f097.png": {
+      "arm": "ours",
+      "frame": 97,
+      "leg": "ours_seed20260821"
+    },
+    "P_f049_eye_dark.png": {
+      "arm": "ours",
+      "box": [
+        848,
+        516,
+        1648,
+        836
+      ],
+      "frame": 49,
+      "leg": "ours_seed20260821",
+      "region": "eye_dark"
+    },
+    "P_f049_eye_light.png": {
+      "arm": "ours",
+      "box": [
+        16,
+        516,
+        816,
+        836
+      ],
+      "frame": 49,
+      "leg": "ours_seed20260821",
+      "region": "eye_light"
+    },
+    "P_f049_gratings_dark.png": {
+      "arm": "ours",
+      "box": [
+        848,
+        416,
+        1648,
+        508
+      ],
+      "frame": 49,
+      "leg": "ours_seed20260821",
+      "region": "gratings_dark"
+    },
+    "P_f049_gratings_light.png": {
+      "arm": "ours",
+      "box": [
+        16,
+        416,
+        816,
+        508
+      ],
+      "frame": 49,
+      "leg": "ours_seed20260821",
+      "region": "gratings_light"
+    },
+    "P_f097_eye_dark.png": {
+      "arm": "ours",
+      "box": [
+        848,
+        516,
+        1648,
+        836
+      ],
+      "frame": 97,
+      "leg": "ours_seed20260821",
+      "region": "eye_dark"
+    },
+    "P_f097_eye_light.png": {
+      "arm": "ours",
+      "box": [
+        16,
+        516,
+        816,
+        836
+      ],
+      "frame": 97,
+      "leg": "ours_seed20260821",
+      "region": "eye_light"
+    },
+    "P_f097_gratings_dark.png": {
+      "arm": "ours",
+      "box": [
+        848,
+        416,
+        1648,
+        508
+      ],
+      "frame": 97,
+      "leg": "ours_seed20260821",
+      "region": "gratings_dark"
+    },
+    "P_f097_gratings_light.png": {
+      "arm": "ours",
+      "box": [
+        16,
+        416,
+        816,
+        508
+      ],
+      "frame": 97,
+      "leg": "ours_seed20260821",
+      "region": "gratings_light"
+    },
+    "Q_f049_eye_dark.png": {
+      "arm": "soft",
+      "box": [
+        848,
+        516,
+        1648,
+        836
+      ],
+      "frame": 49,
+      "leg": "soft_seed20260821",
+      "region": "eye_dark"
+    },
+    "Q_f049_eye_light.png": {
+      "arm": "soft",
+      "box": [
+        16,
+        516,
+        816,
+        836
+      ],
+      "frame": 49,
+      "leg": "soft_seed20260821",
+      "region": "eye_light"
+    },
+    "Q_f049_gratings_dark.png": {
+      "arm": "soft",
+      "box": [
+        848,
+        416,
+        1648,
+        508
+      ],
+      "frame": 49,
+      "leg": "soft_seed20260821",
+      "region": "gratings_dark"
+    },
+    "Q_f049_gratings_light.png": {
+      "arm": "soft",
+      "box": [
+        16,
+        416,
+        816,
+        508
+      ],
+      "frame": 49,
+      "leg": "soft_seed20260821",
+      "region": "gratings_light"
+    },
+    "Q_f097_eye_dark.png": {
+      "arm": "soft",
+      "box": [
+        848,
+        516,
+        1648,
+        836
+      ],
+      "frame": 97,
+      "leg": "soft_seed20260821",
+      "region": "eye_dark"
+    },
+    "Q_f097_eye_light.png": {
+      "arm": "soft",
+      "box": [
+        16,
+        516,
+        816,
+        836
+      ],
+      "frame": 97,
+      "leg": "soft_seed20260821",
+      "region": "eye_light"
+    },
+    "Q_f097_gratings_dark.png": {
+      "arm": "soft",
+      "box": [
+        848,
+        416,
+        1648,
+        508
+      ],
+      "frame": 97,
+      "leg": "soft_seed20260821",
+      "region": "gratings_dark"
+    },
+    "Q_f097_gratings_light.png": {
+      "arm": "soft",
+      "box": [
+        16,
+        416,
+        816,
+        508
+      ],
+      "frame": 97,
+      "leg": "soft_seed20260821",
+      "region": "gratings_light"
+    },
+    "X_f001.png": {
+      "arm": "soft",
+      "frame": 1,
+      "leg": "soft_seed20260821"
+    },
+    "X_f049.png": {
+      "arm": "soft",
+      "frame": 49,
+      "leg": "soft_seed20260821"
+    },
+    "X_f097.png": {
+      "arm": "soft",
+      "frame": 97,
+      "leg": "soft_seed20260821"
+    },
+    "Y_f001.png": {
+      "arm": "ours",
+      "frame": 1,
+      "leg": "ours_seed20260821"
+    },
+    "Y_f049.png": {
+      "arm": "ours",
+      "frame": 49,
+      "leg": "ours_seed20260821"
+    },
+    "Y_f097.png": {
+      "arm": "ours",
+      "frame": 97,
+      "leg": "ours_seed20260821"
+    }
+  },
+  "fixture": "testcard",
+  "legs": {
+    "ours": "ours_seed20260821",
+    "soft": "soft_seed20260821"
+  },
+  "seats": {
+    "seat1_full": {
+      "ours": "B",
+      "reads_first": "candidate",
+      "soft": "A"
+    },
+    "seat2_full": {
+      "ours": "Y",
+      "reads_first": "candidate",
+      "soft": "X"
+    },
+    "seat3_crops": {
+      "ours": "P",
+      "reads_first": "ours",
+      "soft": "Q"
+    }
+  },
+  "seed": 20260821
+}

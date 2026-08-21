@@ -1,0 +1,183 @@
+{
+  "files": {
+    "A_f001.png": {
+      "arm": "ours",
+      "frame": 1,
+      "leg": "ours_seed42"
+    },
+    "A_f049.png": {
+      "arm": "ours",
+      "frame": 49,
+      "leg": "ours_seed42"
+    },
+    "A_f097.png": {
+      "arm": "ours",
+      "frame": 97,
+      "leg": "ours_seed42"
+    },
+    "B_f001.png": {
+      "arm": "soft",
+      "frame": 1,
+      "leg": "soft_seed42"
+    },
+    "B_f049.png": {
+      "arm": "soft",
+      "frame": 49,
+      "leg": "soft_seed42"
+    },
+    "B_f097.png": {
+      "arm": "soft",
+      "frame": 97,
+      "leg": "soft_seed42"
+    },
+    "P_f049_face.png": {
+      "arm": "soft",
+      "box": [
+        432,
+        32,
+        1072,
+        672
+      ],
+      "frame": 49,
+      "leg": "soft_seed42",
+      "region": "face"
+    },
+    "P_f049_uniform.png": {
+      "arm": "soft",
+      "box": [
+        120,
+        680,
+        632,
+        936
+      ],
+      "frame": 49,
+      "leg": "soft_seed42",
+      "region": "uniform"
+    },
+    "P_f097_face.png": {
+      "arm": "soft",
+      "box": [
+        432,
+        32,
+        1072,
+        672
+      ],
+      "frame": 97,
+      "leg": "soft_seed42",
+      "region": "face"
+    },
+    "P_f097_uniform.png": {
+      "arm": "soft",
+      "box": [
+        120,
+        680,
+        632,
+        936
+      ],
+      "frame": 97,
+      "leg": "soft_seed42",
+      "region": "uniform"
+    },
+    "Q_f049_face.png": {
+      "arm": "ours",
+      "box": [
+        432,
+        32,
+        1072,
+        672
+      ],
+      "frame": 49,
+      "leg": "ours_seed42",
+      "region": "face"
+    },
+    "Q_f049_uniform.png": {
+      "arm": "ours",
+      "box": [
+        120,
+        680,
+        632,
+        936
+      ],
+      "frame": 49,
+      "leg": "ours_seed42",
+      "region": "uniform"
+    },
+    "Q_f097_face.png": {
+      "arm": "ours",
+      "box": [
+        432,
+        32,
+        1072,
+        672
+      ],
+      "frame": 97,
+      "leg": "ours_seed42",
+      "region": "face"
+    },
+    "Q_f097_uniform.png": {
+      "arm": "ours",
+      "box": [
+        120,
+        680,
+        632,
+        936
+      ],
+      "frame": 97,
+      "leg": "ours_seed42",
+      "region": "uniform"
+    },
+    "X_f001.png": {
+      "arm": "ours",
+      "frame": 1,
+      "leg": "ours_seed42"
+    },
+    "X_f049.png": {
+      "arm": "ours",
+      "frame": 49,
+      "leg": "ours_seed42"
+    },
+    "X_f097.png": {
+      "arm": "ours",
+      "frame": 97,
+      "leg": "ours_seed42"
+    },
+    "Y_f001.png": {
+      "arm": "soft",
+      "frame": 1,
+      "leg": "soft_seed42"
+    },
+    "Y_f049.png": {
+      "arm": "soft",
+      "frame": 49,
+      "leg": "soft_seed42"
+    },
+    "Y_f097.png": {
+      "arm": "soft",
+      "frame": 97,
+      "leg": "soft_seed42"
+    }
+  },
+  "fixture": "officer",
+  "legs": {
+    "ours": "ours_seed42",
+    "soft": "soft_seed42"
+  },
+  "seats": {
+    "seat1_full": {
+      "ours": "A",
+      "reads_first": "ours",
+      "soft": "B"
+    },
+    "seat2_full": {
+      "ours": "X",
+      "reads_first": "ours",
+      "soft": "Y"
+    },
+    "seat3_crops": {
+      "ours": "Q",
+      "reads_first": "candidate",
+      "soft": "P"
+    }
+  },
+  "seed": 42
+}

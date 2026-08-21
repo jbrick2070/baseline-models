@@ -1,0 +1,183 @@
+{
+  "files": {
+    "A_f001.png": {
+      "arm": "soft",
+      "frame": 1,
+      "leg": "soft_seed42"
+    },
+    "A_f049.png": {
+      "arm": "soft",
+      "frame": 49,
+      "leg": "soft_seed42"
+    },
+    "A_f097.png": {
+      "arm": "soft",
+      "frame": 97,
+      "leg": "soft_seed42"
+    },
+    "B_f001.png": {
+      "arm": "ours",
+      "frame": 1,
+      "leg": "ours_seed42"
+    },
+    "B_f049.png": {
+      "arm": "ours",
+      "frame": 49,
+      "leg": "ours_seed42"
+    },
+    "B_f097.png": {
+      "arm": "ours",
+      "frame": 97,
+      "leg": "ours_seed42"
+    },
+    "P_f049_faces.png": {
+      "arm": "soft",
+      "box": [
+        1000,
+        120,
+        1448,
+        456
+      ],
+      "frame": 49,
+      "leg": "soft_seed42",
+      "region": "faces"
+    },
+    "P_f049_meter.png": {
+      "arm": "soft",
+      "box": [
+        660,
+        808,
+        1180,
+        960
+      ],
+      "frame": 49,
+      "leg": "soft_seed42",
+      "region": "meter"
+    },
+    "P_f097_faces.png": {
+      "arm": "soft",
+      "box": [
+        1000,
+        120,
+        1448,
+        456
+      ],
+      "frame": 97,
+      "leg": "soft_seed42",
+      "region": "faces"
+    },
+    "P_f097_meter.png": {
+      "arm": "soft",
+      "box": [
+        660,
+        808,
+        1180,
+        960
+      ],
+      "frame": 97,
+      "leg": "soft_seed42",
+      "region": "meter"
+    },
+    "Q_f049_faces.png": {
+      "arm": "ours",
+      "box": [
+        1000,
+        120,
+        1448,
+        456
+      ],
+      "frame": 49,
+      "leg": "ours_seed42",
+      "region": "faces"
+    },
+    "Q_f049_meter.png": {
+      "arm": "ours",
+      "box": [
+        660,
+        808,
+        1180,
+        960
+      ],
+      "frame": 49,
+      "leg": "ours_seed42",
+      "region": "meter"
+    },
+    "Q_f097_faces.png": {
+      "arm": "ours",
+      "box": [
+        1000,
+        120,
+        1448,
+        456
+      ],
+      "frame": 97,
+      "leg": "ours_seed42",
+      "region": "faces"
+    },
+    "Q_f097_meter.png": {
+      "arm": "ours",
+      "box": [
+        660,
+        808,
+        1180,
+        960
+      ],
+      "frame": 97,
+      "leg": "ours_seed42",
+      "region": "meter"
+    },
+    "X_f001.png": {
+      "arm": "ours",
+      "frame": 1,
+      "leg": "ours_seed42"
+    },
+    "X_f049.png": {
+      "arm": "ours",
+      "frame": 49,
+      "leg": "ours_seed42"
+    },
+    "X_f097.png": {
+      "arm": "ours",
+      "frame": 97,
+      "leg": "ours_seed42"
+    },
+    "Y_f001.png": {
+      "arm": "soft",
+      "frame": 1,
+      "leg": "soft_seed42"
+    },
+    "Y_f049.png": {
+      "arm": "soft",
+      "frame": 49,
+      "leg": "soft_seed42"
+    },
+    "Y_f097.png": {
+      "arm": "soft",
+      "frame": 97,
+      "leg": "soft_seed42"
+    }
+  },
+  "fixture": "crowd",
+  "legs": {
+    "ours": "ours_seed42",
+    "soft": "soft_seed42"
+  },
+  "seats": {
+    "seat1_full": {
+      "ours": "B",
+      "reads_first": "candidate",
+      "soft": "A"
+    },
+    "seat2_full": {
+      "ours": "X",
+      "reads_first": "ours",
+      "soft": "Y"
+    },
+    "seat3_crops": {
+      "ours": "Q",
+      "reads_first": "candidate",
+      "soft": "P"
+    }
+  },
+  "seed": 42
+}

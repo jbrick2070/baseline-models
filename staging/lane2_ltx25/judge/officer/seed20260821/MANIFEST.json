@@ -1,0 +1,56 @@
+{
+  "fixture": "officer",
+  "seats": {
+    "seat1_full": {
+      "dir": "staging\\lane2_ltx25\\judge\\officer\\seed20260821\\seat1_full",
+      "files": [
+        "A_f001.png",
+        "A_f049.png",
+        "A_f097.png",
+        "B_f001.png",
+        "B_f049.png",
+        "B_f097.png"
+      ],
+      "kind": "full matched frames",
+      "read_order": [
+        "A",
+        "B"
+      ]
+    },
+    "seat2_full": {
+      "dir": "staging\\lane2_ltx25\\judge\\officer\\seed20260821\\seat2_full",
+      "files": [
+        "X_f001.png",
+        "X_f049.png",
+        "X_f097.png",
+        "Y_f001.png",
+        "Y_f049.png",
+        "Y_f097.png"
+      ],
+      "kind": "full matched frames",
+      "read_order": [
+        "X",
+        "Y"
+      ]
+    },
+    "seat3_crops": {
+      "dir": "staging\\lane2_ltx25\\judge\\officer\\seed20260821\\seat3_crops",
+      "files": [
+        "P_f049_face.png",
+        "P_f049_uniform.png",
+        "P_f097_face.png",
+        "P_f097_uniform.png",
+        "Q_f049_face.png",
+        "Q_f049_uniform.png",
+        "Q_f097_face.png",
+        "Q_f097_uniform.png"
+      ],
+      "kind": "native-pixel crops",
+      "read_order": [
+        "P",
+        "Q"
+      ]
+    }
+  },
+  "seed": 20260821
+}
