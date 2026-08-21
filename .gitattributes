@@ -1,0 +1,5 @@
+# The staged arms and their manifest are hashed evidence: ARMS.sha256 is taken
+# over the exact LF bytes on disk, so any end-of-line normalisation on checkout
+# would silently break every receipt that cites those digests.
+*.json -text
+*.sha256 -text
