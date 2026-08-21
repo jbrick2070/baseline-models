@@ -1,0 +1,68 @@
+{
+  "arm_sha256": {
+    "controlroom": {
+      "official": "0b046f0a613a950ab4adec9827ced2971f596f0cf028bcd0934bd6b2a3252bc5",
+      "ours": "54c62aa8c0220dfa3571a2576e53050b74d6c65553bb77814623f1404ad247ab"
+    },
+    "crowd": {
+      "official": "c8c4b03340ca231e8367ac6dce532fbe3bc7119461c99fa70b8b8a1734feafee",
+      "ours": "128e8a0d87f8c1e5b2f3b7e793379a0179af1eb00b5a6ff9bbc9a0fbbe6a2b04"
+    },
+    "officer": {
+      "official": "b7eae0a21a6d71d70629764ca98eed2f490d2f1bd33df74d2a913b6572be46a7",
+      "ours": "109a202f6997f9c2e932f5c73b7738d006d9def3799adb53e2c20f843914853e"
+    },
+    "testcard": {
+      "official": "52adf7c5fbc41e251dea88865040db81c145287cb6c7eda9e03af4fa655575d8",
+      "ours": "6296071f48d81cda3bde090ff483f67b6f2c9704031fb83bae4be4372e0b76b2"
+    }
+  },
+  "declared_contrast": {
+    "ksampler.sampler_name": "uni_pc",
+    "ksampler.steps": 20,
+    "modelsampling.shift": 8.0
+  },
+  "engine": "eng_wan_ti2v",
+  "fixtures": {
+    "controlroom": {
+      "image": "lane1_controlroom.png",
+      "output_subdir": "controlroom"
+    },
+    "crowd": {
+      "image": "lane1_crowd.png",
+      "output_subdir": "crowd"
+    },
+    "officer": {
+      "image": "portrait_16_9.png",
+      "output_subdir": ""
+    },
+    "testcard": {
+      "image": "lane1_testcard.png",
+      "output_subdir": "testcard"
+    }
+  },
+  "lane": "lane1_wan_ti2v",
+  "ours_recipe": {
+    "ksampler.sampler_name": "euler",
+    "ksampler.steps": 30,
+    "modelsampling.shift": 5.0
+  },
+  "provenance": {
+    "builder_fixture_plan": {
+      "audio_path": "diffomatic.wav",
+      "init_image": "diffomatic.png",
+      "negative_prompt": "",
+      "seed": 42,
+      "target_frame_count": 97,
+      "text_prompt": "a vintage radio broadcast scene, subtle natural motion"
+    },
+    "builder_signature": "(request, image_name, plan, length, width, height, external_results=None)",
+    "engine_class": "WanTi2vEngine",
+    "engine_id": "wan_ti2v",
+    "engine_module": "nodes._otr_video_engines.eng_wan_ti2v",
+    "render_canvas": [
+      832,
+      480
+    ]
+  }
+}

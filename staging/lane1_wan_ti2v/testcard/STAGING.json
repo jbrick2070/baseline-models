@@ -1,0 +1,23 @@
+{
+  "arm_sha256": {
+    "official": "52adf7c5fbc41e251dea88865040db81c145287cb6c7eda9e03af4fa655575d8",
+    "ours": "6296071f48d81cda3bde090ff483f67b6f2c9704031fb83bae4be4372e0b76b2"
+  },
+  "declared_contrast": {
+    "ksampler.sampler_name": "uni_pc",
+    "ksampler.steps": 20,
+    "modelsampling.shift": 8.0
+  },
+  "engine": "eng_wan_ti2v",
+  "fixture": "testcard",
+  "image": "lane1_testcard.png",
+  "lane": "lane1_wan_ti2v",
+  "note": "Seeds are applied identically to BOTH arms at render time; the staged arms carry the engine's own fixture seed.",
+  "ours_recipe": {
+    "ksampler.sampler_name": "euler",
+    "ksampler.steps": 30,
+    "modelsampling.shift": 5.0
+  },
+  "output_subdir": "testcard",
+  "prompt": "A 1950s broadcast test card held steady on screen: colour bars across the top, a grey step wedge, panels of geometric shapes and rows of block letters in decreasing sizes, fine line gratings, and a smooth grey gradient, perfectly flat and square to camera, only the faintest flicker and film grain, nothing moving, static locked-off camera, single continuous shot, no cut, no scene change, no camera move."
+}

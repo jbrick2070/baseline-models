@@ -1,0 +1,23 @@
+{
+  "arm_sha256": {
+    "official": "0b046f0a613a950ab4adec9827ced2971f596f0cf028bcd0934bd6b2a3252bc5",
+    "ours": "54c62aa8c0220dfa3571a2576e53050b74d6c65553bb77814623f1404ad247ab"
+  },
+  "declared_contrast": {
+    "ksampler.sampler_name": "uni_pc",
+    "ksampler.steps": 20,
+    "modelsampling.shift": 8.0
+  },
+  "engine": "eng_wan_ti2v",
+  "fixture": "controlroom",
+  "image": "lane1_controlroom.png",
+  "lane": "lane1_wan_ti2v",
+  "note": "Seeds are applied identically to BOTH arms at render time; the staged arms carry the engine's own fixture seed.",
+  "ours_recipe": {
+    "ksampler.sampler_name": "euler",
+    "ksampler.steps": 30,
+    "modelsampling.shift": 5.0
+  },
+  "output_subdir": "controlroom",
+  "prompt": "A dim 1950s underground control room in warm amber haze, two shirt-sleeved operators seated at long banks of round dials working their controls, a man in a suit standing still in the centre aisle, pendant lamps overhead, deep perspective receding to a bright glare at the far end, only subtle breathing, small hand movements at the consoles and a faint drift of haze, static locked-off camera, single continuous shot, no cut, no scene change, no camera move."
+}

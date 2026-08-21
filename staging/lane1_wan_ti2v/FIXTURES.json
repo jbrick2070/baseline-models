@@ -1,0 +1,19 @@
+{
+  "controlroom": {
+    "image": "lane1_controlroom.png",
+    "note": "letterbox cut (45/47 rows), trimmed to the 832x480 aspect",
+    "sha256": "7fdff633bbc3ca635502a63ddf4200379584b3029c3c3b4c25c9cd30d50ab044",
+    "source": "otr_wan_init_shot_b005_s1794688454_1472x832.png"
+  },
+  "crowd": {
+    "image": "lane1_crowd.png",
+    "note": "1920x1080, no letterbox; copied unmodified",
+    "sha256": "2315a59980aee687c7bdaae8f94f1039d44fec7a98e8df2322111452bc82ce75",
+    "source": "still_b013_58fcc78202cf.png"
+  },
+  "officer": {
+    "image": "portrait_16_9.png",
+    "note": "already rendered in pass 1; left exactly as staged",
+    "sha256": "4fd6479da40a215ffda4867373ad330d6d45ab4bd34ffe3ad4c0db4fce40e375"
+  }
+}

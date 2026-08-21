@@ -1,0 +1,66 @@
+{
+  "authored_at_canvas": true,
+  "colour_bars": [
+    "white",
+    "yellow",
+    "cyan",
+    "green",
+    "magenta",
+    "red",
+    "blue",
+    "black"
+  ],
+  "eye_chart_rows": [
+    {
+      "glyph_px": 38,
+      "letters": "C",
+      "row": 1
+    },
+    {
+      "glyph_px": 27,
+      "letters": "D H K",
+      "row": 2
+    },
+    {
+      "glyph_px": 19,
+      "letters": "N O R S",
+      "row": 3
+    },
+    {
+      "glyph_px": 13,
+      "letters": "V Z C D H",
+      "row": 4
+    },
+    {
+      "glyph_px": 9,
+      "letters": "K N O R S V",
+      "row": 5
+    }
+  ],
+  "grating_pitches_px": [
+    16,
+    12,
+    8,
+    6,
+    4,
+    3
+  ],
+  "grayscale_steps": 16,
+  "image": "lane1_testcard.png",
+  "note": "Sizes span the latent resolving limit (52x30 cells for this canvas) so the arms separate mid-range instead of both failing at the bottom. Sloan letters are equally legible to one another, so a failed row failed on size.",
+  "polarities": [
+    "light field",
+    "dark field"
+  ],
+  "sha256": "b4191259940f2882e9ee75d15f9a734d6f992c94800d3663db2c4b640a586053",
+  "shape_row_sizes_px": [
+    38,
+    26,
+    17,
+    11
+  ],
+  "size": [
+    832,
+    480
+  ]
+}
