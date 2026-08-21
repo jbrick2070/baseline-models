@@ -1,0 +1,54 @@
+{
+  "arm_sha256": {
+    "crowd": {
+      "official": "8cea8b4b397eb0e65311e432fbf5aefcd08a36800fd28ec0e5bc9808dae1f0ed",
+      "ours": "128e8a0d87f8c1e5b2f3b7e793379a0179af1eb00b5a6ff9bbc9a0fbbe6a2b04"
+    },
+    "testcard_motion": {
+      "official": "00d3f9591c1862076a2ff91ead05bc8b93e441ab4c1a6b552bfede065fae0386",
+      "ours": "8631cd9f44fb73a19bea9171793cb217e906c72303127acc1d18e62ce9f6cc9f"
+    }
+  },
+  "declared_contrast": {
+    "kind": "node class swap",
+    "node": "clip",
+    "official_class": "CLIPLoader",
+    "ours_class": "CLIPLoaderGGUF"
+  },
+  "engine": "eng_wan_ti2v",
+  "fixtures": {
+    "crowd": {
+      "output_subdir": "crowd",
+      "role": "hard content, countable prompt demands (faces, tubes, doorway)"
+    },
+    "testcard_motion": {
+      "output_subdir": "testcard_motion",
+      "role": "authored acuity instrument IN MOTION -- known element sizes, moving"
+    }
+  },
+  "lane": "lane4_wan_text_encoder",
+  "provenance": {
+    "builder_fixture_plan": {
+      "audio_path": "diffomatic.wav",
+      "init_image": "diffomatic.png",
+      "negative_prompt": "",
+      "seed": 42,
+      "target_frame_count": 97,
+      "text_prompt": "a vintage radio broadcast scene, subtle natural motion"
+    },
+    "builder_signature": "(request, image_name, plan, length, width, height, external_results=None)",
+    "engine_class": "WanTi2vEngine",
+    "engine_id": "wan_ti2v",
+    "engine_module": "nodes._otr_video_engines.eng_wan_ti2v",
+    "render_canvas": [
+      832,
+      480
+    ]
+  },
+  "verdict_matrix": {
+    "adherence_gain": "the encoder's own axis: does an arm deliver MORE of what the prompt names (countable objects, held geometry) -- counted per arm against the PROMPT",
+    "candidate_win": "official WINS -> refutation panel, then this becomes a QUALITY TIER proposal for boxes with headroom, never a silent swap on a 16 GB default",
+    "null_at_shipping_output": "LOSS for the candidate; the shipped GGUF encoder stands and the VRAM saving is free",
+    "structural_regression": "an arm with materially more structural defects loses regardless of sharpness"
+  }
+}

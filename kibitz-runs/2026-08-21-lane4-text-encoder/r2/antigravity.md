@@ -1,0 +1,56 @@
+VERDICT: build-ready-with-fixes. Multiple tool signature mismatches and missing configuration data will cause runtime crashes during receipt rebuilding and judge set creation.
+
+MUST-FIX BEFORE BUILD:
+1. [## Fixtures, and why these two] Running `make_judge_set.py` will crash with exit code 1 because the lane `"lane4_wan_text_encoder"` is missing from the `REGIONS` configuration in `basline-models/tools/make_judge_set.py:L47-70`. 
+   Fix: Add `"lane4_wan_text_encoder"` to `REGIONS` in `make_judge_set.py` with coordinates for `"crowd"` and `"testcard_motion"` fixtures based on `lane1_wan_ti2v` coordinates (since both use the same 832x480 resolution):
+   ```python
+   "lane4_wan_text_encoder": {
+       "crowd": [("faces", 500, 60, 224, 168), ("meter", 330, 404, 260, 76)],
+       "testcard_motion": [("eye_light", 8, 258, 400, 160), ("eye_dark", 424, 258, 400, 160),
+                            ("gratings_light", 8, 208, 400, 46),
+                            ("gratings_dark", 424, 208, 400, 46)],
+   },
+   ```
+
+2. [## Known open method debts carried in from lane 3's completeness critic] Rebuilding receipts via `rebuild_receipts.py` will crash with a `TypeError` because it calls `render_arms.build_submission` (in `rebuild_receipts.py:L62`) and `render_arms.leg_prefix` (in `rebuild_receipts.py:L121`) with four positional arguments instead of the three expected by Lane 4's `render_arms.py`.
+   Fix: In `rebuild_receipts.py`, inspect the parameter count of `build_submission` and `leg_prefix` using `inspect.signature` or check if the lane is `"lane4_wan_text_encoder"`, and conditionally call them with three arguments:
+   ```python
+   # For build_submission
+   sig = inspect.signature(render_arms.build_submission)
+   if len(sig.parameters) == 3:
+       expected = render_arms.build_submission(fixture, arm, seed)
+   else:
+       expected = render_arms.build_submission(fixture, subdir, arm, seed)
+
+   # For leg_prefix
+   sig_prefix = inspect.signature(render_arms.leg_prefix)
+   if len(sig_prefix.parameters) == 3:
+       prefix_val = render_arms.leg_prefix(fixture, "official", seed)
+   else:
+       prefix_val = render_arms.leg_prefix(fixture, subdir, "official", seed)
+   ```
+
+3. [## Why this lane exists] The rendering script `render_arms.py:L268-270` will raise a `KeyError` and crash the loop if rendering fails or produces fewer than 2 frames. When this occurs, `temporal_stats.leg_stats` returns `{"error": ...}` which does not contain the keys `"mean_abs_delta"` or `"max_abs_delta"`.
+   Fix: Check if the `"error"` key exists in the returned stats dictionary in `render_arms.py` before attempting to access delta metrics:
+   ```python
+   stats = temporal_stats.leg_stats(temporal_stats.COMFY_OUTPUT / record["subfolder"])
+   record["temporal"] = stats
+   if "error" in stats:
+       print("[TEMPORAL] %s failed: %s" % (label, stats["error"]))
+   else:
+       print("[TEMPORAL] %s mean=%.3f max=%.3f" % (label, stats["mean_abs_delta"], stats["max_abs_delta"]))
+   ```
+
+SHOULD-FIX:
+1. [## The purity-gate change this forced, and why it is the risky part] The preflight assertion in `render_arms.py:L180-189` enforces that the custom node class `ManualSigmas` must be registered on the ComfyUI server. However, neither `crowd` nor `testcard_motion` workflows in Lane 4 contain any `ManualSigmas` nodes. This creates a false-positive preflight blocker.
+   Fix: Remove the `ManualSigmas` preflight validation block from `basline-models/staging/lane4_wan_text_encoder/render_arms.py:L180-189`.
+2. [## What this plan is asking the panel] Measuring text-encoder precision (FP8 vs Q5 GGUF) on image-to-video (i2v) fixtures is highly prone to a floor effect [ASSUMPTION] because the spatial conditioning image dominates the composition, leaving little room for text encoder prompt differences to be visible.
+   Fix: Defer text-encoder precision testing to pure text-to-video (t2v) lanes or increase the prompt weight/complexity.
+3. [## Known open method debts carried in from lane 3's completeness critic] Carried-in debts 1 (duplicate seat views) and 2 (unbalanced read-orders) introduce significant statistical noise and position bias to the blind judging results.
+   Fix: Modify `make_judge_set.py` to balance ours-first and candidate-first reads, and reduce duplicate seat mappings before launching the panel.
+
+OPTIONAL / NICE-TO-HAVE:
+1. [## Known open method debts carried in from lane 3's completeness critic] Implement a programmatic check for final-frame Normalized Cross-Correlation (NCC) in `render_arms.py` (debt 4) to detect severe semantic drift between the candidate and reference arms.
+
+CUT THESE (over-engineering):
+None. The proposed scripts are minimal and target the precise differences of the text encoder swap.

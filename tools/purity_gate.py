@@ -116,6 +116,11 @@ def main(argv=None) -> int:
     parser.add_argument("--contrast", help="STAGING.json carrying declared_contrast")
     parser.add_argument("--expect", action="append", default=[],
                         help="declared delta as path=json_value")
+    parser.add_argument("--expect-class", action="append", default=[],
+                        dest="expect_class", metavar="NODE=ClassName",
+                        help="declared NODE CLASS swap at exactly one node, e.g. "
+                             "clip=CLIPLoader. Every OTHER class change still "
+                             "fails, and wiring changes still fail unconditionally.")
     args = parser.parse_args(argv)
 
     path_a, path_b = Path(args.arm_a).resolve(), Path(args.arm_b).resolve()
@@ -128,7 +133,18 @@ def main(argv=None) -> int:
     for item in args.expect:
         key, _, raw = item.partition("=")
         declared[key] = json.loads(raw)
-    if not declared:
+
+    # A declared CLASS swap is the contrast on a loader/precision lane. It stays
+    # OPT-IN and node-specific: the default remains "any class change aborts the
+    # lane", because an UNdeclared class change is exactly the uncontrolled
+    # second variable Bible 12.121 was promoted for.
+    declared_classes: dict = {}
+    for item in args.expect_class:
+        node, _, class_name = item.partition("=")
+        if not node or not class_name:
+            raise SystemExit("[FAIL] --expect-class wants NODE=ClassName, got %r" % item)
+        declared_classes[f"{node}.__class__"] = class_name
+    if not declared and not declared_classes:
         raise SystemExit("[FAIL] no declared contrast set; refusing to pass a lane blind")
 
     print(f"[ARM A] {path_a}")
@@ -155,7 +171,11 @@ def main(argv=None) -> int:
         if kind_a == "WIRE" or kind_b == "WIRE":
             failures.append(f"[FAIL] TOPOLOGY differs at {key}: {value_a!r} -> {value_b!r}")
         elif kind_a == "CLASS" or kind_b == "CLASS":
-            failures.append(f"[FAIL] NODE CLASS differs at {key}: {value_a!r} -> {value_b!r}")
+            if declared_classes.get(key) == value_b:
+                print(f"[OK]   declared CLASS swap {key}: {value_a!r} -> {value_b!r}")
+            else:
+                failures.append(
+                    f"[FAIL] NODE CLASS differs at {key}: {value_a!r} -> {value_b!r}")
         elif key not in declared:
             failures.append(f"[FAIL] UNDECLARED delta at {key}: {value_a!r} -> {value_b!r}")
         elif value_b != declared[key]:
@@ -166,6 +186,8 @@ def main(argv=None) -> int:
 
     for key in sorted(set(declared) - set(changed)):
         failures.append(f"[FAIL] declared delta {key} did not change between the arms")
+    for key in sorted(set(declared_classes) - set(changed)):
+        failures.append(f"[FAIL] declared CLASS swap {key} did not change between the arms")
 
     print(f"[COUNT] nodes A={len(graph_a)} B={len(graph_b)} | "
           f"leaves A={len(flat_a)} B={len(flat_b)} | changed={len(changed)}")
@@ -176,8 +198,11 @@ def main(argv=None) -> int:
             print(line)
         print(f"\n[PURITY GATE] FAILED -- {len(failures)} fault(s). ABORT THE LANE.")
         return 1
+    swaps = (f" plus the declared CLASS swap(s) {sorted(declared_classes)}"
+             if declared_classes else "")
     print(f"\n[PURITY GATE] PASSED -- changed-parameter set is EXACTLY "
-          f"{sorted(declared)} ({len(declared)} knob(s)); everything else is identical.")
+          f"{sorted(declared)} ({len(declared)} knob(s)){swaps}; "
+          f"everything else is identical.")
     return 0
 
 

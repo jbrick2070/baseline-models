@@ -1,0 +1,33 @@
+{
+  "arm_sha256": {
+    "official": "00d3f9591c1862076a2ff91ead05bc8b93e441ab4c1a6b552bfede065fae0386",
+    "ours": "8631cd9f44fb73a19bea9171793cb217e906c72303127acc1d18e62ce9f6cc9f"
+  },
+  "declared_contrast": {
+    "kind": "node class swap",
+    "node": "clip",
+    "official": {
+      "class_type": "CLIPLoader",
+      "inputs": {
+        "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+        "type": "wan"
+      }
+    },
+    "ours": {
+      "class_type": "CLIPLoaderGGUF",
+      "inputs": {
+        "clip_name": "umt5-xxl-encoder-Q5_K_M.gguf",
+        "type": "wan"
+      }
+    }
+  },
+  "engine": "eng_wan_ti2v",
+  "fixture": "testcard_motion",
+  "image": "lane1_testcard.png",
+  "lane": "lane4_wan_text_encoder",
+  "negative": "low quality, worst quality, blurry, distorted, static",
+  "negative_is_fixture_specific": true,
+  "prompt": "A 1950s broadcast test card filling the frame: colour bars across the top, a grey step wedge, panels of geometric shapes and rows of block letters in decreasing sizes, fine line gratings, and a smooth grey gradient. The camera drifts slowly and steadily to the left across the card at a constant rate, the card itself stays flat, square and rigid, every printed element holding its shape and sharpness as it moves, single continuous shot, no cut, no scene change, nothing warping or rippling.",
+  "role": "authored acuity instrument IN MOTION -- known element sizes, moving",
+  "wiring_note": "encoder feeds ['neg', 'pos'] in BOTH arms; any wiring delta is a staging fault"
+}
