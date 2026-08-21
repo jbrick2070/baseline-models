@@ -1,0 +1,23 @@
+{
+  "arm_sha256": {
+    "ours": "a5bb658b8a7886d2ccc0e55562ef89c9b507e28fec3c782866e4a8462306cf6f",
+    "soft": "c24e0038faaae4b1d1f8a67f25a2ca97d683eeaaf3157471ff1eb006a58f09a5"
+  },
+  "contrast_note": "two graph leaves, ONE shipping knob: both read LTX25_I2V_ANCHOR_STRENGTH (ltx25_recipe.py:223)",
+  "declared_contrast": {
+    "i2v.strength": 0.7,
+    "refine_i2v.strength": 0.7
+  },
+  "engine": "eng_ltx25",
+  "fixture": "officer",
+  "image": "portrait_16_9.png",
+  "lane": "lane2_ltx25",
+  "prompt": "1950s black and white cinematic close-up of a military officer's face, facing the camera, holding his gaze steady, only subtle breathing and a slight head movement, static locked-off camera, single continuous shot, no cut, no scene change, no camera move.",
+  "role": "identity gate (primary)",
+  "shared_adapt": {
+    "engine_emits": "CLIPLoaderGGUF",
+    "node": "te",
+    "staged_as": "CLIPLoaderGGUFCPU",
+    "why": "matches production's runtime CPU pin at eng_ltx25.py:1188; identical three-device placement, both arms, contrast untouched"
+  }
+}

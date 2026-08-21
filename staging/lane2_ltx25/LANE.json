@@ -1,0 +1,68 @@
+{
+  "arm_sha256": {
+    "crowd": {
+      "ours": "7a52ed5e30a9442b02e68ac7ac4ec7056ae4d4437495a7f08a91b9525d7424eb",
+      "soft": "4e9f82cbfb8574eb1a5a1bb1f06b028811d95c6741e146bb4a61ed3d90ab1aef"
+    },
+    "officer": {
+      "ours": "a5bb658b8a7886d2ccc0e55562ef89c9b507e28fec3c782866e4a8462306cf6f",
+      "soft": "c24e0038faaae4b1d1f8a67f25a2ca97d683eeaaf3157471ff1eb006a58f09a5"
+    },
+    "testcard": {
+      "ours": "82e406ccc53131ec7ee4fc4c2a81689cc878ff452a649c0f38d79f3d0d85b083",
+      "soft": "13150daff3f0778ad77fcd1da16a0ad6998c7f42214947b3014a8eb3b14b0ec7"
+    }
+  },
+  "declared_contrast": {
+    "i2v.strength": 0.7,
+    "refine_i2v.strength": 0.7
+  },
+  "engine": "eng_ltx25",
+  "fixtures": {
+    "crowd": {
+      "image": "lane1_crowd.png",
+      "output_subdir": "crowd",
+      "role": "multi-face stress (secondary; cannot close the identity gate)"
+    },
+    "officer": {
+      "image": "portrait_16_9.png",
+      "output_subdir": "officer",
+      "role": "identity gate (primary)"
+    },
+    "testcard": {
+      "image": "lane1_testcard.png",
+      "output_subdir": "testcard",
+      "role": "drift control (excluded from the identity gate)"
+    }
+  },
+  "lane": "lane2_ltx25",
+  "provenance": {
+    "builder_fixture_plan": {
+      "audio_path": "diffomatic.wav",
+      "init_image": "diffomatic.png",
+      "negative_prompt": "",
+      "seed": 42,
+      "target_frame_count": 97,
+      "text_prompt": "a vintage radio broadcast scene, subtle natural motion"
+    },
+    "builder_signature": "(plan, image_name, length, width, height)",
+    "engine_class": "Ltx25VideoEngine",
+    "engine_id": "ltx25_video",
+    "engine_module": "nodes._otr_video_engines.eng_ltx25",
+    "render_canvas": [
+      832,
+      480
+    ]
+  },
+  "verdict_matrix": {
+    "identity_hold_plus_material_gain": "candidate WIN -> refutation panel",
+    "identity_regression": "LOSS, regardless of any motion or stability gain",
+    "notes": [
+      "Identity is judged on RAW native-pixel face crops against the conditioning still at early/middle/final frames; contrast-normalized copies serve only secondary motion/detail questions.",
+      "Arm-to-arm NCC is a divergence FLAG on this lane, not an admission gate: the soft arm is designed to drift, so lane 1's 0.90 rule would reject the effect under test.",
+      "The expected freer-motion benefit of 0.7 is an ASSUMPTION carried from an audio-driven sibling lane; it is what the A/B tests, not a premise."
+    ],
+    "null_at_shipping_output": "LOSS (the shipped default stands)",
+    "semantic_scene_failure": "invalid cell -> fix the fixture, never a vote"
+  }
+}

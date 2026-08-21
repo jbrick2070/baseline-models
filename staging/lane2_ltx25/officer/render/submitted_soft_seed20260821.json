@@ -1,0 +1,359 @@
+{
+  "audiovae": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "ltx-2.5-audio-vae-bf16.safetensors"
+    }
+  },
+  "concat": {
+    "class_type": "LTXVConcatAVLatent",
+    "inputs": {
+      "audio_latent": [
+        "emptyaudio",
+        0
+      ],
+      "video_latent": [
+        "i2v",
+        0
+      ]
+    }
+  },
+  "cond": {
+    "class_type": "LTXVConditioning",
+    "inputs": {
+      "frame_rate": 25.0,
+      "negative": [
+        "neg",
+        0
+      ],
+      "positive": [
+        "pos",
+        0
+      ]
+    }
+  },
+  "decode": {
+    "class_type": "VAEDecodeTiled",
+    "inputs": {
+      "overlap": 64,
+      "samples": [
+        "refine_separate",
+        0
+      ],
+      "temporal_overlap": 16,
+      "temporal_size": 64,
+      "tile_size": 512,
+      "vae": [
+        "videovae",
+        0
+      ]
+    }
+  },
+  "emptyaudio": {
+    "class_type": "LTXVEmptyLatentAudio",
+    "inputs": {
+      "audio_vae": [
+        "audiovae",
+        0
+      ],
+      "batch_size": 1,
+      "frame_rate": 25.0,
+      "frames_number": 97
+    }
+  },
+  "emptylatent": {
+    "class_type": "EmptyLTXVLatentVideo",
+    "inputs": {
+      "batch_size": 1,
+      "height": 480,
+      "length": 97,
+      "width": 832
+    }
+  },
+  "guider": {
+    "class_type": "LTXVDualCFGGuider",
+    "inputs": {
+      "audio_cfg": 1.0,
+      "model": [
+        "modality",
+        0
+      ],
+      "negative": [
+        "cond",
+        1
+      ],
+      "positive": [
+        "cond",
+        0
+      ],
+      "video_cfg": 1.0
+    }
+  },
+  "i2v": {
+    "class_type": "LTXVImgToVideoInplace",
+    "inputs": {
+      "bypass": false,
+      "image": [
+        "preprocess",
+        0
+      ],
+      "latent": [
+        "emptylatent",
+        0
+      ],
+      "strength": 0.7,
+      "vae": [
+        "videovae",
+        0
+      ]
+    }
+  },
+  "ksel": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "euler_ancestral_cfg_pp"
+    }
+  },
+  "latent_upscale": {
+    "class_type": "LTXVLatentUpsampler",
+    "inputs": {
+      "samples": [
+        "separate",
+        0
+      ],
+      "upscale_model": [
+        "upscale_loader",
+        0
+      ],
+      "vae": [
+        "videovae",
+        0
+      ]
+    }
+  },
+  "loadimage": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "portrait_16_9.png"
+    }
+  },
+  "modality": {
+    "class_type": "LTXVModalityGuidance",
+    "inputs": {
+      "end_percent": 1.0,
+      "modality_scale": 1.0,
+      "model": [
+        "unet",
+        0
+      ],
+      "start_percent": 0.0
+    }
+  },
+  "neg": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "te",
+        0
+      ],
+      "text": ""
+    }
+  },
+  "noise": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 20260821
+    }
+  },
+  "pos": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "clip": [
+        "te",
+        0
+      ],
+      "text": "1950s black and white cinematic close-up of a military officer's face, facing the camera, holding his gaze steady, only subtle breathing and a slight head movement, static locked-off camera, single continuous shot, no cut, no scene change, no camera move."
+    }
+  },
+  "preprocess": {
+    "class_type": "LTXVPreprocess",
+    "inputs": {
+      "image": [
+        "resize",
+        0
+      ],
+      "img_compression": 0
+    }
+  },
+  "refine_concat": {
+    "class_type": "LTXVConcatAVLatent",
+    "inputs": {
+      "audio_latent": [
+        "separate",
+        1
+      ],
+      "video_latent": [
+        "refine_i2v",
+        0
+      ]
+    }
+  },
+  "refine_i2v": {
+    "class_type": "LTXVImgToVideoInplace",
+    "inputs": {
+      "bypass": false,
+      "image": [
+        "preprocess",
+        0
+      ],
+      "latent": [
+        "latent_upscale",
+        0
+      ],
+      "strength": 0.7,
+      "vae": [
+        "videovae",
+        0
+      ]
+    }
+  },
+  "refine_sampler": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "guider": [
+        "guider",
+        0
+      ],
+      "latent_image": [
+        "refine_concat",
+        0
+      ],
+      "noise": [
+        "noise",
+        0
+      ],
+      "sampler": [
+        "ksel",
+        0
+      ],
+      "sigmas": [
+        "refine_sigmas",
+        0
+      ]
+    }
+  },
+  "refine_separate": {
+    "class_type": "LTXVSeparateAVLatent",
+    "inputs": {
+      "av_latent": [
+        "refine_sampler",
+        0
+      ]
+    }
+  },
+  "refine_sigmas": {
+    "class_type": "ManualSigmas",
+    "inputs": {
+      "sigmas": "0.85, 0.7250, 0.4219, 0.0"
+    }
+  },
+  "resize": {
+    "class_type": "ResizeImageMaskNode",
+    "inputs": {
+      "input": [
+        "loadimage",
+        0
+      ],
+      "resize_type": {
+        "crop": "center",
+        "height": 480,
+        "resize_type": "scale dimensions",
+        "width": 832
+      },
+      "scale_method": "lanczos"
+    }
+  },
+  "sampler": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "guider": [
+        "guider",
+        0
+      ],
+      "latent_image": [
+        "concat",
+        0
+      ],
+      "noise": [
+        "noise",
+        0
+      ],
+      "sampler": [
+        "ksel",
+        0
+      ],
+      "sigmas": [
+        "sched",
+        0
+      ]
+    }
+  },
+  "save": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "baseline_output/lane2_ltx25/officer/soft_seed20260821/frame",
+      "images": [
+        "decode",
+        0
+      ]
+    }
+  },
+  "sched": {
+    "class_type": "LTXVScheduler",
+    "inputs": {
+      "base_shift": 0.95,
+      "latent": [
+        "i2v",
+        0
+      ],
+      "max_shift": 2.05,
+      "steps": 8,
+      "stretch": true,
+      "terminal": 0.1
+    }
+  },
+  "separate": {
+    "class_type": "LTXVSeparateAVLatent",
+    "inputs": {
+      "av_latent": [
+        "sampler",
+        0
+      ]
+    }
+  },
+  "te": {
+    "class_type": "CLIPLoaderGGUFCPU",
+    "inputs": {
+      "clip_name": "gemma4-12b-with-proj-ltx-2.5-Q5_K_M.gguf",
+      "type": "ltxv"
+    }
+  },
+  "unet": {
+    "class_type": "UnetLoaderGGUF",
+    "inputs": {
+      "unet_name": "LTX-2.5-Distilled-Q3_K_M.gguf"
+    }
+  },
+  "upscale_loader": {
+    "class_type": "LatentUpscaleModelLoader",
+    "inputs": {
+      "model_name": "ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors"
+    }
+  },
+  "videovae": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "ltx-2.5-video-vae-bf16.safetensors"
+    }
+  }
+}

@@ -1,0 +1,417 @@
+{
+  "arms": [
+    "ours",
+    "soft"
+  ],
+  "fixture": "crowd",
+  "fps": 25,
+  "legs": [
+    {
+      "arm": "ours",
+      "elapsed_s": 10.2,
+      "first_frame": null,
+      "fixture": "crowd",
+      "frame_count": 0,
+      "last_frame": null,
+      "leg": "crowd/ours_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "f17c979e-83bf-470d-9081-8fb47aa96609",
+            "timestamp": 1787338770429
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "f17c979e-83bf-470d-9081-8fb47aa96609",
+            "timestamp": 1787338770572
+          }
+        ],
+        [
+          "execution_error",
+          {
+            "current_inputs": {
+              "input": [
+                "tensor([[[[0.1922, 0.1176, 0.1216],\n          [0.1922, 0.1176, 0.1216],\n          [0.1961, 0.1176, 0.1137],\n          ...,\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000]],\n\n         [[0.1922, 0.1137, 0.1176],\n          [0.1922, 0.1137, 0.1176],\n          [0.1961, 0.1176, 0.1137],\n          ...,\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000]],\n\n         [[0.1961, 0.1176, 0.1216],\n          [0.1961, 0.1176, 0.1176],\n          [0.2000, 0.1176, 0.1137],\n          ...,\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000]],\n\n         ...,\n\n         [[0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          ...,\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765]],\n\n         [[0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          ...,\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765]],\n\n         [[0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          ...,\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765]]]])"
+              ],
+              "scale_method": [
+                "lanczos"
+              ]
+            },
+            "current_outputs": [
+              "noise",
+              "sched",
+              "separate",
+              "loadimage",
+              "refine_i2v",
+              "latent_upscale",
+              "concat",
+              "refine_sigmas",
+              "save",
+              "audiovae",
+              "cond",
+              "te",
+              "modality",
+              "videovae",
+              "refine_concat",
+              "refine_sampler",
+              "neg",
+              "unet",
+              "ksel",
+              "guider",
+              "upscale_loader",
+              "resize",
+              "pos",
+              "decode",
+              "sampler",
+              "preprocess",
+              "emptylatent",
+              "i2v",
+              "emptyaudio",
+              "refine_separate"
+            ],
+            "exception_message": "ResizeImageMaskNode.execute() missing 1 required positional argument: 'resize_type'\n",
+            "exception_type": "TypeError",
+            "executed": [
+              "noise",
+              "videovae",
+              "emptylatent",
+              "loadimage",
+              "refine_sigmas",
+              "ksel",
+              "upscale_loader"
+            ],
+            "node_id": "resize",
+            "node_type": "ResizeImageMaskNode",
+            "prompt_id": "f17c979e-83bf-470d-9081-8fb47aa96609",
+            "timestamp": 1787338773199,
+            "traceback": [
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 545, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 344, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\Documents\\ComfyUI\\custom_nodes\\comfyui-lora-manager\\py\\metadata_collector\\metadata_hook.py\", line 177, in async_map_node_over_list_with_metadata\n    results = await original_map_node_over_list(\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 318, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 306, in process_inputs\n    result = f(**inputs)\n             ^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\comfy_api\\internal\\__init__.py\", line 149, in wrapped_func\n    return method(locked_class, **inputs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\comfy_api\\latest\\_io.py\", line 1990, in EXECUTE_NORMALIZED\n    to_return = cls.execute(*args, **kwargs)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
+            ]
+          }
+        ]
+      ],
+      "prompt_id": "f17c979e-83bf-470d-9081-8fb47aa96609",
+      "seed": 42,
+      "sha256": "37205cffe0065bca6d8cc2b91610d3a786aec7cf02b9fb47d047b8ca0821ba70",
+      "status": "error",
+      "subfolder": null
+    },
+    {
+      "arm": "soft",
+      "elapsed_s": 10.2,
+      "first_frame": null,
+      "fixture": "crowd",
+      "frame_count": 0,
+      "last_frame": null,
+      "leg": "crowd/soft_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "5e0fb70b-edb0-4186-84ab-8fa7f01b4729",
+            "timestamp": 1787338780611
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "emptylatent",
+              "ksel",
+              "loadimage",
+              "noise",
+              "refine_sigmas",
+              "upscale_loader",
+              "videovae"
+            ],
+            "prompt_id": "5e0fb70b-edb0-4186-84ab-8fa7f01b4729",
+            "timestamp": 1787338780687
+          }
+        ],
+        [
+          "execution_error",
+          {
+            "current_inputs": {
+              "input": [
+                "tensor([[[[0.1922, 0.1176, 0.1216],\n          [0.1922, 0.1176, 0.1216],\n          [0.1961, 0.1176, 0.1137],\n          ...,\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000]],\n\n         [[0.1922, 0.1137, 0.1176],\n          [0.1922, 0.1137, 0.1176],\n          [0.1961, 0.1176, 0.1137],\n          ...,\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000]],\n\n         [[0.1961, 0.1176, 0.1216],\n          [0.1961, 0.1176, 0.1176],\n          [0.2000, 0.1176, 0.1137],\n          ...,\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000]],\n\n         ...,\n\n         [[0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          ...,\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765]],\n\n         [[0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          ...,\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765]],\n\n         [[0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          ...,\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765]]]])"
+              ],
+              "scale_method": [
+                "lanczos"
+              ]
+            },
+            "current_outputs": [
+              "noise",
+              "sched",
+              "separate",
+              "loadimage",
+              "refine_i2v",
+              "latent_upscale",
+              "concat",
+              "refine_sigmas",
+              "save",
+              "audiovae",
+              "cond",
+              "te",
+              "modality",
+              "videovae",
+              "refine_concat",
+              "refine_sampler",
+              "neg",
+              "unet",
+              "ksel",
+              "guider",
+              "upscale_loader",
+              "resize",
+              "pos",
+              "decode",
+              "sampler",
+              "preprocess",
+              "emptylatent",
+              "i2v",
+              "emptyaudio",
+              "refine_separate"
+            ],
+            "exception_message": "ResizeImageMaskNode.execute() missing 1 required positional argument: 'resize_type'\n",
+            "exception_type": "TypeError",
+            "executed": [],
+            "node_id": "resize",
+            "node_type": "ResizeImageMaskNode",
+            "prompt_id": "5e0fb70b-edb0-4186-84ab-8fa7f01b4729",
+            "timestamp": 1787338780690,
+            "traceback": [
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 545, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 344, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\Documents\\ComfyUI\\custom_nodes\\comfyui-lora-manager\\py\\metadata_collector\\metadata_hook.py\", line 177, in async_map_node_over_list_with_metadata\n    results = await original_map_node_over_list(\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 318, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 306, in process_inputs\n    result = f(**inputs)\n             ^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\comfy_api\\internal\\__init__.py\", line 149, in wrapped_func\n    return method(locked_class, **inputs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\comfy_api\\latest\\_io.py\", line 1990, in EXECUTE_NORMALIZED\n    to_return = cls.execute(*args, **kwargs)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
+            ]
+          }
+        ]
+      ],
+      "prompt_id": "5e0fb70b-edb0-4186-84ab-8fa7f01b4729",
+      "seed": 42,
+      "sha256": "828b697defd4a4827c1178f4251ff5287ff58e1b367cdeace606d0b5c61bbb56",
+      "status": "error",
+      "subfolder": null
+    },
+    {
+      "arm": "ours",
+      "elapsed_s": 10.2,
+      "first_frame": null,
+      "fixture": "crowd",
+      "frame_count": 0,
+      "last_frame": null,
+      "leg": "crowd/ours_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "8e9397b2-3721-4f61-b6e8-02be524f7d37",
+            "timestamp": 1787338790804
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "emptylatent",
+              "ksel",
+              "loadimage",
+              "refine_sigmas",
+              "upscale_loader",
+              "videovae"
+            ],
+            "prompt_id": "8e9397b2-3721-4f61-b6e8-02be524f7d37",
+            "timestamp": 1787338790877
+          }
+        ],
+        [
+          "execution_error",
+          {
+            "current_inputs": {
+              "input": [
+                "tensor([[[[0.1922, 0.1176, 0.1216],\n          [0.1922, 0.1176, 0.1216],\n          [0.1961, 0.1176, 0.1137],\n          ...,\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000]],\n\n         [[0.1922, 0.1137, 0.1176],\n          [0.1922, 0.1137, 0.1176],\n          [0.1961, 0.1176, 0.1137],\n          ...,\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000]],\n\n         [[0.1961, 0.1176, 0.1216],\n          [0.1961, 0.1176, 0.1176],\n          [0.2000, 0.1176, 0.1137],\n          ...,\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000]],\n\n         ...,\n\n         [[0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          ...,\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765]],\n\n         [[0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          ...,\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765]],\n\n         [[0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          ...,\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765]]]])"
+              ],
+              "scale_method": [
+                "lanczos"
+              ]
+            },
+            "current_outputs": [
+              "noise",
+              "sched",
+              "separate",
+              "loadimage",
+              "refine_i2v",
+              "latent_upscale",
+              "concat",
+              "refine_sigmas",
+              "save",
+              "audiovae",
+              "cond",
+              "te",
+              "modality",
+              "videovae",
+              "refine_concat",
+              "refine_sampler",
+              "neg",
+              "unet",
+              "ksel",
+              "guider",
+              "upscale_loader",
+              "resize",
+              "pos",
+              "decode",
+              "sampler",
+              "preprocess",
+              "emptylatent",
+              "i2v",
+              "emptyaudio",
+              "refine_separate"
+            ],
+            "exception_message": "ResizeImageMaskNode.execute() missing 1 required positional argument: 'resize_type'\n",
+            "exception_type": "TypeError",
+            "executed": [
+              "noise"
+            ],
+            "node_id": "resize",
+            "node_type": "ResizeImageMaskNode",
+            "prompt_id": "8e9397b2-3721-4f61-b6e8-02be524f7d37",
+            "timestamp": 1787338790881,
+            "traceback": [
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 545, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 344, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\Documents\\ComfyUI\\custom_nodes\\comfyui-lora-manager\\py\\metadata_collector\\metadata_hook.py\", line 177, in async_map_node_over_list_with_metadata\n    results = await original_map_node_over_list(\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 318, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 306, in process_inputs\n    result = f(**inputs)\n             ^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\comfy_api\\internal\\__init__.py\", line 149, in wrapped_func\n    return method(locked_class, **inputs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\comfy_api\\latest\\_io.py\", line 1990, in EXECUTE_NORMALIZED\n    to_return = cls.execute(*args, **kwargs)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
+            ]
+          }
+        ]
+      ],
+      "prompt_id": "8e9397b2-3721-4f61-b6e8-02be524f7d37",
+      "seed": 20260821,
+      "sha256": "910f9c0abf958a9ebaec9edf8c99a6b5561a7b41d6281dc4d8112bcca87006cd",
+      "status": "error",
+      "subfolder": null
+    },
+    {
+      "arm": "soft",
+      "elapsed_s": 10.2,
+      "first_frame": null,
+      "fixture": "crowd",
+      "frame_count": 0,
+      "last_frame": null,
+      "leg": "crowd/soft_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "1ed13719-98b8-4663-986e-5f5bac3d1316",
+            "timestamp": 1787338801000
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "emptylatent",
+              "ksel",
+              "loadimage",
+              "noise",
+              "refine_sigmas",
+              "upscale_loader",
+              "videovae"
+            ],
+            "prompt_id": "1ed13719-98b8-4663-986e-5f5bac3d1316",
+            "timestamp": 1787338801076
+          }
+        ],
+        [
+          "execution_error",
+          {
+            "current_inputs": {
+              "input": [
+                "tensor([[[[0.1922, 0.1176, 0.1216],\n          [0.1922, 0.1176, 0.1216],\n          [0.1961, 0.1176, 0.1137],\n          ...,\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000]],\n\n         [[0.1922, 0.1137, 0.1176],\n          [0.1922, 0.1137, 0.1176],\n          [0.1961, 0.1176, 0.1137],\n          ...,\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000]],\n\n         [[0.1961, 0.1176, 0.1216],\n          [0.1961, 0.1176, 0.1176],\n          [0.2000, 0.1176, 0.1137],\n          ...,\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000],\n          [0.6235, 0.3059, 0.2000]],\n\n         ...,\n\n         [[0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          ...,\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765]],\n\n         [[0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          ...,\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765]],\n\n         [[0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          [0.0706, 0.0667, 0.0980],\n          ...,\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765],\n          [0.0745, 0.1098, 0.1765]]]])"
+              ],
+              "scale_method": [
+                "lanczos"
+              ]
+            },
+            "current_outputs": [
+              "noise",
+              "sched",
+              "separate",
+              "loadimage",
+              "refine_i2v",
+              "latent_upscale",
+              "concat",
+              "refine_sigmas",
+              "save",
+              "audiovae",
+              "cond",
+              "te",
+              "modality",
+              "videovae",
+              "refine_concat",
+              "refine_sampler",
+              "neg",
+              "unet",
+              "ksel",
+              "guider",
+              "upscale_loader",
+              "resize",
+              "pos",
+              "decode",
+              "sampler",
+              "preprocess",
+              "emptylatent",
+              "i2v",
+              "emptyaudio",
+              "refine_separate"
+            ],
+            "exception_message": "ResizeImageMaskNode.execute() missing 1 required positional argument: 'resize_type'\n",
+            "exception_type": "TypeError",
+            "executed": [],
+            "node_id": "resize",
+            "node_type": "ResizeImageMaskNode",
+            "prompt_id": "1ed13719-98b8-4663-986e-5f5bac3d1316",
+            "timestamp": 1787338801079,
+            "traceback": [
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 545, in execute\n    output_data, output_ui, has_subgraph, has_pending_tasks = await get_output_data(prompt_id, unique_id, obj, input_data_all, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 344, in get_output_data\n    return_values = await _async_map_node_over_list(prompt_id, unique_id, obj, input_data_all, obj.FUNCTION, allow_interrupt=True, execution_block_cb=execution_block_cb, pre_execute_cb=pre_execute_cb, v3_data=v3_data)\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\Documents\\ComfyUI\\custom_nodes\\comfyui-lora-manager\\py\\metadata_collector\\metadata_hook.py\", line 177, in async_map_node_over_list_with_metadata\n    results = await original_map_node_over_list(\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 318, in _async_map_node_over_list\n    await process_inputs(input_dict, i)\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\execution.py\", line 306, in process_inputs\n    result = f(**inputs)\n             ^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\comfy_api\\internal\\__init__.py\", line 149, in wrapped_func\n    return method(locked_class, **inputs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n",
+              "  File \"C:\\Users\\jeffr\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\comfy_api\\latest\\_io.py\", line 1990, in EXECUTE_NORMALIZED\n    to_return = cls.execute(*args, **kwargs)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
+            ]
+          }
+        ]
+      ],
+      "prompt_id": "1ed13719-98b8-4663-986e-5f5bac3d1316",
+      "seed": 20260821,
+      "sha256": "9a7fd9a3458ee9c04637d44c32e1d27d0ca88c686028d09df82f602d0ffadbfc",
+      "status": "error",
+      "subfolder": null
+    }
+  ],
+  "output_prefix": "baseline_output/lane2_ltx25",
+  "seeds": [
+    42,
+    20260821
+  ],
+  "server": "http://127.0.0.1:8000"
+}
