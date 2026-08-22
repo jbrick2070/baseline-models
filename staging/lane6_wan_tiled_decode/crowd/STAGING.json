@@ -1,0 +1,55 @@
+{
+  "arm_sha256": {
+    "candidate": "103c0f2759215b5900d0106bb8b7ba6f76662be0e86cf37508ff34a6362c3b37",
+    "ours": "2e55ccb73aa5d625745b963c93914f1ec499caf57b82d6e495f301a9591c3e97"
+  },
+  "declared_contrast": {
+    "candidate": {
+      "class_type": "VAEDecode",
+      "inputs": {
+        "samples": [
+          "ksampler",
+          0
+        ],
+        "vae": [
+          "vae",
+          0
+        ]
+      }
+    },
+    "kind": "node class swap",
+    "node": "vaedecode",
+    "ours": {
+      "class_type": "VAEDecodeTiled",
+      "inputs": {
+        "overlap": 64,
+        "samples": [
+          "ksampler",
+          0
+        ],
+        "temporal_overlap": 8,
+        "temporal_size": 16,
+        "tile_size": 256,
+        "vae": [
+          "vae",
+          0
+        ]
+      }
+    },
+    "tiling_literals_dropped": [
+      "overlap",
+      "temporal_overlap",
+      "temporal_size",
+      "tile_size"
+    ]
+  },
+  "engine": "eng_wan_ti2v",
+  "fixture": "crowd",
+  "image": "lane1_crowd.png",
+  "lane": "lane6_wan_tiled_decode",
+  "negative": "low quality, worst quality, blurry, distorted, watermark, text, static",
+  "negative_is_fixture_specific": false,
+  "prompt": "A crowded 1940s radio studio control room, a dozen technicians at consoles, rows of glass valve tubes glowing along the back wall, a large VU meter with a clearly ruled scale on the near panel, faces lit from below by the console lamps. static locked-off camera, single continuous shot, no cut, no scene change, no camera move.",
+  "role": "hard content -- faces and held objects across the whole frame",
+  "wiring_note": "decoder feeds [] in BOTH arms; any wiring delta is a staging fault"
+}

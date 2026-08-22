@@ -1,0 +1,61 @@
+{
+  "arm_sha256": {
+    "crowd": {
+      "candidate": "103c0f2759215b5900d0106bb8b7ba6f76662be0e86cf37508ff34a6362c3b37",
+      "ours": "2e55ccb73aa5d625745b963c93914f1ec499caf57b82d6e495f301a9591c3e97"
+    },
+    "testcard": {
+      "candidate": "2fee027fc78fb3eac640f393f1895e56d571b3dc6d6342c932c3005b05b1d563",
+      "ours": "492a32e8d35fa08c358785e3d487d5a7d3dfd3af8bb99112a5a1ef65b2663930"
+    }
+  },
+  "declared_contrast": {
+    "candidate_class": "VAEDecode",
+    "kind": "node class swap",
+    "node": "vaedecode",
+    "ours_class": "VAEDecodeTiled",
+    "tiling_literals_dropped": [
+      "overlap",
+      "temporal_overlap",
+      "temporal_size",
+      "tile_size"
+    ]
+  },
+  "engine": "eng_wan_ti2v",
+  "fixtures": {
+    "crowd": {
+      "output_subdir": "crowd",
+      "role": "hard content -- faces and held objects across the whole frame"
+    },
+    "testcard": {
+      "output_subdir": "testcard",
+      "role": "authored acuity instrument, STATIC -- known element sizes"
+    }
+  },
+  "lane": "lane6_wan_tiled_decode",
+  "provenance": {
+    "builder_fixture_plan": {
+      "audio_path": "diffomatic.wav",
+      "init_image": "diffomatic.png",
+      "negative_prompt": "",
+      "seed": 42,
+      "target_frame_count": 97,
+      "text_prompt": "a vintage radio broadcast scene, subtle natural motion"
+    },
+    "builder_signature": "(request, image_name, plan, length, width, height, external_results=None)",
+    "engine_class": "WanTi2vEngine",
+    "engine_id": "wan_ti2v",
+    "engine_module": "nodes._otr_video_engines.eng_wan_ti2v",
+    "render_canvas": [
+      832,
+      480
+    ]
+  },
+  "recipe_note": "tiled_vae is a FROZEN recipe field whose env knob only binds under the prequalification consent act. This lane does not open that act and does not edit the recipe -- it swaps one node in the STAGED API graph. The shipped recipe stays byte-identical.",
+  "verdict_matrix": {
+    "admission": "arm-to-arm NCC below ~0.90 at the final frame means the arms stopped rendering the same scene and the cell is not judged (lane 1 precedent, lane 5 gate)",
+    "detail_gain": "untiled resolving more of the card's known elements -- read down to which grating, which letter row",
+    "null_at_shipping_output": "LOSS for the candidate; tiled decode stands and its VRAM saving is free",
+    "seam_regression": "a visible tile seam, boundary discontinuity or 256-grid artifact in the TILED arm that is absent from the untiled arm is the candidate's win condition and the only one that matters"
+  }
+}

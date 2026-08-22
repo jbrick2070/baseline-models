@@ -121,6 +121,12 @@ def main(argv=None) -> int:
                         help="declared NODE CLASS swap at exactly one node, e.g. "
                              "clip=CLIPLoader. Every OTHER class change still "
                              "fails, and wiring changes still fail unconditionally.")
+    parser.add_argument("--expect-drop", action="append", default=[],
+                        dest="expect_drop", metavar="NODE.key",
+                        help="an input the declared class swap legitimately "
+                             "REMOVES, e.g. vaedecode.tile_size. Only honoured "
+                             "at a node that also carries --expect-class; a key "
+                             "vanishing anywhere else is still a hard fail.")
     args = parser.parse_args(argv)
 
     path_a, path_b = Path(args.arm_a).resolve(), Path(args.arm_b).resolve()
@@ -144,6 +150,30 @@ def main(argv=None) -> int:
         if not node or not class_name:
             raise SystemExit("[FAIL] --expect-class wants NODE=ClassName, got %r" % item)
         declared_classes[f"{node}.__class__"] = class_name
+
+    # A declared class swap between classes with DIFFERENT input signatures
+    # legitimately drops keys -- VAEDecodeTiled -> VAEDecode loses tile_size,
+    # overlap, temporal_size and temporal_overlap because the target class has
+    # no such inputs. Carrying one across would not be a smaller contrast, it
+    # would be an invalid graph. (Lane 4 never hit this because CLIPLoaderGGUF
+    # and CLIPLoader share a key set.)
+    #
+    # Two deliberate constraints keep this from becoming a hole:
+    #   * each dropped key must be named EXPLICITLY, so the changed set still
+    #     equals the declared set exactly; and
+    #   * a drop is only honoured at a node that ALSO carries a declared class
+    #     swap. A key vanishing anywhere else stays a hard fail, because that
+    #     is the uncontrolled second variable Bible 12.121 was promoted for.
+    declared_drops: set = set()
+    for item in args.expect_drop:
+        node = item.split(".", 1)[0]
+        if f"{node}.__class__" not in declared_classes:
+            raise SystemExit(
+                "[FAIL] --expect-drop %r names a node with no declared class "
+                "swap; a key that vanishes without one is a staging fault, "
+                "not a contrast" % item)
+        declared_drops.add(item)
+
     if not declared and not declared_classes:
         raise SystemExit("[FAIL] no declared contrast set; refusing to pass a lane blind")
 
@@ -161,6 +191,10 @@ def main(argv=None) -> int:
 
     failures = list(manifest_failures)
     for key in only_a:
+        if key in declared_drops:
+            print(f"[OK]   declared DROP {key} = {flat_a[key][1]!r} "
+                  f"(absent in B by the declared class swap)")
+            continue
         failures.append(f"[FAIL] present only in A: {key} = {flat_a[key][1]!r}")
     for key in only_b:
         failures.append(f"[FAIL] present only in B: {key} = {flat_b[key][1]!r}")
