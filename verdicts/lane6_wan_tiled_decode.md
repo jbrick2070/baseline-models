@@ -1,7 +1,66 @@
 # Lane 6 verdict -- `wan_ti2v` tiled vs untiled VAE decode
 
+> **SUPERSEDED IN ITS CONCLUSION, 2026-08-21 evening. The lane closed NO WIN on
+> its declared matrix and that reasoning still stands as written below. Then the
+> OPERATOR'S EYE found what the matrix was not looking for, and it is not a
+> statistic: the tiled decoder paints a BLUE BLOB onto the picture. The recipe
+> was bumped to v2 (untiled) on his ruling, "yes ship the quality".
+> See section 0.**
+
+## 0. THE OPERATOR EYE OVERTURNED THIS LANE, AND IT FOUND A VISIBLE DEFECT
+
+Shown a blind side-by-side of the test card -- no arm named, sides alternating
+per cell -- he called it unprompted:
+
+> *"the first one I see a blue blob animated on the right"* ... *"the left colour
+> card I didn't see a blue blob"*
+
+`testcard_seed42` decodes LEFT=candidate(untiled), RIGHT=ours(**tiled**). **He
+picked the shipped arm, blind.** He also read the crowd pair as a tie, which
+matches its much smaller measured gap -- so the eye discriminated where the
+instruments said there was something and tied where they said there was not.
+
+**Then the measurement caught up with him.** Blue excess in the lower-right
+panel, frames sampled every 8:
+
+| cell | blob frames (of 13) | worst blob |
+| :-- | --: | --: |
+| testcard/42 **tiled** | 1 | 5,977 px |
+| testcard/20260821 **tiled** | 3 | 12,911 px |
+| testcard/42 **untiled** | **0** | 0 px |
+| testcard/20260821 **untiled** | **0** | 1 px |
+
+**And it is not new, and not confined to this lane.** Sweeping every test card
+this programme has ever rendered:
+
+| lane | engine / decode | blob frames of 13 | worst |
+| :-- | :-- | --: | --: |
+| lane 1, both arms | wan_ti2v **tiled** | 4-9 | 24,251 px |
+| lane 4, both arms | wan_ti2v **tiled** | 8-10 | 26,334 px |
+| lane 6 `ours` | wan_ti2v **tiled** | 1-3 | 12,911 px |
+| **lane 6 `candidate`** | wan_ti2v **untiled** | **0** | **1 px** |
+| lane 2, both arms | **ltx25** | **0** | 0 px |
+
+Every wan_ti2v test card ever rendered carries it, because tiling was frozen ON
+for the entire life of the v1 recipe -- so every one of those renders was tiled.
+The only untiled renders in existence are this lane's candidate arm, and they
+have none. A different engine has none, so it is not the card artwork.
+
+**Two consequences worth writing down.** The artifact has been in every
+`wan_ti2v` clip the show has produced. And lanes 1 and 4 were judged with it
+present in BOTH arms -- an uncontrolled shared variable in every cell, exactly
+the hazard Bible `12.121` exists for. It did not change those verdicts, since
+both arms carried it equally, but they were scored over it and that is now on
+the record.
+
+**The operator's instinct was the useful one:** *"I was thinking the blobs were
+an animated test feature."* They are not. They are a decode defect that had gone
+unnoticed for the life of the recipe precisely because it looked deliberate.
+
+## The original verdict follows, unedited
+
 **RESULT ON THE PRE-DECLARED MATRIX: NO WIN. No tile seam exists, which was the
-declared win condition. The shipped `VAEDecodeTiled` recipe is NOT changed.**
+declared win condition.**
 
 **BUT THE LANE FOUND SOMETHING ITS MATRIX DID NOT ANTICIPATE, AND IT IS LARGE:
 tiled decode costs 4-5x more frame-to-frame churn on flat graphic content.**
@@ -137,6 +196,31 @@ Receipt: `VRAM_PROBE.json`.
 | **candidate (untiled)** | **14,526 MiB** | **322 MiB of margin** | 175.7s |
 
 **Removing tiling costs +1,792 MiB of peak VRAM and saves 20 seconds.**
+
+**FOUR POINTS NOW, AND THE SHAPE IS NOT WHAT THE RECIPE ASSUMED.** A second
+length was measured per arm, each on its own fresh server:
+
+| | 17 frames | 97 frames | slope |
+| :-- | --: | --: | --: |
+| tiled | 12,555 MiB | 12,734 MiB | +179 -- **flat** |
+| untiled | 14,699 MiB | 14,526 MiB | -173 -- **flat** |
+
+**BOTH modes are flat with clip length.** v1 froze tiling ON citing *"tiled holds
+the peak FLAT across clip length where untiled climbs with it"* -- that was the
+ltx tier's measurement and the v1 comment said so. On this adapter untiled does
+not climb either. **Tiling buys a flat ~1.8-2.1 GB at every length, not a slope.**
+
+**This also kills the low-VRAM objection the r3 panel raised.** `otr_8gb_wan`,
+`otr_nv40_12gb` and `otr_amd8_rocm` all select `wan_ti2v` and cannot hold
+14.5 GB -- but **tiled already needed 12.5 GB**, so none of those envelopes could
+run this engine before lane 6 either. The bump makes an already-impossible
+configuration slightly more impossible; it does not break a working one.
+
+**And it exposes the cost model as fiction here.** `FRAME_COST_MODEL["wan_ti2v"]
+= (7000.0, 185.0)` implies +5,849 MB across 97 frames at this canvas; the
+measured slope is ~0 in both modes. Its good fit at 97 frames was arithmetic
+coincidence. Documented in `motion_common.py` rather than re-fitted, because
+`QUALIFIED_COST_ROWS` is empty so the gate cannot refuse anything today.
 
 **And the earlier timing reading is now formally dead.** The in-lane split of
 ~180s against ~18s was caching, not speed. Measured honestly on equal footing

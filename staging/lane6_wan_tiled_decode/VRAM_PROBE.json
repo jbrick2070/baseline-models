@@ -20,5 +20,29 @@
     "prompt_id": "4c68cc24-3ffe-49a7-b388-d87a3504d3ed",
     "seed": 42,
     "status": "success"
+  },
+  {
+    "arm": "candidate",
+    "baseline_mib": 1347,
+    "delta_mib": 13352,
+    "elapsed_s": 50.4,
+    "fixture": "crowd",
+    "frames": 17,
+    "peak_mib": 14699,
+    "prompt_id": "4cf3760f-663a-44e2-9fc3-c7db6ae05bbb",
+    "seed": 42,
+    "status": "success"
+  },
+  {
+    "arm": "ours",
+    "baseline_mib": 1347,
+    "delta_mib": 11208,
+    "elapsed_s": 50.3,
+    "fixture": "crowd",
+    "frames": 17,
+    "peak_mib": 12555,
+    "prompt_id": "5a587c30-9a6a-4b4d-ad9c-9d3978b1b1b5",
+    "seed": 42,
+    "status": "success"
   }
 ]

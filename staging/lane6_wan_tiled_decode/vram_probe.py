@@ -86,10 +86,21 @@ def main() -> int:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     arm = (sys.argv[1] if len(sys.argv) > 1 else "").strip()
     if arm not in ("ours", "candidate"):
-        raise SystemExit("usage: vram_probe.py ours|candidate")
+        raise SystemExit("usage: vram_probe.py ours|candidate [frames]")
+    # A SECOND LENGTH makes the cost model fittable. FRAME_COST_MODEL is
+    # `overhead + per_frame * frames`, which is two unknowns -- one measurement
+    # cannot separate them, and the engine's own note says tiled holds the peak
+    # FLAT across clip length while untiled CLIMBS with it. So the whole
+    # question is which term moved, and that needs two points.
+    frames = int(sys.argv[2]) if len(sys.argv) > 2 else 0
 
     graph_path = HERE / FIXTURE / f"arm_{arm}.json"
     graph = json.loads(io.open(graph_path, encoding="utf-8").read())
+    if frames:
+        for node in graph.values():
+            if node["class_type"] == "Wan22ImageToVideoLatent":
+                node["inputs"]["length"] = frames
+        print(f"[LENGTH] latent length -> {frames}")
 
     # Seed and a UNIQUE save prefix, so nothing can be served from cache and the
     # frames do not collide with the lane's own render.
@@ -122,6 +133,7 @@ def main() -> int:
     base, pk = peak.stop()
     elapsed = round(time.time() - t0, 1)
     rec = {"arm": arm, "fixture": FIXTURE, "seed": SEED, "status": status,
+           "frames": frames or 97,
            "baseline_mib": base, "peak_mib": pk, "delta_mib": pk - base,
            "elapsed_s": elapsed, "prompt_id": pid}
     print(json.dumps(rec, indent=2))
@@ -129,7 +141,9 @@ def main() -> int:
     all_recs = []
     if OUT.exists():
         all_recs = json.loads(io.open(OUT, encoding="utf-8").read())
-    all_recs = [r for r in all_recs if r.get("arm") != arm] + [rec]
+    tag = (arm, rec["frames"])
+    all_recs = [r for r in all_recs
+                if (r.get("arm"), r.get("frames", 97)) != tag] + [rec]
     io.open(OUT, "w", encoding="utf-8", newline="\n").write(
         json.dumps(all_recs, indent=2, sort_keys=True) + "\n")
 
