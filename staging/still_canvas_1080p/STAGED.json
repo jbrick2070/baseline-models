@@ -1,0 +1,29 @@
+{
+  "arms": {
+    "native1080": [
+      1920,
+      1080
+    ],
+    "ours": [
+      1472,
+      832
+    ]
+  },
+  "engine": "flux2_klein",
+  "fixtures": {
+    "hands": "fingers per hand (5), thumbs (1), hands on the microphone (2)",
+    "radio": "glass tubes (6), dial tick marks, grille weave lines",
+    "signage": "legible characters in ON AIR and in STUDIO B",
+    "testcard": "colour bars (7), grey wedge steps (10), concentric circles (3), eye-chart rows legible, top row C / second row D H K / third row N O R S"
+  },
+  "seeds": [
+    42,
+    20260821
+  ],
+  "sha256": {
+    "testcard/native1080/seed20260821": "fdf3cdf95d05de26dfbf4f3503e9b97dd6c765a1ad25e949485394716b148be3",
+    "testcard/native1080/seed42": "c3bf40b1b339c7de5eab595042cbe434690f6b5e4ed69ab54a65ad17a76af749",
+    "testcard/ours/seed20260821": "46d02b7cd03c415498ab74f7e91134b6f834eca17a10ba09690de60cae960e00",
+    "testcard/ours/seed42": "17fea3611e8e31b6bdea87218971719a7329fbbdc9f78f3d196911947d7e988d"
+  }
+}

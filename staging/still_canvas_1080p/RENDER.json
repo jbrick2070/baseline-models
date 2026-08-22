@@ -1,0 +1,45 @@
+{
+  "legs": [
+    {
+      "canvas": [
+        1920,
+        1080
+      ],
+      "elapsed_s": 18.2,
+      "leg": "testcard/native1080/seed20260821",
+      "sha256": "d4569c22037bdd7b6e3520f3bb05b2a79325869f3c13c2d9775072d838d11120",
+      "status": "success"
+    },
+    {
+      "canvas": [
+        1920,
+        1080
+      ],
+      "elapsed_s": 18.2,
+      "leg": "testcard/native1080/seed42",
+      "sha256": "4dfcf9704a3085c4313963cb3bfd27f9e7391b995da4fe130f9d82da0d2fa820",
+      "status": "success"
+    },
+    {
+      "canvas": [
+        1472,
+        832
+      ],
+      "elapsed_s": 10.1,
+      "leg": "testcard/ours/seed20260821",
+      "sha256": "2653446ad9eb985e5e603ac30ac65c811cefb56c22eaa8868b5ec98e615fff90",
+      "status": "success"
+    },
+    {
+      "canvas": [
+        1472,
+        832
+      ],
+      "elapsed_s": 10.1,
+      "leg": "testcard/ours/seed42",
+      "sha256": "e9e4144d1dfc6412bfd661d35bc4e5831de2a81f7711cf5ac61f0c2865076a20",
+      "status": "success"
+    }
+  ],
+  "server": "http://127.0.0.1:8000"
+}
