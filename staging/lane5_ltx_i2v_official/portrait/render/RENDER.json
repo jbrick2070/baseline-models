@@ -1,0 +1,238 @@
+{
+  "arms": [
+    "ours",
+    "official"
+  ],
+  "fixture": "portrait",
+  "fps": 25,
+  "legs": [
+    {
+      "arm": "ours",
+      "elapsed_s": 110.3,
+      "first_frame": "frame_00001_.png",
+      "fixture": "portrait",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "portrait/ours_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "53ed5f30-1cc3-491c-90d5-bab725178fca",
+            "timestamp": 1787355382638
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "latent",
+              "neg",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "53ed5f30-1cc3-491c-90d5-bab725178fca",
+            "timestamp": 1787355382711
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "53ed5f30-1cc3-491c-90d5-bab725178fca",
+            "timestamp": 1787355490376
+          }
+        ]
+      ],
+      "prompt_id": "53ed5f30-1cc3-491c-90d5-bab725178fca",
+      "seed": 42,
+      "sha256": "77ff299420741f06e2df6a465d3ecd292951a6c817832cc69d0d25692b00e1fa",
+      "status": "success",
+      "subfolder": "baseline_output\\lane5_ltx_i2v_official\\portrait\\ours_seed42",
+      "temporal": {
+        "argmax_pair": 93,
+        "frame_pairs": 96,
+        "max_abs_delta": 6.9343,
+        "mean_abs_delta": 3.5011
+      }
+    },
+    {
+      "arm": "official",
+      "elapsed_s": 100.3,
+      "first_frame": "frame_00001_.png",
+      "fixture": "portrait",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "portrait/official_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "3639aad3-9e50-4de1-a451-5f6b891799d2",
+            "timestamp": 1787355494064
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "cond",
+              "img2vid",
+              "latent",
+              "loadimage",
+              "neg",
+              "noise",
+              "pos",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "3639aad3-9e50-4de1-a451-5f6b891799d2",
+            "timestamp": 1787355494131
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "3639aad3-9e50-4de1-a451-5f6b891799d2",
+            "timestamp": 1787355593202
+          }
+        ]
+      ],
+      "prompt_id": "3639aad3-9e50-4de1-a451-5f6b891799d2",
+      "seed": 42,
+      "sha256": "db10ccdc1cc2629d15f746622f5c50d68075070ba400ceb28e2532f5f69f3ad8",
+      "status": "success",
+      "subfolder": "baseline_output\\lane5_ltx_i2v_official\\portrait\\official_seed42",
+      "temporal": {
+        "argmax_pair": 54,
+        "frame_pairs": 96,
+        "max_abs_delta": 6.4693,
+        "mean_abs_delta": 3.3436
+      }
+    },
+    {
+      "arm": "ours",
+      "elapsed_s": 110.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "portrait",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "portrait/ours_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "fab9d39b-2ba6-4e6c-b6d2-32f909120b0c",
+            "timestamp": 1787355595381
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "cond",
+              "img2vid",
+              "latent",
+              "loadimage",
+              "neg",
+              "pos",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "fab9d39b-2ba6-4e6c-b6d2-32f909120b0c",
+            "timestamp": 1787355595448
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "fab9d39b-2ba6-4e6c-b6d2-32f909120b0c",
+            "timestamp": 1787355698066
+          }
+        ]
+      ],
+      "prompt_id": "fab9d39b-2ba6-4e6c-b6d2-32f909120b0c",
+      "seed": 20260821,
+      "sha256": "e10b8e7678231d582943b8c3918464f344d1ea3f14c795653880a4ffecbd1f7e",
+      "status": "success",
+      "subfolder": "baseline_output\\lane5_ltx_i2v_official\\portrait\\ours_seed20260821",
+      "temporal": {
+        "argmax_pair": 65,
+        "frame_pairs": 96,
+        "max_abs_delta": 13.3725,
+        "mean_abs_delta": 5.6306
+      }
+    },
+    {
+      "arm": "official",
+      "elapsed_s": 100.3,
+      "first_frame": "frame_00001_.png",
+      "fixture": "portrait",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "portrait/official_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "5a6dfd23-9351-4238-b2af-66320ffd0b6c",
+            "timestamp": 1787355706672
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "cond",
+              "img2vid",
+              "latent",
+              "loadimage",
+              "neg",
+              "noise",
+              "pos",
+              "samplersel",
+              "sigmas",
+              "te",
+              "unet",
+              "videovae"
+            ],
+            "prompt_id": "5a6dfd23-9351-4238-b2af-66320ffd0b6c",
+            "timestamp": 1787355706739
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "5a6dfd23-9351-4238-b2af-66320ffd0b6c",
+            "timestamp": 1787355805877
+          }
+        ]
+      ],
+      "prompt_id": "5a6dfd23-9351-4238-b2af-66320ffd0b6c",
+      "seed": 20260821,
+      "sha256": "3842333ad069a764da402bfeb351014cf07186a1c36cc73cf7a63bd3c3c3e098",
+      "status": "success",
+      "subfolder": "baseline_output\\lane5_ltx_i2v_official\\portrait\\official_seed20260821",
+      "temporal": {
+        "argmax_pair": 53,
+        "frame_pairs": 96,
+        "max_abs_delta": 13.1893,
+        "mean_abs_delta": 5.1502
+      }
+    }
+  ],
+  "output_prefix": "baseline_output/lane5_ltx_i2v_official",
+  "seeds": [
+    42,
+    20260821
+  ],
+  "server": "http://127.0.0.1:8000"
+}

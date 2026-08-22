@@ -1,0 +1,11 @@
+{
+  "control": "A/A null",
+  "elapsed_s": 115.5,
+  "frame_count": 97,
+  "note": "Same recipe, same seed, same graph -- only the destination differs. A panel that does not return TIE here is reading noise.",
+  "output_prefix": "baseline_output/lane5_ltx_i2v_official/crowd/ours_seed42_RUN2",
+  "prompt_id": "6df21bd4-2444-43f6-8f75-98edcb9a762e",
+  "source_graph": "C:\\Users\\jeffr\\Documents\\ComfyUI\\custom_nodes\\basline-models\\staging\\lane5_ltx_i2v_official\\crowd\\render\\submitted_ours_seed42.json",
+  "source_sha256": "b6365ef5ff1d766a9b17211f5dc474efc2b66f3f4e3b7d9c66730655b9841a92",
+  "status": "success"
+}

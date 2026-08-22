@@ -1,0 +1,118 @@
+{
+  "admission_floor": 0.9,
+  "admitted_cells": [],
+  "cells": {
+    "crowd/seed20260821": {
+      "admitted": false,
+      "conditioning_still": "lane1_crowd.png",
+      "final_frame_arm_ncc": 0.3955,
+      "rows": [
+        {
+          "arm_ncc": 0.9995,
+          "frame": 1,
+          "still_ncc_candidate": 0.9969,
+          "still_ncc_ours": 0.9969
+        },
+        {
+          "arm_ncc": 0.9582,
+          "frame": 49,
+          "still_ncc_candidate": 0.804,
+          "still_ncc_ours": 0.8091
+        },
+        {
+          "arm_ncc": 0.3955,
+          "frame": 97,
+          "still_ncc_candidate": 0.7938,
+          "still_ncc_ours": 0.3391
+        }
+      ]
+    },
+    "crowd/seed42": {
+      "admitted": false,
+      "conditioning_still": "lane1_crowd.png",
+      "final_frame_arm_ncc": 0.685,
+      "rows": [
+        {
+          "arm_ncc": 0.999,
+          "frame": 1,
+          "still_ncc_candidate": 0.997,
+          "still_ncc_ours": 0.997
+        },
+        {
+          "arm_ncc": 0.7115,
+          "frame": 49,
+          "still_ncc_candidate": 0.3503,
+          "still_ncc_ours": 0.415
+        },
+        {
+          "arm_ncc": 0.685,
+          "frame": 97,
+          "still_ncc_candidate": 0.1142,
+          "still_ncc_ours": 0.1354
+        }
+      ]
+    },
+    "portrait/seed20260821": {
+      "admitted": false,
+      "conditioning_still": "portrait_16_9.png",
+      "final_frame_arm_ncc": 0.4236,
+      "rows": [
+        {
+          "arm_ncc": 0.9998,
+          "frame": 1,
+          "still_ncc_candidate": 0.9989,
+          "still_ncc_ours": 0.999
+        },
+        {
+          "arm_ncc": 0.3991,
+          "frame": 49,
+          "still_ncc_candidate": 0.3421,
+          "still_ncc_ours": 0.4202
+        },
+        {
+          "arm_ncc": 0.4236,
+          "frame": 97,
+          "still_ncc_candidate": 0.2909,
+          "still_ncc_ours": 0.3096
+        }
+      ]
+    },
+    "portrait/seed42": {
+      "admitted": false,
+      "conditioning_still": "portrait_16_9.png",
+      "final_frame_arm_ncc": 0.6653,
+      "rows": [
+        {
+          "arm_ncc": 0.9998,
+          "frame": 1,
+          "still_ncc_candidate": 0.9989,
+          "still_ncc_ours": 0.999
+        },
+        {
+          "arm_ncc": 0.4677,
+          "frame": 49,
+          "still_ncc_candidate": 0.4562,
+          "still_ncc_ours": 0.4502
+        },
+        {
+          "arm_ncc": 0.6653,
+          "frame": 97,
+          "still_ncc_candidate": 0.3704,
+          "still_ncc_ours": 0.3571
+        }
+      ]
+    }
+  },
+  "frames": [
+    1,
+    49,
+    97
+  ],
+  "lane": "lane5_ltx_i2v_official",
+  "rejected_cells": [
+    "crowd/seed20260821",
+    "crowd/seed42",
+    "portrait/seed20260821",
+    "portrait/seed42"
+  ]
+}
