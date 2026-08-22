@@ -1,0 +1,23 @@
+{
+  "arm_sha256": {
+    "ours": "341ccb4d652a3f211ab459238200fb385c0eea1ec192e42db2cfdee9475b505f",
+    "soft": "45aeefcec5d2f28022bd13a4becd686a37a16995de32f9b32b620a38d3d82144"
+  },
+  "contrast_note": "two graph leaves, ONE shipping knob: both read LTX25_I2V_ANCHOR_STRENGTH (ltx25_recipe.py:223)",
+  "declared_contrast": {
+    "i2v.strength": 0.7,
+    "refine_i2v.strength": 0.7
+  },
+  "engine": "eng_ltx25",
+  "fixture": "turning",
+  "image": "portrait_16_9.png",
+  "lane": "lane7_ltx25_motion",
+  "prompt": "1950s black and white cinematic shot of a military officer. He turns his head fully from his left shoulder around to his right, then lifts his chin and leans forward toward the camera, his shoulders rotating with him, a deliberate continuous movement throughout. The camera holds position, single continuous shot, no cut, no scene change.",
+  "role": "MOTION-demanding, identity under movement -- the harder case: does a soft anchor keep the FACE while the head moves",
+  "shared_adapt": {
+    "engine_emits": "CLIPLoaderGGUF",
+    "node": "te",
+    "staged_as": "CLIPLoaderGGUFCPU",
+    "why": "matches production's runtime CPU pin at eng_ltx25.py:1188; identical three-device placement, both arms, contrast untouched"
+  }
+}

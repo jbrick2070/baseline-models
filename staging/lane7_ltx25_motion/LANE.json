@@ -1,0 +1,59 @@
+{
+  "arm_sha256": {
+    "crossing": {
+      "ours": "8692d7e97264c47752e1d54364bfdffdc949140cfc1d55fd7eb7a8c4bfa6480a",
+      "soft": "2b4423d47c1bd25b397151a87de42e81dced4b57ee22888e47f8d9918f7adb0a"
+    },
+    "turning": {
+      "ours": "341ccb4d652a3f211ab459238200fb385c0eea1ec192e42db2cfdee9475b505f",
+      "soft": "45aeefcec5d2f28022bd13a4becd686a37a16995de32f9b32b620a38d3d82144"
+    }
+  },
+  "declared_contrast": {
+    "i2v.strength": 0.7,
+    "refine_i2v.strength": 0.7
+  },
+  "engine": "eng_ltx25",
+  "fixtures": {
+    "crossing": {
+      "image": "lane1_crowd.png",
+      "output_subdir": "crossing",
+      "role": "MOTION-demanding, crowd -- the axis lane 2 left untested; people must traverse the frame, not merely breathe"
+    },
+    "turning": {
+      "image": "portrait_16_9.png",
+      "output_subdir": "turning",
+      "role": "MOTION-demanding, identity under movement -- the harder case: does a soft anchor keep the FACE while the head moves"
+    }
+  },
+  "lane": "lane7_ltx25_motion",
+  "provenance": {
+    "builder_fixture_plan": {
+      "audio_path": "diffomatic.wav",
+      "init_image": "diffomatic.png",
+      "negative_prompt": "",
+      "seed": 42,
+      "target_frame_count": 97,
+      "text_prompt": "a vintage radio broadcast scene, subtle natural motion"
+    },
+    "builder_signature": "(plan, image_name, length, width, height)",
+    "engine_class": "Ltx25VideoEngine",
+    "engine_id": "ltx25_video",
+    "engine_module": "nodes._otr_video_engines.eng_ltx25",
+    "render_canvas": [
+      832,
+      480
+    ]
+  },
+  "verdict_matrix": {
+    "identity_hold_plus_material_gain": "candidate WIN -> refutation panel",
+    "identity_regression": "LOSS, regardless of any motion or stability gain",
+    "notes": [
+      "Identity is judged on RAW native-pixel face crops against the conditioning still at early/middle/final frames; contrast-normalized copies serve only secondary motion/detail questions.",
+      "Arm-to-arm NCC is a divergence FLAG on this lane, not an admission gate: the soft arm is designed to drift, so lane 1's 0.90 rule would reject the effect under test.",
+      "The expected freer-motion benefit of 0.7 is an ASSUMPTION carried from an audio-driven sibling lane; it is what the A/B tests, not a premise."
+    ],
+    "null_at_shipping_output": "LOSS (the shipped default stands)",
+    "semantic_scene_failure": "invalid cell -> fix the fixture, never a vote"
+  }
+}
