@@ -123,6 +123,32 @@ simply wrong about which defect tiling produces here.
 with a temporal matrix declared up front, and an operator decision -- not a
 recipe edit made by the driver on the strength of an unplanned measurement.
 
+## 3b. THE COST SIDE IS NOW MEASURED. The trade is complete.
+
+The verdict originally shipped with the cost half missing and said so. It has
+since been measured properly: **one leg per arm, each on its OWN FRESH SERVER**,
+so neither can inherit the other's cache or residency -- which is exactly what
+confounded the in-lane timings. NVML samples the whole submission window.
+Receipt: `VRAM_PROBE.json`.
+
+| arm | peak | vs 14.5 GiB target (14,848 MiB) | wall clock |
+| :-- | --: | --: | --: |
+| **ours (tiled)** | **12,734 MiB** | 2,114 MiB of margin | 195.7s |
+| **candidate (untiled)** | **14,526 MiB** | **322 MiB of margin** | 175.7s |
+
+**Removing tiling costs +1,792 MiB of peak VRAM and saves 20 seconds.**
+
+**And the earlier timing reading is now formally dead.** The in-lane split of
+~180s against ~18s was caching, not speed. Measured honestly on equal footing
+the untiled arm is faster by **20s on a ~196s leg (about 10%)**, not 9x.
+
+**What that does to the decision.** Tiling buys **1.8 GB of headroom** and costs
+**4-5x more temporal churn on flat graphic content**. Untiled still fits -- but
+it lands 322 MiB under the project target instead of 2.1 GB under it, on a box
+where the video engines are not the only thing that needs the card. That is a
+real narrowing of margin for a real reduction in flicker, and it is exactly the
+shape of trade the operator should decide rather than the driver.
+
 ## 4. What the operator is owed, in one paragraph
 
 Tiling was frozen ON for VRAM at the 8 GB tier, on the LTX tier's evidence, and
@@ -138,9 +164,11 @@ measure.
 
 ## 5. Bounds
 
-* **Decode-time and VRAM were NOT measured.** Caching confounded the timings and
-  no peak probe was run per arm. The whole cost side of the trade is missing.
+* ~~Decode-time and VRAM were NOT measured.~~ **Now measured -- see 3b.**
+  +1,792 MiB peak and -20s to remove tiling.
 * Two fixtures, two seeds, 12 scored frames. No blind panel and no operator eye.
+* The VRAM probe is **one leg per arm on the crowd fixture at seed 42**, not a
+  distribution. It prices the trade; it does not bound the worst case.
 * The temporal metric is a whole-frame mean absolute difference. It does not
   localise the churn or prove it is visible to a viewer at 25fps.
 * Flat graphic content is where the effect is large; ordinary content showed

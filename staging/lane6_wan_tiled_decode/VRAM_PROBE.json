@@ -1,0 +1,24 @@
+[
+  {
+    "arm": "ours",
+    "baseline_mib": 1206,
+    "delta_mib": 11528,
+    "elapsed_s": 195.7,
+    "fixture": "crowd",
+    "peak_mib": 12734,
+    "prompt_id": "c5b1fe70-795b-4150-8ec5-40da9dd50070",
+    "seed": 42,
+    "status": "success"
+  },
+  {
+    "arm": "candidate",
+    "baseline_mib": 1206,
+    "delta_mib": 13320,
+    "elapsed_s": 175.7,
+    "fixture": "crowd",
+    "peak_mib": 14526,
+    "prompt_id": "4c68cc24-3ffe-49a7-b388-d87a3504d3ed",
+    "seed": 42,
+    "status": "success"
+  }
+]
