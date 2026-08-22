@@ -1,0 +1,156 @@
+{
+  "admission_ncc": 0.9,
+  "cells": {
+    "crowd/seed20260821": {
+      "frames": {
+        "1": {
+          "admitted": true,
+          "max_abs_diff": 21.0,
+          "mean_abs_diff": 0.439,
+          "ncc": 0.999875,
+          "seam_detected": false,
+          "seam_ratio_col": 1.0258,
+          "seam_ratio_row": 0.9689
+        },
+        "49": {
+          "admitted": true,
+          "max_abs_diff": 82.67,
+          "mean_abs_diff": 4.0405,
+          "ncc": 0.996401,
+          "seam_detected": false,
+          "seam_ratio_col": 1.0487,
+          "seam_ratio_row": 1.0741
+        },
+        "97": {
+          "admitted": true,
+          "max_abs_diff": 90.33,
+          "mean_abs_diff": 2.4336,
+          "ncc": 0.996431,
+          "seam_detected": false,
+          "seam_ratio_col": 1.0724,
+          "seam_ratio_row": 1.0292
+        }
+      },
+      "temporal_mean": {
+        "candidate": 6.5229,
+        "ours": 7.1576
+      }
+    },
+    "crowd/seed42": {
+      "frames": {
+        "1": {
+          "admitted": true,
+          "max_abs_diff": 21.0,
+          "mean_abs_diff": 0.439,
+          "ncc": 0.999875,
+          "seam_detected": false,
+          "seam_ratio_col": 1.0258,
+          "seam_ratio_row": 0.9689
+        },
+        "49": {
+          "admitted": true,
+          "max_abs_diff": 81.33,
+          "mean_abs_diff": 3.9697,
+          "ncc": 0.997126,
+          "seam_detected": false,
+          "seam_ratio_col": 0.99,
+          "seam_ratio_row": 1.0019
+        },
+        "97": {
+          "admitted": true,
+          "max_abs_diff": 127.33,
+          "mean_abs_diff": 2.2842,
+          "ncc": 0.996743,
+          "seam_detected": false,
+          "seam_ratio_col": 1.0623,
+          "seam_ratio_row": 1.0927
+        }
+      },
+      "temporal_mean": {
+        "candidate": 5.325,
+        "ours": 6.2191
+      }
+    },
+    "testcard/seed20260821": {
+      "frames": {
+        "1": {
+          "admitted": true,
+          "max_abs_diff": 78.67,
+          "mean_abs_diff": 0.6509,
+          "ncc": 0.999762,
+          "seam_detected": false,
+          "seam_ratio_col": 0.6403,
+          "seam_ratio_row": 0.9126
+        },
+        "49": {
+          "admitted": true,
+          "max_abs_diff": 225.33,
+          "mean_abs_diff": 5.2069,
+          "ncc": 0.993717,
+          "seam_detected": false,
+          "seam_ratio_col": 0.985,
+          "seam_ratio_row": 0.966
+        },
+        "97": {
+          "admitted": true,
+          "max_abs_diff": 255.0,
+          "mean_abs_diff": 3.6154,
+          "ncc": 0.99308,
+          "seam_detected": false,
+          "seam_ratio_col": 0.8705,
+          "seam_ratio_row": 0.9564
+        }
+      },
+      "temporal_mean": {
+        "candidate": 1.8894,
+        "ours": 6.3541
+      }
+    },
+    "testcard/seed42": {
+      "frames": {
+        "1": {
+          "admitted": true,
+          "max_abs_diff": 78.67,
+          "mean_abs_diff": 0.6509,
+          "ncc": 0.999762,
+          "seam_detected": false,
+          "seam_ratio_col": 0.6403,
+          "seam_ratio_row": 0.9126
+        },
+        "49": {
+          "admitted": true,
+          "max_abs_diff": 212.67,
+          "mean_abs_diff": 4.8644,
+          "ncc": 0.995015,
+          "seam_detected": false,
+          "seam_ratio_col": 1.026,
+          "seam_ratio_row": 0.9567
+        },
+        "97": {
+          "admitted": true,
+          "max_abs_diff": 230.67,
+          "mean_abs_diff": 3.3478,
+          "ncc": 0.994345,
+          "seam_detected": false,
+          "seam_ratio_col": 0.849,
+          "seam_ratio_row": 0.8714
+        }
+      },
+      "temporal_mean": {
+        "candidate": 2.6962,
+        "ours": 6.6986
+      }
+    }
+  },
+  "lane": "lane6_wan_tiled_decode",
+  "overlap": 64,
+  "seam_ratio_threshold": 1.15,
+  "summary": {
+    "cells": 4,
+    "frames_admitted": 12,
+    "frames_scored": 12,
+    "frames_with_seam": 0,
+    "max_mean_abs_diff": 5.2069
+  },
+  "tile": 256
+}

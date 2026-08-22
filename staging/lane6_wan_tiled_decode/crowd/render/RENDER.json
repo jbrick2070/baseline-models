@@ -1,0 +1,221 @@
+{
+  "arms": [
+    "ours",
+    "candidate"
+  ],
+  "fixture": "crowd",
+  "fps": 25,
+  "legs": [
+    {
+      "arm": "ours",
+      "elapsed_s": 200.8,
+      "first_frame": "frame_00001_.png",
+      "fixture": "crowd",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "crowd/ours_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "efe3a6d6-4d0b-4ea0-9d99-535676790c2c",
+            "timestamp": 1787363928479
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "efe3a6d6-4d0b-4ea0-9d99-535676790c2c",
+            "timestamp": 1787363928626
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "efe3a6d6-4d0b-4ea0-9d99-535676790c2c",
+            "timestamp": 1787364124840
+          }
+        ]
+      ],
+      "prompt_id": "efe3a6d6-4d0b-4ea0-9d99-535676790c2c",
+      "seed": 42,
+      "sha256": "c14b108abc56f42a00748dd3a682d9eaa3de8b8c503530de12a34f7d0350b587",
+      "status": "success",
+      "subfolder": "baseline_output\\lane6_wan_tiled_decode\\crowd\\ours_seed42",
+      "temporal": {
+        "argmax_pair": 93,
+        "frame_pairs": 96,
+        "max_abs_delta": 6.6824,
+        "mean_abs_delta": 2.3314
+      }
+    },
+    {
+      "arm": "candidate",
+      "elapsed_s": 20.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "crowd",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "crowd/candidate_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "fa0f2268-a46c-4be6-b482-fa3950202860",
+            "timestamp": 1787364130129
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "clip",
+              "ksampler",
+              "latent",
+              "loadimage",
+              "modelsampling",
+              "neg",
+              "pos",
+              "unet",
+              "vae"
+            ],
+            "prompt_id": "fa0f2268-a46c-4be6-b482-fa3950202860",
+            "timestamp": 1787364130198
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "fa0f2268-a46c-4be6-b482-fa3950202860",
+            "timestamp": 1787364148249
+          }
+        ]
+      ],
+      "prompt_id": "fa0f2268-a46c-4be6-b482-fa3950202860",
+      "seed": 42,
+      "sha256": "68a1cd80ac9717bee542d9c6fde47939c2e19e259600f9515144ff866859d430",
+      "status": "success",
+      "subfolder": "baseline_output\\lane6_wan_tiled_decode\\crowd\\candidate_seed42",
+      "temporal": {
+        "argmax_pair": 93,
+        "frame_pairs": 96,
+        "max_abs_delta": 6.6486,
+        "mean_abs_delta": 1.8634
+      }
+    },
+    {
+      "arm": "ours",
+      "elapsed_s": 180.5,
+      "first_frame": "frame_00001_.png",
+      "fixture": "crowd",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "crowd/ours_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "136d546b-da73-4698-a235-b42e2f9fef0b",
+            "timestamp": 1787364151172
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "clip",
+              "latent",
+              "loadimage",
+              "modelsampling",
+              "neg",
+              "pos",
+              "unet",
+              "vae"
+            ],
+            "prompt_id": "136d546b-da73-4698-a235-b42e2f9fef0b",
+            "timestamp": 1787364151238
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "136d546b-da73-4698-a235-b42e2f9fef0b",
+            "timestamp": 1787364327112
+          }
+        ]
+      ],
+      "prompt_id": "136d546b-da73-4698-a235-b42e2f9fef0b",
+      "seed": 20260821,
+      "sha256": "7a4e5901f4f1b57e17f15eb4c403f370f5e77b3f696c53abfccff6a6800910be",
+      "status": "success",
+      "subfolder": "baseline_output\\lane6_wan_tiled_decode\\crowd\\ours_seed20260821",
+      "temporal": {
+        "argmax_pair": 60,
+        "frame_pairs": 96,
+        "max_abs_delta": 10.9431,
+        "mean_abs_delta": 3.2646
+      }
+    },
+    {
+      "arm": "candidate",
+      "elapsed_s": 20.2,
+      "first_frame": "frame_00001_.png",
+      "fixture": "crowd",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "crowd/candidate_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "f46f065f-8aac-4a30-bf9e-2fcad2fd459c",
+            "timestamp": 1787364332465
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "clip",
+              "ksampler",
+              "latent",
+              "loadimage",
+              "modelsampling",
+              "neg",
+              "pos",
+              "unet",
+              "vae"
+            ],
+            "prompt_id": "f46f065f-8aac-4a30-bf9e-2fcad2fd459c",
+            "timestamp": 1787364332535
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "f46f065f-8aac-4a30-bf9e-2fcad2fd459c",
+            "timestamp": 1787364350766
+          }
+        ]
+      ],
+      "prompt_id": "f46f065f-8aac-4a30-bf9e-2fcad2fd459c",
+      "seed": 20260821,
+      "sha256": "42a9c48ab089a2ae30f1af102ec3a93310d2281b5bcab0e385671deac86f4144",
+      "status": "success",
+      "subfolder": "baseline_output\\lane6_wan_tiled_decode\\crowd\\candidate_seed20260821",
+      "temporal": {
+        "argmax_pair": 60,
+        "frame_pairs": 96,
+        "max_abs_delta": 12.1334,
+        "mean_abs_delta": 2.9634
+      }
+    }
+  ],
+  "output_prefix": "baseline_output/lane6_wan_tiled_decode",
+  "seeds": [
+    42,
+    20260821
+  ],
+  "server": "http://127.0.0.1:8000"
+}
