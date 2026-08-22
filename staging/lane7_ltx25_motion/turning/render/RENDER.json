@@ -1,0 +1,260 @@
+{
+  "arms": [
+    "ours",
+    "soft"
+  ],
+  "fixture": "turning",
+  "fps": 25,
+  "legs": [
+    {
+      "arm": "ours",
+      "elapsed_s": 250.5,
+      "first_frame": "frame_00001_.png",
+      "fixture": "turning",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "turning/ours_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "a7c63221-84e6-4209-8e42-b48cb1816035",
+            "timestamp": 1787366032827
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "audiovae",
+              "emptyaudio",
+              "emptylatent",
+              "ksel",
+              "modality",
+              "neg",
+              "refine_sigmas",
+              "te",
+              "unet",
+              "upscale_loader",
+              "videovae"
+            ],
+            "prompt_id": "a7c63221-84e6-4209-8e42-b48cb1816035",
+            "timestamp": 1787366032868
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "a7c63221-84e6-4209-8e42-b48cb1816035",
+            "timestamp": 1787366274444
+          }
+        ]
+      ],
+      "prompt_id": "a7c63221-84e6-4209-8e42-b48cb1816035",
+      "seed": 42,
+      "sha256": "884cb1d3e6d6e187e05f0c537444c358ec57c971ec402905c6e7510d08d9d236",
+      "status": "success",
+      "subfolder": "baseline_output\\lane7_ltx25_motion\\turning\\ours_seed42",
+      "temporal": {
+        "argmax_pair": 91,
+        "frame_pairs": 96,
+        "max_abs_delta": 12.6227,
+        "mean_abs_delta": 6.0467
+      }
+    },
+    {
+      "arm": "soft",
+      "elapsed_s": 200.4,
+      "first_frame": "frame_00001_.png",
+      "fixture": "turning",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "turning/soft_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "558f552f-3fed-4642-a5fa-636b3e39e2be",
+            "timestamp": 1787366285408
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "audiovae",
+              "cond",
+              "emptyaudio",
+              "emptylatent",
+              "guider",
+              "ksel",
+              "loadimage",
+              "modality",
+              "neg",
+              "noise",
+              "pos",
+              "preprocess",
+              "refine_sigmas",
+              "resize",
+              "te",
+              "unet",
+              "upscale_loader",
+              "videovae"
+            ],
+            "prompt_id": "558f552f-3fed-4642-a5fa-636b3e39e2be",
+            "timestamp": 1787366285448
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "558f552f-3fed-4642-a5fa-636b3e39e2be",
+            "timestamp": 1787366477049
+          }
+        ]
+      ],
+      "prompt_id": "558f552f-3fed-4642-a5fa-636b3e39e2be",
+      "seed": 42,
+      "sha256": "d16786e6b38a63b81829a61a247f93c84667406ecf8646ae819959ce98ffc402",
+      "status": "success",
+      "subfolder": "baseline_output\\lane7_ltx25_motion\\turning\\soft_seed42",
+      "temporal": {
+        "argmax_pair": 92,
+        "frame_pairs": 96,
+        "max_abs_delta": 13.856,
+        "mean_abs_delta": 6.7331
+      }
+    },
+    {
+      "arm": "ours",
+      "elapsed_s": 200.4,
+      "first_frame": "frame_00001_.png",
+      "fixture": "turning",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "turning/ours_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "9bbc3611-ab1a-4914-8072-baf392691037",
+            "timestamp": 1787366487925
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "audiovae",
+              "cond",
+              "emptyaudio",
+              "emptylatent",
+              "guider",
+              "ksel",
+              "loadimage",
+              "modality",
+              "neg",
+              "pos",
+              "preprocess",
+              "refine_sigmas",
+              "resize",
+              "te",
+              "unet",
+              "upscale_loader",
+              "videovae"
+            ],
+            "prompt_id": "9bbc3611-ab1a-4914-8072-baf392691037",
+            "timestamp": 1787366487966
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "9bbc3611-ab1a-4914-8072-baf392691037",
+            "timestamp": 1787366680091
+          }
+        ]
+      ],
+      "prompt_id": "9bbc3611-ab1a-4914-8072-baf392691037",
+      "seed": 20260821,
+      "sha256": "a9a25390ef49b873f51e0301c49dbdecaca7f80dbd0f9035e1a6c7e68d08b069",
+      "status": "success",
+      "subfolder": "baseline_output\\lane7_ltx25_motion\\turning\\ours_seed20260821",
+      "temporal": {
+        "argmax_pair": 12,
+        "frame_pairs": 96,
+        "max_abs_delta": 11.7633,
+        "mean_abs_delta": 6.32
+      }
+    },
+    {
+      "arm": "soft",
+      "elapsed_s": 200.5,
+      "first_frame": "frame_00001_.png",
+      "fixture": "turning",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "turning/soft_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "85914c8d-4c1a-40ee-baea-ec3ae5bfd168",
+            "timestamp": 1787366690501
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "audiovae",
+              "cond",
+              "emptyaudio",
+              "emptylatent",
+              "guider",
+              "ksel",
+              "loadimage",
+              "modality",
+              "neg",
+              "noise",
+              "pos",
+              "preprocess",
+              "refine_sigmas",
+              "resize",
+              "te",
+              "unet",
+              "upscale_loader",
+              "videovae"
+            ],
+            "prompt_id": "85914c8d-4c1a-40ee-baea-ec3ae5bfd168",
+            "timestamp": 1787366690543
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "85914c8d-4c1a-40ee-baea-ec3ae5bfd168",
+            "timestamp": 1787366881741
+          }
+        ]
+      ],
+      "prompt_id": "85914c8d-4c1a-40ee-baea-ec3ae5bfd168",
+      "seed": 20260821,
+      "sha256": "deeb3f6cbd808ed4f6b9f1085c400f5066ce7c0ef72814ed19a08ba516daae3c",
+      "status": "success",
+      "subfolder": "baseline_output\\lane7_ltx25_motion\\turning\\soft_seed20260821",
+      "temporal": {
+        "argmax_pair": 13,
+        "frame_pairs": 96,
+        "max_abs_delta": 12.088,
+        "mean_abs_delta": 5.9424
+      }
+    }
+  ],
+  "output_prefix": "baseline_output/lane7_ltx25_motion",
+  "seeds": [
+    42,
+    20260821
+  ],
+  "server": "http://127.0.0.1:8000"
+}

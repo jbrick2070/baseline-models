@@ -1,0 +1,248 @@
+{
+  "arms": [
+    "ours",
+    "soft"
+  ],
+  "fixture": "crossing",
+  "fps": 25,
+  "legs": [
+    {
+      "arm": "ours",
+      "elapsed_s": 310.6,
+      "first_frame": "frame_00001_.png",
+      "fixture": "crossing",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "crossing/ours_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "7013b4fe-67ef-4e76-90a7-64c3867fda7b",
+            "timestamp": 1787365110679
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [],
+            "prompt_id": "7013b4fe-67ef-4e76-90a7-64c3867fda7b",
+            "timestamp": 1787365110815
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "7013b4fe-67ef-4e76-90a7-64c3867fda7b",
+            "timestamp": 1787365418402
+          }
+        ]
+      ],
+      "prompt_id": "7013b4fe-67ef-4e76-90a7-64c3867fda7b",
+      "seed": 42,
+      "sha256": "3e2533a6ec4b30792c639bb7a2a7da3a046fa91375bb059189a70273879af994",
+      "status": "success",
+      "subfolder": "baseline_output\\lane7_ltx25_motion\\crossing\\ours_seed42",
+      "temporal": {
+        "argmax_pair": 15,
+        "frame_pairs": 96,
+        "max_abs_delta": 11.0686,
+        "mean_abs_delta": 6.1268
+      }
+    },
+    {
+      "arm": "soft",
+      "elapsed_s": 200.4,
+      "first_frame": "frame_00001_.png",
+      "fixture": "crossing",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "crossing/soft_seed42",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "bf54be6d-e60b-4e14-afc9-0ed5facdc716",
+            "timestamp": 1787365423833
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "audiovae",
+              "cond",
+              "emptyaudio",
+              "emptylatent",
+              "guider",
+              "ksel",
+              "loadimage",
+              "modality",
+              "neg",
+              "noise",
+              "pos",
+              "preprocess",
+              "refine_sigmas",
+              "resize",
+              "te",
+              "unet",
+              "upscale_loader",
+              "videovae"
+            ],
+            "prompt_id": "bf54be6d-e60b-4e14-afc9-0ed5facdc716",
+            "timestamp": 1787365423874
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "bf54be6d-e60b-4e14-afc9-0ed5facdc716",
+            "timestamp": 1787365616699
+          }
+        ]
+      ],
+      "prompt_id": "bf54be6d-e60b-4e14-afc9-0ed5facdc716",
+      "seed": 42,
+      "sha256": "f3a5ac0d3ba37357973b67be1e405d5d8b9de3ec47dd754d70a343d718e54bc4",
+      "status": "success",
+      "subfolder": "baseline_output\\lane7_ltx25_motion\\crossing\\soft_seed42",
+      "temporal": {
+        "argmax_pair": 13,
+        "frame_pairs": 96,
+        "max_abs_delta": 11.348,
+        "mean_abs_delta": 6.1667
+      }
+    },
+    {
+      "arm": "ours",
+      "elapsed_s": 200.5,
+      "first_frame": "frame_00001_.png",
+      "fixture": "crossing",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "crossing/ours_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "2cdff337-145c-4f7f-b42b-74bcb6a6b10d",
+            "timestamp": 1787365626759
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "audiovae",
+              "cond",
+              "emptyaudio",
+              "emptylatent",
+              "guider",
+              "ksel",
+              "loadimage",
+              "modality",
+              "neg",
+              "pos",
+              "preprocess",
+              "refine_sigmas",
+              "resize",
+              "te",
+              "unet",
+              "upscale_loader",
+              "videovae"
+            ],
+            "prompt_id": "2cdff337-145c-4f7f-b42b-74bcb6a6b10d",
+            "timestamp": 1787365626799
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "2cdff337-145c-4f7f-b42b-74bcb6a6b10d",
+            "timestamp": 1787365819691
+          }
+        ]
+      ],
+      "prompt_id": "2cdff337-145c-4f7f-b42b-74bcb6a6b10d",
+      "seed": 20260821,
+      "sha256": "f67cbc15f20c5447f0b916b5f84f0cecc3d0497e64f8dda1a18ab5894bfe3f6a",
+      "status": "success",
+      "subfolder": "baseline_output\\lane7_ltx25_motion\\crossing\\ours_seed20260821",
+      "temporal": {
+        "argmax_pair": 34,
+        "frame_pairs": 96,
+        "max_abs_delta": 11.3035,
+        "mean_abs_delta": 6.1959
+      }
+    },
+    {
+      "arm": "soft",
+      "elapsed_s": 200.4,
+      "first_frame": "frame_00001_.png",
+      "fixture": "crossing",
+      "frame_count": 97,
+      "last_frame": "frame_00097_.png",
+      "leg": "crossing/soft_seed20260821",
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "ec49f6c0-e366-4928-ac18-1a15339ef8d0",
+            "timestamp": 1787365829742
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "audiovae",
+              "cond",
+              "emptyaudio",
+              "emptylatent",
+              "guider",
+              "ksel",
+              "loadimage",
+              "modality",
+              "neg",
+              "noise",
+              "pos",
+              "preprocess",
+              "refine_sigmas",
+              "resize",
+              "te",
+              "unet",
+              "upscale_loader",
+              "videovae"
+            ],
+            "prompt_id": "ec49f6c0-e366-4928-ac18-1a15339ef8d0",
+            "timestamp": 1787365829783
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "ec49f6c0-e366-4928-ac18-1a15339ef8d0",
+            "timestamp": 1787366023508
+          }
+        ]
+      ],
+      "prompt_id": "ec49f6c0-e366-4928-ac18-1a15339ef8d0",
+      "seed": 20260821,
+      "sha256": "6883aab054d64a5ce2a6f3cc8bbf4cc6aa8986ea898aeb8f9979135e8a5ac885",
+      "status": "success",
+      "subfolder": "baseline_output\\lane7_ltx25_motion\\crossing\\soft_seed20260821",
+      "temporal": {
+        "argmax_pair": 15,
+        "frame_pairs": 96,
+        "max_abs_delta": 11.1881,
+        "mean_abs_delta": 6.0933
+      }
+    }
+  ],
+  "output_prefix": "baseline_output/lane7_ltx25_motion",
+  "seeds": [
+    42,
+    20260821
+  ],
+  "server": "http://127.0.0.1:8000"
+}

@@ -1,0 +1,108 @@
+{
+  "admission_ncc": 0.9,
+  "cells": {
+    "crossing/seed20260821": {
+      "admitted": false,
+      "anchor_ncc_f1_f97": {
+        "ours": 0.0238,
+        "soft": -0.0027
+      },
+      "arm_to_arm_ncc": {
+        "1": 0.9987,
+        "49": 0.486,
+        "97": 0.6237
+      },
+      "soft_departs_more": true
+    },
+    "crossing/seed42": {
+      "admitted": false,
+      "anchor_ncc_f1_f97": {
+        "ours": 0.0219,
+        "soft": 0.0254
+      },
+      "arm_to_arm_ncc": {
+        "1": 0.9991,
+        "49": 0.7911,
+        "97": 0.5587
+      },
+      "soft_departs_more": false
+    },
+    "turning/seed20260821": {
+      "admitted": false,
+      "anchor_ncc_f1_f97": {
+        "ours": 0.2103,
+        "soft": -0.0019
+      },
+      "arm_to_arm_ncc": {
+        "1": 0.9996,
+        "49": 0.0669,
+        "97": 0.3863
+      },
+      "soft_departs_more": true
+    },
+    "turning/seed42": {
+      "admitted": false,
+      "anchor_ncc_f1_f97": {
+        "ours": 0.008,
+        "soft": 0.1417
+      },
+      "arm_to_arm_ncc": {
+        "1": 0.9995,
+        "49": 0.4382,
+        "97": 0.166
+      },
+      "soft_departs_more": false
+    }
+  },
+  "lane": "lane7_ltx25_motion",
+  "motion_gate": {
+    "crossing/ours/20260821": {
+      "churn": 15.834,
+      "excursion": 48.303,
+      "moved": true
+    },
+    "crossing/ours/42": {
+      "churn": 15.553,
+      "excursion": 47.045,
+      "moved": true
+    },
+    "crossing/soft/20260821": {
+      "churn": 14.879,
+      "excursion": 49.974,
+      "moved": true
+    },
+    "crossing/soft/42": {
+      "churn": 15.189,
+      "excursion": 48.484,
+      "moved": true
+    },
+    "turning/ours/20260821": {
+      "churn": 15.329,
+      "excursion": 44.867,
+      "moved": true
+    },
+    "turning/ours/42": {
+      "churn": 14.371,
+      "excursion": 42.071,
+      "moved": true
+    },
+    "turning/soft/20260821": {
+      "churn": 14.058,
+      "excursion": 44.146,
+      "moved": true
+    },
+    "turning/soft/42": {
+      "churn": 15.812,
+      "excursion": 39.043,
+      "moved": true
+    }
+  },
+  "motion_min_excursion": 6.0,
+  "summary": {
+    "cells": 4,
+    "cells_admitted": 0,
+    "cells_where_soft_departs_more": 2,
+    "clips": 8,
+    "clips_that_moved": 8
+  }
+}
